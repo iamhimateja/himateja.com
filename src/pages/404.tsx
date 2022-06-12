@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { RiAlarmWarningFill } from 'react-icons/ri'
 
 import Layout from '@/components/layout/Layout'

@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap');
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+
+  .name {
+    display: flex;
+    gap: 15px;
+    padding: 0 20px 5px 20px;
+
+    [class*='letter-'] {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .letter-h {
+      height: 90px;
+      width: 65px;
+
+      .h-left,
+      .h-right,
+      .h-center {
+        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+      }
+
+      .h-left,
+      .h-right {
+        position: absolute;
+        height: 100%;
+        width: 30px;
+      }
+
+      .h-center {
+        position: absolute;
+        background-color: rgba(236, 98, 109, 0.7);
+        backdrop-filter: blur(5px);
+        height: 30px;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: 'slideInRightCentered';
+        animation-delay: 0.75s;
+      }
+
+      .h-left {
+        background-color: #17a2d6;
+        animation-name: 'slideInUp';
+      }
+
+      .h-right {
+        background-color: #f2bc36;
+        right: 0;
+        animation-name: 'slideInDown';
+        animation-delay: 0.25s;
+      }
+    }
+
+    .letter-i {
+      height: 90px;
+      width: 30px;
+
+      .i-main {
+        position: absolute;
+        background-color: #17a2d6;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        animation-name: 'slideInUp';
+        animation-delay: 1s;
+        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+      }
+    }
+
+    .letter-m {
+      height: 90px;
+      width: calc(60px + calc(30px / 2));
+      display: flex;
+
+      .m-left,
+      .m-right,
+      .m-skew-left,
+      .m-skew-right {
+        position: absolute;
+        height: 100%;
+        width: 30px;
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+      }
+
+      .m-skew-left,
+      .m-skew-right {
+        top: 0;
+        left: calc(50% - calc(30px / 2));
+        animation-duration: 1s;
+        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+        transform-origin: bottom;
+        animation-delay: 1.5s;
+      }
+
+      .m-left,
+      .m-right {
+        animation-name: 'slideInDown';
+        animation-delay: 2.5s;
+      }
+
+      .m-left {
+        background-color: #18a4d6;
+        left: 0;
+      }
+
+      .m-right {
+        background-color: #17a2d6;
+        right: 0;
+      }
+
+      .m-skew-left {
+        background-color: rgba(237, 187, 51, 0.7);
+        backdrop-filter: blur(5px);
+        z-index: 2;
+        animation-name: 'mLeftSkew';
+      }
+
+      .m-skew-right {
+        background-color: rgba(236, 98, 109, 0.7);
+        backdrop-filter: blur(5px);
+        z-index: 1;
+        animation-name: 'mRightSkew';
+      }
+    }
+
+    .letter-a,
+    .letter-a-right {
+      height: 90px;
+      width: calc(60px + calc(30px / 2));
+      margin-right: 20px;
+
+      .a-left,
+      .a-right {
+        position: absolute;
+        top: 0%;
+        width: 30px;
+        height: 100%;
+        left: calc(50% - calc(30px / 2));
+        transform-origin: top;
+        animation-duration: 1s;
+        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+        animation-delay: 3s;
+        animation-fill-mode: both;
+      }
+
+      .a-left {
+        background-color: rgba(143, 211, 211, 0.7);
+        backdrop-filter: blur(5px);
+        z-index: 1;
+        animation-name: 'aLeftSkew';
+      }
+
+      .a-right {
+        background-color: #18a4d6;
+        animation-name: 'aRightSkew';
+      }
+    }
+
+    .letter-t {
+      display: flex;
+      place-content: center;
+      place-items: center;
+      height: 90px;
+      width: 65px;
+
+      .t-top,
+      .t-middle {
+        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+        animation-duration: 0.5s;
+        transform-origin: bottom;
+        animation-delay: 4s;
+        animation-fill-mode: both;
+      }
+
+      .t-top {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 30px;
+        background: rgba(143, 211, 211, 0.7);
+        backdrop-filter: blur(5px);
+        z-index: 1;
+        animation-name: 'tTopScale';
+      }
+
+      .t-middle {
+        width: 30px;
+        height: 100%;
+        background-color: #18a4d6;
+        animation-name: 'slideInDown';
+      }
+    }
+
+    .letter-e {
+      display: flex;
+      flex-direction: column;
+      height: 90px;
+      width: 60px;
+
+      .e1,
+      .e2,
+      .e3 {
+        width: 100%;
+        height: 30px;
+        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+        animation-duration: 0.5s;
+        transform-origin: bottom;
+        animation-name: 'slideInLeft';
+        animation-fill-mode: both;
+      }
+
+      .e1,
+      .e3 {
+        background-color: #ec616d;
+      }
+
+      .e1 {
+        animation-delay: 5.3s;
+      }
+
+      .e2 {
+        width: calc(100% - 15px);
+        background-color: #8fd3d3;
+        animation-delay: 5.1s;
+      }
+
+      .e3 {
+        animation-delay: 5s;
+      }
+    }
+
+    .letter-j {
+      height: 90px;
+      width: 55px;
+
+      .j-right,
+      .j-bottom {
+        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+        animation-duration: 0.5s;
+        transform-origin: bottom;
+        animation-fill-mode: both;
+      }
+
+      .j-bottom {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 30px;
+        background: rgba(143, 211, 211, 0.7);
+        backdrop-filter: blur(5px);
+        z-index: 1;
+        animation-name: 'slideInRight';
+        animation-delay: 6.05s;
+      }
+
+      .j-right {
+        position: absolute;
+        right: 0;
+        width: 30px;
+        height: 100%;
+        background-color: #18a4d6;
+        animation-delay: 6s;
+        animation-name: 'slideInUp';
+      }
+    }
+
+    .letter-a-right {
+      margin-right: 0;
+      .a-left,
+      .a-right {
+        animation-delay: 7s;
+      }
+    }
+  }
+
+  .divider {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    margin-top: 15px;
+    transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+    animation-fill-mode: both;
+    animation-duration: 0.5s;
+    animation-name: 'divider';
+    animation-delay: 8.1s;
+
+    .dot {
+      content: '';
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      background: #fff;
+      top: 50%;
+      transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+      transform: translate(-50%, -50%) rotate(45deg) scale(1);
+      animation-fill-mode: both;
+      animation-duration: 1s;
+      animation-name: 'divider-dots';
+      animation-delay: 7.1s;
+      -webkit-filter: url(#glitchFilter_svg__glitch);
+      filter: url(#glitchFilter_svg__glitch);
+
+      &:first-child {
+        left: 0;
+      }
+
+      &:last-child {
+        right: -15px;
+      }
+    }
+  }
+
+  .tagLine {
+    font-family: 'Bungee Hairline', cursive;
+    font-optical-sizing: auto;
+    font-variation-settings: 'opsz' 40;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #e8eaed;
+    letter-spacing: 0.5rem;
+    margin-top: 0.5rem;
+    font-style: normal;
+    line-height: initial;
+    perspective: 1000px;
+
+    .individualLetter {
+      display: inline-block;
+      white-space: break-spaces;
+      transform-origin: center;
+      transform: scaleX(0);
+      transform-style: preserve-3d;
+      transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+    }
+  }
+}

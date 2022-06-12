@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { fontFamily } = require('tailwindcss/defaultTheme');
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 function withOpacityValue(variable) {
   return ({ opacityValue }) => {
     if (opacityValue === undefined) {
-      return `rgb(var(${variable}))`;
+      return `rgb(var(${variable}))`
     }
-    return `rgb(var(${variable}) / ${opacityValue})`;
-  };
+    return `rgb(var(${variable}) / ${opacityValue})`
+  }
 }
 
 /** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig } */
@@ -32,7 +32,7 @@ module.exports = {
           800: withOpacityValue('--tw-color-primary-800'),
           900: withOpacityValue('--tw-color-primary-900'),
         },
-        dark: '#222222',
+        dark: '#00031b',
       },
       keyframes: {
         flicker: {
@@ -62,4 +62,4 @@ module.exports = {
     },
   },
   plugins: [require('@tailwindcss/forms')],
-};
+}

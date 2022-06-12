@@ -2,7 +2,7 @@
   //#region  //*=========== React ===========
   "import React": {
     "prefix": "ir",
-    "body": ["import * as React from 'react';"]
+    "body": ["import React from 'react';"]
   },
   "React.useState": {
     "prefix": "us",
@@ -16,11 +16,7 @@
   },
   "React.useReducer": {
     "prefix": "ur",
-    "body": [
-      "const [state, dispatch] = React.useReducer(${0:someReducer}, {",
-      "  ",
-      "})"
-    ]
+    "body": ["const [state, dispatch] = React.useReducer(${0:someReducer}, {", "  ", "})"]
   },
   "React.useRef": {
     "prefix": "urf",
@@ -29,7 +25,7 @@
   "React Functional Component": {
     "prefix": "rc",
     "body": [
-      "import * as React from 'react';\n",
+      "import React from 'react';\n",
       "export default function ${1:${TM_FILENAME_BASE}}() {",
       "  return (",
       "    <div>",
@@ -42,7 +38,7 @@
   "React Functional Component with Props": {
     "prefix": "rcp",
     "body": [
-      "import * as React from 'react';\n",
+      "import React from 'react';\n",
       "import clsxm from '@/lib/clsxm';\n",
       "type ${1:${TM_FILENAME_BASE}}Props= {\n",
       "} & React.ComponentPropsWithoutRef<'div'>\n",
@@ -82,7 +78,7 @@
   "Next Pages": {
     "prefix": "np",
     "body": [
-      "import * as React from 'react';\n",
+      "import React from 'react';\n",
       "import Layout from '@/components/layout/Layout';",
       "import Seo from '@/components/Seo';\n",
       "export default function ${1:${TM_FILENAME_BASE/(^[a-zA-Z])(.*)/${1:/upcase}${2}/}}Page() {",
