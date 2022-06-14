@@ -1,18 +1,19 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import { openGraph } from '@/lib/helper'
 import { ThemeType } from '@/lib/types'
 
 const defaultMeta = {
   title: 'Himateja - Designer & Developer',
   siteName: 'Himateja - Designer & Developer',
   description: 'An online portfolio and blog by Himateja Merlapaka. Showcase of his projects and work.',
-  url: 'https://himateja.com',
+  url: 'https://dev.himu.io',
   type: 'website',
   robots: 'follow, index',
-  /** No need to be filled, will be populated with openGraph function */
-  image: '',
+  image: '/images/og-metadata.webp',
+  imageAlt:
+    'Himateja - Designer & Developer, Works as a full-stack developer at Index (https://index.app), contact @ iamhimateja[at]gmail[dot]com, visit https://himu.io/',
+  keywords: 'himu, himateja, merlapaka, full-stack developer, index.app',
 }
 
 type SeoProps = {
@@ -30,18 +31,11 @@ export default function Seo(props: SeoProps) {
 
   meta['title'] = props.templateTitle ? `${props.templateTitle} | ${meta.siteName}` : meta.title
 
-  // Use siteName if there is templateTitle
-  // but show full title if there is none
-  meta['image'] = openGraph({
-    description: meta.description,
-    siteName: props.templateTitle ? meta.siteName : meta.title,
-    templateTitle: props.templateTitle,
-  })
-
   return (
     <Head>
       <title>{meta.title}</title>
       <meta name="robots" content={meta.robots} />
+      <meta name="keywords" content={meta.keywords} />
       <meta content={meta.description} name="description" />
       <meta property="og:url" content={`${meta.url}${router.asPath}`} />
       <link rel="canonical" href={`${meta.url}${router.asPath}`} />
@@ -50,18 +44,21 @@ export default function Seo(props: SeoProps) {
       <meta property="og:site_name" content={meta.siteName} />
       <meta property="og:description" content={meta.description} />
       <meta property="og:title" content={meta.title} />
-      <meta name="image" property="og:image" content={meta.image} />
+      <meta name="image" property="og:image" content={`${meta.url}${meta.image}`} />
+      <meta property="og:image:alt" content={meta.imageAlt} />
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@th_clarence" />
+      <meta name="twitter:site" content="@iamhimateja" />
+      <meta name="twitter:creator" content="@iamhimateja" />
       <meta name="twitter:title" content={meta.title} />
       <meta name="twitter:description" content={meta.description} />
-      <meta name="twitter:image" content={meta.image} />
+      <meta name="twitter:image" content={`${meta.url}${meta.image}`} />
+      <meta name="twitter:image:alt" content={meta.imageAlt} />
       {meta.date && (
         <>
           <meta property="article:published_time" content={meta.date} />
           <meta name="publish_date" property="og:publish_date" content={meta.date} />
-          <meta name="author" property="article:author" content="Theodorus Clarence" />
+          <meta name="author" property="article:author" content="Himateja" />
         </>
       )}
 
