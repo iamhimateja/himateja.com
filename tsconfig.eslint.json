@@ -1,17 +1,4 @@
 {
   "extends": "./tsconfig.json",
-  "include": [
-    "**/*.js",
-    "**/*.jsx",
-    "**/*.ts",
-    "**/*.tsx",
-    "./*.js",
-    "./*.ts"
-    // "jest.setup.js",
-    // "jest.config.js",
-    // "next.config.js",
-    // "next-sitemap.config.js",
-    // "next-env.d.ts",
-    // "postcss.config.js"
-  ]
+  "include": ["./*.js", "./*.ts", "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
 }
