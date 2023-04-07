@@ -31,6 +31,7 @@
     "xterm-addon-web-links": "^0.8.0"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.33.0",
     "@svgr/webpack": "^6.2.1",
     "@testing-library/react": "^13.2.0",
     "@types/loader-utils": "^2.0.3",
