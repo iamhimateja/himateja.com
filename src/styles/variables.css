@@ -1,0 +1,8 @@
+:root {
+  --name-primary-color: rgba(189, 220, 244);
+  --name-primary-color-alpha-5: rgba(189, 220, 244, 0.5);
+  --name-secondary-color: #cfbdff;
+  /* --default-transition: 0.5s cubic-bezier(1, 0, 0, 1); */
+  --default-transition: cubic-bezier(1, -0.5, 0, 1.5);
+  /* --default-transition: cubic-bezier(1, 0, 0, 1); */
+}

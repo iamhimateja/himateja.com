@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://dev.himu.io',
+  siteUrl: 'https://dev.himateja.com',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [{ userAgent: '*', allow: '/' }],

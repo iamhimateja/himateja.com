@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2017",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "noUncheckedIndexedAccess": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -19,14 +20,26 @@
     "strictNullChecks": true,
     "noFallthroughCasesInSwitch": true,
     "noErrorTruncation": true,
+    "incremental": true,
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    // Using "baseUrl" allows you to use absolute paths
     "baseUrl": ".",
+    // Using "paths" allows you to configure module path aliases
     "paths": {
       "@/*": ["./src/*"],
       "~/*": ["./public/*"]
     },
-    "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"],
-  "moduleResolution": ["node_modules", ".next", "node"]
+  "include": [
+    "helper.mjs",
+    "next-env.d.ts",
+    "loaders.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.cjs",
+    "**/*.mjs"
+  ],
+  "exclude": ["node_modules"]
 }

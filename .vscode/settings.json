@@ -8,5 +8,6 @@
   "headwind.runOnSave": false,
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "files.autoSave": "onFocusChange",
-  "cSpell.words": ["himu", "iamhimateja", "Merlapaka"]
+  "cSpell.words": ["himu", "iamhimateja", "Merlapaka"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

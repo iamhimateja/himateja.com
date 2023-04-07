@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import { ThemeType } from '@/lib/types'
+import type { ThemeType } from '@/lib/types'
 
 const defaultMeta = {
   title: 'Himateja - Designer & Developer',

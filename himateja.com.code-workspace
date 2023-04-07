@@ -1,16 +1,8 @@
 {
-  "extensions": {
-    "recommendations": [
-      "dbaeumer.vscode-eslint",
-      "esbenp.prettier-vscode",
-      "styled-components.vscode-styled-components",
-      "firsttris.vscode-jest-runner",
-      "Prisma.prisma"
-    ]
-  },
+  "extensions": {},
   "folders": [
     {
-      "path": "."
+      "path": "./"
     }
   ],
   "settings": {
@@ -30,13 +22,21 @@
     "search.exclude": {
       "**/coverage": true
     },
-    "[prisma]": {
-      "editor.defaultFormatter": "Prisma.prisma"
-    },
-    // "typescript.tsdk": "server/node_modules/typescript/lib",
+    "typescript.tsdk": "./node_modules/typescript/lib",
     "svg.preview.background": "white",
     "material-icon-theme.files.associations": {
       "*.jest.ts": "jest"
+    },
+    "scss.lint.unknownAtRules": "ignore",
+    "cSpell.words": ["clsx"],
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true,
+      "**/node_modules": true
     }
   }
 }

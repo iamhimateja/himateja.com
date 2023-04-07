@@ -1,19 +1,254 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap');
+
+@keyframes hover {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRightCentered {
+  from {
+    transform: translate(50%, -50%);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes slideOutUp {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes mLeftSkew {
+  0% {
+    transform: translate(0, 100%);
+    visibility: visible;
+  }
+
+  50% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, 0) skewX(14deg);
+  }
+}
+
+@keyframes mRightSkew {
+  0% {
+    transform: translate(0, 100%);
+    visibility: visible;
+  }
+
+  50% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, 0) skewX(-14deg);
+  }
+}
+
+@keyframes aLeftRotate {
+  0% {
+    height: var(--initial-height, 30px);
+    visibility: visible;
+  }
+
+  50% {
+    height: var(--final-height, 100%);
+  }
+
+  100% {
+    height: var(--final-height, 100%);
+    transform: translate(4px, 0) rotate(16deg);
+  }
+}
+
+@keyframes aRightRotate {
+  0% {
+    height: var(--initial-height, 30px);
+    visibility: visible;
+  }
+
+  50% {
+    height: var(--final-height, 100%);
+  }
+
+  100% {
+    height: var(--final-height, 100%);
+    transform: translate(-4px, 0) rotate(-16deg);
+  }
+}
+
+@keyframes tTopScale {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale3d(0.3, 0.3, 0.3);
+    transform: translate(-50%, -50%) scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes divider {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes divider-dots {
+  0% {
+    transform: translate(-50%, -50%) rotate(0) scale(0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
+}
+
+@keyframes heightGrow {
+  50% {
+    height: var(--initial-height, 30px);
+  }
+
+  100% {
+    height: var(--final-height, 100%);
+  }
+}
+
+@keyframes widthGrow {
+  50% {
+    width: var(--initial-width, 30px);
+  }
+
+  100% {
+    width: var(--final-width, 100%);
+  }
+}
+
+.flex-wrapper {
+  @apply flex h-screen w-full flex-row items-center justify-center;
+}
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  place-content: center;
-  place-items: center;
+  @apply flex flex-col place-content-center place-items-center;
 
   .name {
-    display: flex;
-    gap: 15px;
-    padding: 0 20px 5px 20px;
+    @apply flex gap-4 px-[20px] pt-0 pb-[5px];
+    transform-origin: center center;
+    // animation: hover 10s ease-in-out infinite;
 
     [class*='letter-'] {
       position: relative;
-      overflow: hidden;
     }
 
     .letter-h {
@@ -23,7 +258,8 @@
       .h-left,
       .h-right,
       .h-center {
-        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+        transition: height var(--default-transition);
+        animation-timing-function: var(--default-transition);
         animation-duration: 0.5s;
         animation-fill-mode: both;
       }
@@ -31,33 +267,36 @@
       .h-left,
       .h-right {
         position: absolute;
-        height: 100%;
+        height: 0;
         width: 30px;
+        border-radius: 30px;
       }
 
       .h-center {
         position: absolute;
-        background-color: rgba(236, 98, 109, 0.7);
-        backdrop-filter: blur(5px);
+        background: radial-gradient(circle at 10px 10px, #ffffff, #9c9c9c);
         height: 30px;
-        width: 100%;
+        width: 30px;
+        border-radius: 50%;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        animation-name: 'slideInRightCentered';
-        animation-delay: 0.75s;
+        transform-origin: center;
+        animation-name: zoomIn;
+        animation-delay: 0.5s;
       }
 
       .h-left {
-        background-color: #17a2d6;
-        animation-name: 'slideInUp';
+        top: 0;
+        background-color: var(--name-primary-color-alpha-5);
+        animation-name: heightGrow;
       }
 
       .h-right {
-        background-color: #f2bc36;
+        background-color: var(--name-secondary-color);
         right: 0;
-        animation-name: 'slideInDown';
-        animation-delay: 0.25s;
+        bottom: 0;
+        animation-name: heightGrow;
       }
     }
 
@@ -67,73 +306,65 @@
 
       .i-main {
         position: absolute;
-        background-color: #17a2d6;
-        height: 100%;
+        background-color: var(--name-primary-color-alpha-5);
+        height: 0;
         width: 100%;
+        border-radius: 30px;
         top: 0;
-        animation-name: 'slideInUp';
-        animation-delay: 1s;
-        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+        animation-name: heightGrow;
+        animation-delay: 0.25s;
+
+        animation-timing-function: var(--default-transition);
         animation-duration: 0.5s;
         animation-fill-mode: both;
       }
     }
 
     .letter-m {
+      position: relative;
+      overflow: visible;
       height: 90px;
-      width: calc(60px + calc(30px / 2));
-      display: flex;
+      width: 90px;
 
-      .m-left,
-      .m-right,
-      .m-skew-left,
-      .m-skew-right {
+      div {
         position: absolute;
-        height: 100%;
         width: 30px;
+        height: 0;
+        transform-origin: top;
         animation-duration: 0.5s;
+        transition: all var(--default-transition);
+        animation-timing-function: var(--default-transition);
+        animation-name: heightGrow;
         animation-fill-mode: both;
-        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
-      }
+        border-radius: 30px;
 
-      .m-skew-left,
-      .m-skew-right {
-        top: 0;
-        left: calc(50% - calc(30px / 2));
-        animation-duration: 1s;
-        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
-        transform-origin: bottom;
-        animation-delay: 1.5s;
-      }
+        &:nth-child(odd) {
+          background-color: var(--name-secondary-color);
+          top: 0;
+          --init-dot-height: 0;
+        }
 
-      .m-left,
-      .m-right {
-        animation-name: 'slideInDown';
-        animation-delay: 2.5s;
-      }
+        &:first-child {
+          left: 0;
+          border-top-right-radius: 0;
+          animation-delay: 0.25s;
+        }
 
-      .m-left {
-        background-color: #18a4d6;
-        left: 0;
-      }
+        &:nth-child(2) {
+          height: 0;
+          --final-height: 65%;
+          animation-delay: 0.3s;
+          left: calc(100% / 3);
+          background-color: var(--name-primary-color-alpha-5);
+          border-top-right-radius: 0;
+          border-top-left-radius: 0;
+        }
 
-      .m-right {
-        background-color: #17a2d6;
-        right: 0;
-      }
-
-      .m-skew-left {
-        background-color: rgba(237, 187, 51, 0.7);
-        backdrop-filter: blur(5px);
-        z-index: 2;
-        animation-name: 'mLeftSkew';
-      }
-
-      .m-skew-right {
-        background-color: rgba(236, 98, 109, 0.7);
-        backdrop-filter: blur(5px);
-        z-index: 1;
-        animation-name: 'mRightSkew';
+        &:last-child {
+          animation-delay: 0.35s;
+          right: 0;
+          border-top-left-radius: 0;
+        }
       }
     }
 
@@ -141,32 +372,32 @@
     .letter-a-right {
       height: 90px;
       width: calc(60px + calc(30px / 2));
-      margin-right: 20px;
 
       .a-left,
       .a-right {
         position: absolute;
         top: 0%;
         width: 30px;
-        height: 100%;
+        height: 0;
         left: calc(50% - calc(30px / 2));
         transform-origin: top;
         animation-duration: 1s;
-        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
-        animation-delay: 3s;
+        animation-timing-function: var(--default-transition);
+        animation-delay: 0.25s;
         animation-fill-mode: both;
+        border-radius: 30px;
       }
 
       .a-left {
-        background-color: rgba(143, 211, 211, 0.7);
+        background-color: var(--name-primary-color-alpha-5);
         backdrop-filter: blur(5px);
         z-index: 1;
-        animation-name: 'aLeftSkew';
+        animation-name: aLeftRotate;
       }
 
       .a-right {
-        background-color: #18a4d6;
-        animation-name: 'aRightSkew';
+        background-color: var(--name-secondary-color);
+        animation-name: aRightRotate;
       }
     }
 
@@ -179,29 +410,32 @@
 
       .t-top,
       .t-middle {
-        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+        position: absolute;
+        animation-timing-function: var(--default-transition);
         animation-duration: 0.5s;
         transform-origin: bottom;
-        animation-delay: 4s;
         animation-fill-mode: both;
+        border-radius: 30px;
       }
 
       .t-top {
-        position: absolute;
         top: 0;
         width: 100%;
         height: 30px;
-        background: rgba(143, 211, 211, 0.7);
+        background: var(--name-primary-color-alpha-5);
         backdrop-filter: blur(5px);
         z-index: 1;
-        animation-name: 'tTopScale';
+        animation-name: tTopScale;
+        animation-delay: 0.3s;
       }
 
       .t-middle {
+        top: 0;
         width: 30px;
-        height: 100%;
-        background-color: #18a4d6;
-        animation-name: 'slideInDown';
+        height: 0;
+        background-color: var(--name-secondary-color);
+        animation-delay: 0.45s;
+        animation-name: heightGrow;
       }
     }
 
@@ -214,32 +448,36 @@
       .e1,
       .e2,
       .e3 {
-        width: 100%;
+        width: 0;
         height: 30px;
-        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+
+        animation-timing-function: var(--default-transition);
         animation-duration: 0.5s;
         transform-origin: bottom;
-        animation-name: 'slideInLeft';
+        animation-name: widthGrow;
         animation-fill-mode: both;
+        border-radius: 0 30px 30px 0;
       }
 
       .e1,
       .e3 {
-        background-color: #ec616d;
+        background-color: var(--name-secondary-color);
       }
 
       .e1 {
-        animation-delay: 5.3s;
+        animation-delay: 0.25s;
+        border-top-left-radius: 30px;
       }
 
       .e2 {
-        width: calc(100% - 15px);
-        background-color: #8fd3d3;
-        animation-delay: 5.1s;
+        --final-width: calc(100% - 15px);
+        background-color: var(--name-primary-color-alpha-5);
+        animation-delay: 0.35s;
       }
 
       .e3 {
-        animation-delay: 5s;
+        animation-delay: 0.45s;
+        border-bottom-left-radius: 30px;
       }
     }
 
@@ -249,32 +487,36 @@
 
       .j-right,
       .j-bottom {
-        transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+        animation-timing-function: var(--default-transition);
         animation-duration: 0.5s;
         transform-origin: bottom;
         animation-fill-mode: both;
+        border-radius: 30px;
       }
 
       .j-bottom {
         position: absolute;
+        border-top-right-radius: 0;
         bottom: 0;
-        width: 100%;
+        right: 0;
+        width: 0;
         height: 30px;
-        background: rgba(143, 211, 211, 0.7);
+        background: var(--name-primary-color-alpha-5);
         backdrop-filter: blur(5px);
         z-index: 1;
-        animation-name: 'slideInRight';
-        animation-delay: 6.05s;
+        animation-name: widthGrow;
+        animation-delay: 0.35s;
       }
 
       .j-right {
         position: absolute;
         right: 0;
+        bottom: 0;
         width: 30px;
-        height: 100%;
-        background-color: #18a4d6;
-        animation-delay: 6s;
-        animation-name: 'slideInUp';
+        height: 0;
+        background-color: var(--name-secondary-color);
+        animation-delay: 0.25s;
+        animation-name: heightGrow;
       }
     }
 
@@ -282,7 +524,7 @@
       margin-right: 0;
       .a-left,
       .a-right {
-        animation-delay: 7s;
+        animation-delay: 0.35s;
       }
     }
   }
@@ -293,10 +535,11 @@
     height: 1px;
     background: #fff;
     margin-top: 15px;
-    transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+    transition: all var(--default-transition);
+    animation-timing-function: var(--default-transition);
     animation-fill-mode: both;
     animation-duration: 0.5s;
-    animation-name: 'divider';
+    animation-name: divider;
     animation-delay: 8.1s;
 
     .dot {
@@ -306,14 +549,13 @@
       position: absolute;
       background: #fff;
       top: 50%;
-      transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+
+      animation-timing-function: var(--default-transition);
       transform: translate(-50%, -50%) rotate(45deg) scale(1);
       animation-fill-mode: both;
       animation-duration: 1s;
-      animation-name: 'divider-dots';
+      animation-name: divider-dots;
       animation-delay: 7.1s;
-      -webkit-filter: url(#glitchFilter_svg__glitch);
-      filter: url(#glitchFilter_svg__glitch);
 
       &:first-child {
         left: 0;
@@ -344,7 +586,8 @@
       transform-origin: center;
       transform: scaleX(0);
       transform-style: preserve-3d;
-      transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+      transition: all var(--default-transition);
+      animation-timing-function: var(--default-transition);
     }
   }
 }

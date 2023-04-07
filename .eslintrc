@@ -1,7 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "react", "react-hooks", "simple-import-sort", "unused-imports"],
-
+  "plugins": ["@typescript-eslint", "react", "simple-import-sort"],
+  "root": true,
   "extends": [
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
@@ -12,17 +12,16 @@
   ],
   "env": {
     "browser": true,
-    "jest": true,
-    "es2021": true,
-    "node": true
+    "jest": true
   },
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",
+    "allowImportExportEverywhere": true,
     "ecmaFeatures": {
       "jsx": true
     },
-    "project": "./tsconfig.eslint.json"
+    "project": "./tsconfig.json"
   },
   "settings": {
     "react": {
@@ -37,7 +36,6 @@
         "ignoreRestSiblings": true
       }
     ],
-    "react/display-name": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
@@ -52,63 +50,12 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": "off",
-    // Prevent extra closing tags for components without children
-    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md
     "react/self-closing-comp": "error",
-
     "import/order": "off",
     "sort-imports": "off",
-
-    "unused-imports/no-unused-imports": "warn",
-    "unused-imports/no-unused-vars": [
-      "warn",
-      {
-        "vars": "all",
-        "varsIgnorePattern": "^_",
-        "args": "after-used",
-        "argsIgnorePattern": "^_"
-      }
-    ],
-
-    "simple-import-sort/exports": "warn",
-    "simple-import-sort/imports": [
-      "warn",
-      {
-        "groups": [
-          // ext library & side effect imports
-          ["^@?\\w", "^\\u0000"],
-          // {s}css files
-          ["^.+\\.s?css$"],
-          // Lib and hooks
-          ["^@/lib", "^@/hooks"],
-          // static data
-          ["^@/data"],
-          // components
-          ["^@/components", "^@/container"],
-          // zustand store
-          ["^@/store"],
-          // Other imports
-          ["^@/"],
-          // relative paths up until 3 level
-          [
-            "^\\./?$",
-            "^\\.(?!/?$)",
-            "^\\.\\./?$",
-            "^\\.\\.(?!/?$)",
-            "^\\.\\./\\.\\./?$",
-            "^\\.\\./\\.\\.(?!/?$)",
-            "^\\.\\./\\.\\./\\.\\./?$",
-            "^\\.\\./\\.\\./\\.\\.(?!/?$)"
-          ],
-          ["^@/types"],
-          // other that didnt fit in
-          ["^"]
-        ]
-      }
-    ],
-    // This rule will help with preventing to commit code that is not yet finished
-    // I removed TODO as a term so that we can still use that for future work
-    // and use FIXME during the development process
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "@typescript-eslint/consistent-type-imports": "warn",
     "no-warning-comments": [
       "warn",
       {

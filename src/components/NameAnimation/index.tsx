@@ -2,14 +2,9 @@ import React from 'react'
 
 import styles from './styles.module.scss'
 
-import TagLine from './TagLine'
-
-import GlitchFilter from '~/svg/glitchFilter.svg'
-
 const NameAnimation = () => {
   return (
-    <section className={`flex h-screen w-full flex-row items-center justify-center bg-dark`}>
-      <GlitchFilter style={{ display: 'none' }} />
+    <section className={styles['flex-wrapper']}>
       <div className={styles.wrapper}>
         <div className={styles.name}>
           <div className={styles['letter-h']}>
@@ -21,10 +16,9 @@ const NameAnimation = () => {
             <div className={styles['i-main']} />
           </div>
           <div className={styles['letter-m']}>
-            <div className={styles['m-left']} />
-            <div className={styles['m-skew-left']} />
-            <div className={styles['m-skew-right']} />
-            <div className={styles['m-right']} />
+            <div />
+            <div />
+            <div />
           </div>
           <div className={styles['letter-a']}>
             <div className={styles['a-left']} />
@@ -48,12 +42,6 @@ const NameAnimation = () => {
             <div className={styles['a-right']} />
           </div>
         </div>
-        <div className={styles.divider}>
-          <div className={styles.dot} />
-          <div className={styles.dot} />
-        </div>
-
-        <TagLine content="Designer & Developer" />
       </div>
     </section>
   )
