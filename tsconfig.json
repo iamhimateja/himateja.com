@@ -28,7 +28,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "~/*": ["./public/*"]
-    },
+    }
   },
   "include": [
     "helper.mjs",

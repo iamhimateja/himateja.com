@@ -6,14 +6,15 @@ import type { ThemeType } from '@/lib/types'
 const defaultMeta = {
   title: 'Himateja - Designer & Developer',
   siteName: 'Himateja - Designer & Developer',
-  description: 'An online portfolio and blog by Himateja Merlapaka. Showcase of his projects and work.',
-  url: 'https://dev.himu.io',
+  description: 'An online portfolio of Himateja Merlapaka. Showcase of his projects and work.',
+  url: 'https://himateja.com',
   type: 'website',
   robots: 'follow, index',
   image: '/images/og-metadata.webp',
   imageAlt:
-    'Himateja - Designer & Developer, Works as a full-stack developer at Index (https://index.app), contact @ iamhimateja[at]gmail[dot]com, visit https://himu.io/',
-  keywords: 'himu, himateja, merlapaka, full-stack developer, index.app',
+    'Himateja - Designer & Developer, Works as a full-stack developer at Index (https://index.app), contact @ iamhimateja[at]gmail[dot]com, visit https://himateja.com/',
+  keywords:
+    'himu, himateja, merlapaka, full-stack developer, index.app, halemind, involvio, himateja.com, himateja portfolio, himateja blog, himateja blog, hima',
 }
 
 type SeoProps = {
@@ -84,74 +85,74 @@ const favicons: Array<Favicons> = [
   {
     rel: 'apple-touch-icon',
     sizes: '57x57',
-    href: '/favicon/light/apple-icon-57x57.png',
+    href: '/favicon/apple-icon-57x57.png',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '60x60',
-    href: '/favicon/light/apple-icon-60x60.png',
+    href: '/favicon/apple-icon-60x60.png',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '72x72',
-    href: '/favicon/light/apple-icon-72x72.png',
+    href: '/favicon/apple-icon-72x72.png',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '76x76',
-    href: '/favicon/light/apple-icon-76x76.png',
+    href: '/favicon/apple-icon-76x76.png',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '114x114',
-    href: '/favicon/light/apple-icon-114x114.png',
+    href: '/favicon/apple-icon-114x114.png',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '120x120',
-    href: '/favicon/light/apple-icon-120x120.png',
+    href: '/favicon/apple-icon-120x120.png',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '144x144',
-    href: '/favicon/light/apple-icon-144x144.png',
+    href: '/favicon/apple-icon-144x144.png',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '152x152',
-    href: '/favicon/light/apple-icon-152x152.png',
+    href: '/favicon/apple-icon-152x152.png',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '180x180',
-    href: '/favicon/light/apple-icon-180x180.png',
+    href: '/favicon/apple-icon-180x180.png',
   },
   {
     rel: 'icon',
     type: 'image/png',
     sizes: '192x192',
-    href: '/favicon/light/android-icon-192x192.png',
+    href: '/favicon/android-icon-192x192.png',
   },
   {
     rel: 'icon',
     type: 'image/png',
     sizes: '32x32',
-    href: '/favicon/light/favicon-32x32.png',
+    href: '/favicon/favicon-32x32.png',
   },
   {
     rel: 'icon',
     type: 'image/png',
     sizes: '96x96',
-    href: '/favicon/light/favicon-96x96.png',
+    href: '/favicon/favicon-96x96.png',
   },
   {
     rel: 'icon',
     type: 'image/png',
     sizes: '16x16',
-    href: '/favicon/light/favicon-16x16.png',
+    href: '/favicon/favicon-16x16.png',
   },
   {
     rel: 'manifest',
-    href: '/favicon/light/manifest.json',
+    href: '/favicon/manifest.json',
   },
 ]
