@@ -15,7 +15,7 @@ const PageFooter = () => {
     <div className={styles.container}>
       <div className={styles.footer}>
         <div className={styles.avatarBar}>
-          <Link href="/" className={styles.link}>
+          <Link href="/" className={styles.link} aria-label="Go to Home" tabIndex={0}>
             <Image src="/images/headShot.webp" alt="Himateja" width="60" height="60" />
           </Link>
         </div>
@@ -37,20 +37,43 @@ const PageFooter = () => {
             <div className={styles.contactLinks}>
               <span className={styles.label}>Contact</span>
               <div className={styles.emailLinks}>
-                <Link href={`mailto:${myMailId}`}>{myMailId}</Link>
-                <Link href={`mailto:${myAlternativeEmailId}`}>{myAlternativeEmailId}</Link>
+                <Link aria-label="Contact Himateja with this email" tabIndex={0} href={`mailto:${myMailId}`}>
+                  {myMailId}
+                </Link>
+                <Link
+                  aria-label="Contact Himateja with this email"
+                  tabIndex={0}
+                  href={`mailto:${myAlternativeEmailId}`}
+                >
+                  {myAlternativeEmailId}
+                </Link>
               </div>
             </div>
             <div className={styles.socialLinks}>
               <span className={styles.label}>Social</span>
               <div className={styles.linksContainer}>
-                <Link href={socialLinks.linkedIn} target="_blank">
+                <Link
+                  href={socialLinks.linkedIn}
+                  target="_blank"
+                  aria-label="Go to Himateja's LinkedIn profile."
+                  tabIndex={0}
+                >
                   <LinkedInIcon />
                 </Link>
-                <Link href={socialLinks.github} target="_blank">
+                <Link
+                  href={socialLinks.github}
+                  target="_blank"
+                  aria-label="Go to Himateja's Github profile"
+                  tabIndex={0}
+                >
                   <GithubIcon />
                 </Link>
-                <Link href={socialLinks.codepen} target="_blank">
+                <Link
+                  href={socialLinks.codepen}
+                  target="_blank"
+                  aria-label="Go to Himateja's Codepen profile"
+                  tabIndex={0}
+                >
                   <CodepenIcon />
                 </Link>
               </div>
@@ -58,7 +81,7 @@ const PageFooter = () => {
 
             <div className={styles.copyright}>
               <span className={styles.label}>Copyright</span>
-              <Link href="/" className={styles.link}>
+              <Link href="/" className={styles.link} aria-label="This website's copyright" tabIndex={0}>
                 © {currentYear} Himateja Merlapaka
               </Link>
             </div>

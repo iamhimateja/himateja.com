@@ -18,7 +18,7 @@ const ThemeSwitch = () => {
   }
 
   return (
-    <button id={styles.themeSwitch} onClick={toggleTheme}>
+    <button id={styles.themeSwitch} onClick={toggleTheme} role="button" tabIndex={0} title="Toggle theme">
       <span className={`${styles.icon} ${styles.lightThemeIcon}`}>
         <SunIcon />
       </span>
