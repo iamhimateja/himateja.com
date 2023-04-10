@@ -1,3 +1,3 @@
-# Source - <http://himateja.com> → <https://dev.himu.io>
+# Source - <http://himateja.com>
 
 WIP: My personal portfolio.. ? / Blog.. ? 🫤

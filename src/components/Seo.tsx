@@ -152,6 +152,11 @@ const favicons: Array<Favicons> = [
     href: '/favicon/favicon-16x16.png',
   },
   {
+    rel: 'icon',
+    type: 'image/x-icon',
+    href: '/favicon/favicon.ico',
+  },
+  {
     rel: 'manifest',
     href: '/favicon/manifest.json',
   },

@@ -8,5 +8,5 @@ module.exports = {
   bracketSpacing: true,
   printWidth: 120,
   tabWidth: 2,
-  plugins: [require.resolve('prettier-plugin-tailwindcss')],
+  plugins: [],
 }

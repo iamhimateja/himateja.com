@@ -1,12 +1,10 @@
-import { NameAnimation } from '@/components'
 import Layout from '@/components/layout/Layout'
 import Seo from '@/components/Seo'
 
-export default function HomePage() {
+export default function About() {
   return (
     <Layout>
-      <Seo />
-      <NameAnimation />
+      <Seo title="About" />
     </Layout>
   )
 }

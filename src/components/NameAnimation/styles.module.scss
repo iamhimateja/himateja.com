@@ -73,14 +73,31 @@
 }
 
 .flex-wrapper {
-  @apply flex h-screen w-full flex-row items-center justify-center;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrapper {
-  @apply flex flex-col place-content-center place-items-center;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: flex-start;
+  gap: 2em;
+
+  .hiMessage,
+  .description {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #565656;
+  }
 
   .name {
-    @apply flex gap-4 px-[20px] pt-0 pb-[5px];
+    display: flex;
+    gap: 1rem;
     transform-origin: center center;
 
     [class*='letter-'] {
@@ -365,65 +382,18 @@
     }
   }
 
-  .divider {
-    position: relative;
-    width: 100%;
-    height: 1px;
-    background: #fff;
-    margin-top: 15px;
-    transition: all var(--default-transition);
-    animation-timing-function: var(--default-transition);
-    animation-fill-mode: both;
-    animation-duration: 0.5s;
-    animation-name: divider;
-    animation-delay: 8.1s;
+  .description {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 3px solid #d4d4d461;
 
-    .dot {
-      content: '';
-      width: 15px;
-      height: 15px;
-      position: absolute;
-      background: #fff;
-      top: 50%;
-
-      animation-timing-function: var(--default-transition);
-      transform: translate(-50%, -50%) rotate(45deg) scale(1);
-      animation-fill-mode: both;
-      animation-duration: 1s;
-      animation-name: divider-dots;
-      animation-delay: 7.1s;
-
-      &:first-child {
-        left: 0;
+      &:hover {
+        color: #9b81e3;
+        border-bottom-color: #cfbdff;
       }
-
-      &:last-child {
-        right: -15px;
-      }
-    }
-  }
-
-  .tagLine {
-    font-family: 'Bungee Hairline', cursive;
-    font-optical-sizing: auto;
-    font-variation-settings: 'opsz' 40;
-    font-size: 2rem;
-    font-weight: 400;
-    color: #e8eaed;
-    letter-spacing: 0.5rem;
-    margin-top: 0.5rem;
-    font-style: normal;
-    line-height: initial;
-    perspective: 1000px;
-
-    .individualLetter {
-      display: inline-block;
-      white-space: break-spaces;
-      transform-origin: center;
-      transform: scaleX(0);
-      transform-style: preserve-3d;
-      transition: all var(--default-transition);
-      animation-timing-function: var(--default-transition);
     }
   }
 }
