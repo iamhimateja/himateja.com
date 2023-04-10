@@ -16,7 +16,7 @@ const Navigation = () => {
     <div className={styles['nav-container']}>
       <nav className={styles.navigation}>
         <Link className={styles.avatarLink} target="_blank" href={`mailto:${myMailId}`}>
-          <Image src="/images/headShot.png" alt="Himateja" width="60" height="60" />
+          <Image src="/images/headShot.webp" alt="Himateja" width="60" height="60" />
           <h4 className={styles.message}>Hi, let&#39;s chat.</h4>
         </Link>
 

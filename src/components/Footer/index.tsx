@@ -16,7 +16,7 @@ const PageFooter = () => {
       <div className={styles.footer}>
         <div className={styles.avatarBar}>
           <Link href="/" className={styles.link}>
-            <Image src="/images/headShot.png" alt="Himateja" width="60" height="60" />
+            <Image src="/images/headShot.webp" alt="Himateja" width="60" height="60" />
           </Link>
         </div>
         <div className={styles.content}>
