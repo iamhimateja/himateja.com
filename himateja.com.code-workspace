@@ -28,7 +28,7 @@
       "*.jest.ts": "jest"
     },
     "scss.lint.unknownAtRules": "ignore",
-    "cSpell.words": ["clsx"],
+    "cSpell.words": ["clsx", "codepen"],
     "files.exclude": {
       "**/.git": true,
       "**/.svn": true,
