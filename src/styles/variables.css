@@ -1,6 +1,38 @@
 :root {
+  --color-white: #fff;
+  --color-black: #000;
+  --body-gradient-line-1: hsla(196, 0%, 79%, 0.06);
+  --body-gradient-line-2: hsla(196, 0%, 79%, 0.09);
+  --body-main-gradient-start: var(--color-white);
+  --body-main-gradient-end: var(--color-white);
   --name-primary-color: rgba(189, 220, 244);
   --name-primary-color-alpha-5: rgba(189, 220, 244, 0.5);
   --name-secondary-color: #cfbdff;
+  --default-text-color: #565656;
+  --default-link-color: #9b81e3;
+  --default-link-border: #cfbdff;
+  --avatar-tooltip-background: #c5e5ffb8;
+  --nav-background: rgba(255, 255, 255, 0.5);
+  --nav-link: #595959;
+  --nav-link-hover: rgba(189, 220, 244, 0.2);
+  --nav-link-active: rgba(197, 229, 255, 0.75);
   --default-transition: cubic-bezier(1, -0.5, 0, 1.5);
+  --footer-gradient: linear-gradient(#9150cf, #6700df);
+}
+
+/* Dark theme */
+[data-theme='dark'] {
+  --body-gradient-line-1: hsla(0, 0%, 100%, 0.04);
+  --body-gradient-line-2: hsla(0, 0%, 100%, 0.05);
+  --body-main-gradient-start: #20002e;
+  --body-main-gradient-end: var(--color-black);
+  --default-text-color: #bfbfbf;
+  --avatar-tooltip-background: var(--color-white);
+  --default-link-color: var(--color-white);
+  --default-link-border: var(--color-white);
+  --nav-background: rgb(103, 0, 141, 0.5);
+  --nav-link: #a4a4a4;
+  --nav-link-hover: rgb(120, 120, 120, 0.2);
+  --nav-link-active: rgb(255, 255, 255, 0.75);
+  --footer-gradient: linear-gradient(#1f102d, var(--color-black));
 }

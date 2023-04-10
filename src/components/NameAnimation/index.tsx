@@ -6,7 +6,12 @@ import styles from './styles.module.scss'
 const NameAnimation = () => (
   <section className={styles['flex-wrapper']}>
     <div className={styles.wrapper}>
-      <h3 className={styles.hiMessage}>Hi, I&#39;m</h3>
+      <h3 className={styles.hiMessage}>
+        <span>Hi, I&#39;m</span>
+        <span className={styles.myNameMobile}>
+          Hi, <br /> I&#39;m Himateja
+        </span>
+      </h3>
       <div className={styles.name}>
         <div className={styles['letter-h']}>
           <div className={styles['h-left']} />
@@ -48,9 +53,7 @@ const NameAnimation = () => (
         <Link href="https://index.app/" target="_blank">
           Index
         </Link>
-        .
-        <br />
-        Formerly at{' '}
+        . <br /> Formerly at{' '}
         <Link href="https://involvio.com/" target="_blank">
           Involvio
         </Link>{' '}

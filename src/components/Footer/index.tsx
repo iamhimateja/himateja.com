@@ -42,15 +42,18 @@ const PageFooter = () => {
               </div>
             </div>
             <div className={styles.socialLinks}>
-              <Link href={socialLinks.linkedIn} target="_blank">
-                <LinkedInIcon />
-              </Link>
-              <Link href={socialLinks.github} target="_blank">
-                <GithubIcon />
-              </Link>
-              <Link href={socialLinks.codepen} target="_blank">
-                <CodepenIcon />
-              </Link>
+              <span className={styles.label}>Social</span>
+              <div className={styles.linksContainer}>
+                <Link href={socialLinks.linkedIn} target="_blank">
+                  <LinkedInIcon />
+                </Link>
+                <Link href={socialLinks.github} target="_blank">
+                  <GithubIcon />
+                </Link>
+                <Link href={socialLinks.codepen} target="_blank">
+                  <CodepenIcon />
+                </Link>
+              </div>
             </div>
 
             <div className={styles.copyright}>

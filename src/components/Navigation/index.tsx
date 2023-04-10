@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
 
+import ThemeSwitch from '@/components/ThemeSwitch'
 import { myMailId } from '@/lib/variables'
 
 import styles from './styles.module.scss'
@@ -15,7 +16,7 @@ const Navigation = () => {
     <div className={styles['nav-container']}>
       <nav className={styles.navigation}>
         <Link className={styles.avatarLink} target="_blank" href={`mailto:${myMailId}`}>
-          <Image src="/images/headShot.png" alt="Himateja" width="50" height="50" />
+          <Image src="/images/headShot.png" alt="Himateja" width="60" height="60" />
           <h4 className={styles.message}>Hi, let&#39;s chat.</h4>
         </Link>
 
@@ -31,7 +32,7 @@ const Navigation = () => {
           </Link>
         </div>
 
-        <button className={styles.themePicker}>Theme</button>
+        <ThemeSwitch />
       </nav>
     </div>
   )

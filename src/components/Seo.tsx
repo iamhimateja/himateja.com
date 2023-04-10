@@ -6,13 +6,13 @@ import type { ThemeType } from '@/lib/types'
 const defaultMeta = {
   title: 'Himateja - Designer & Developer',
   siteName: 'Himateja - Designer & Developer',
-  description: 'An online portfolio of Himateja Merlapaka. Showcase of his projects and work.',
+  description: 'Personal website of Himateja Merlapaka',
   url: 'https://himateja.com',
   type: 'website',
   robots: 'follow, index',
   image: '/images/og-metadata.webp',
   imageAlt:
-    'Himateja - Designer & Developer, Works as a full-stack developer at Index (https://index.app), contact @ iamhimateja[at]gmail[dot]com, visit https://himateja.com/',
+    'Himateja - Designer & Developer, Works as a full-stack developer at Index, contact @ hello[at]himateja[dot]com, visit https://himateja.com/',
   keywords:
     'himu, himateja, merlapaka, full-stack developer, index.app, halemind, involvio, himateja.com, himateja portfolio, himateja blog, himateja blog, hima',
 }

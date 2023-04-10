@@ -5,7 +5,7 @@
   width: 100vw;
   z-index: 101;
   background-color: #9150cf;
-  background-image: linear-gradient(#9150cf, #6700df);
+  background-image: var(--footer-gradient);
 
   .footer {
     position: relative;
@@ -16,6 +16,14 @@
     height: calc(100% - 40px);
     width: calc(100% - 40px);
     padding: 20px;
+
+    @media screen and (min-width: 600px) {
+      background-image: url('/images/freak 10.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      background-attachment: fixed;
+    }
 
     .avatarBar,
     .content {
@@ -47,10 +55,13 @@
 
           .handshake {
             display: inline-flex;
-            padding: 10px;
             background: #fff;
             border-radius: 50%;
             font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            place-content: center;
+            place-items: center;
             vertical-align: middle;
           }
         }
@@ -71,11 +82,8 @@
         place-items: center;
 
         .contactLinks,
-        .copyright {
-          display: flex;
-          flex-flow: column nowrap;
-          gap: 10px;
-
+        .copyright,
+        .socialLinks {
           .label {
             font-size: 0.6rem;
             font-weight: 600;
@@ -83,6 +91,13 @@
             text-transform: uppercase;
             letter-spacing: 0.05rem;
           }
+        }
+
+        .contactLinks,
+        .copyright {
+          display: flex;
+          flex-flow: column nowrap;
+          gap: 10px;
 
           a {
             font-weight: 400;
@@ -111,6 +126,19 @@
         .socialLinks {
           display: flex;
           gap: 10px;
+          flex-flow: column nowrap;
+
+          .label {
+            @media screen and (min-width: 600px) {
+              display: none;
+            }
+          }
+
+          .linksContainer {
+            display: flex;
+            gap: 10px;
+            flex-flow: row nowrap;
+          }
 
           a {
             display: flex;
@@ -141,6 +169,44 @@
 
         .copyright .label {
           place-self: flex-end;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        .description {
+          flex-flow: column nowrap;
+          gap: 50px;
+          place-items: flex-start;
+          place-content: center;
+
+          .footerLeft {
+            font-size: 3.5rem;
+          }
+
+          .footerRight {
+            line-height: 1.5rem;
+          }
+        }
+        .footerLinks {
+          flex-flow: column nowrap;
+          place-items: flex-start;
+          gap: 15px;
+          .contactLinks {
+            .emailLinks {
+              flex-flow: column nowrap;
+              gap: 5px;
+              a:first-child:after {
+                content: none;
+              }
+            }
+          }
+
+          .copyright {
+            .label,
+            a {
+              place-self: flex-start;
+            }
+          }
         }
       }
     }
