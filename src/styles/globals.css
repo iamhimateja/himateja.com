@@ -1,5 +1,10 @@
 @import url('../styles/reset.css');
 
+* {
+  box-sizing: border-box;
+  font-smoothing: antialiased;
+}
+
 body {
   display: block;
   position: relative;

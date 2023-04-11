@@ -8,6 +8,8 @@
   --name-primary-color: rgba(189, 220, 244);
   --name-primary-color-alpha-5: rgba(189, 220, 244, 0.5);
   --name-secondary-color: #cfbdff;
+  --default-transition: cubic-bezier(1, -0.5, 0, 1.5);
+  --footer-gradient: linear-gradient(#9150cf, #6700df);
   --default-text-color: #565656;
   --default-link-color: #9b81e3;
   --default-link-border: #cfbdff;
@@ -16,8 +18,14 @@
   --nav-link: #595959;
   --nav-link-hover: rgba(189, 220, 244, 0.2);
   --nav-link-active: rgba(197, 229, 255, 0.75);
-  --default-transition: cubic-bezier(1, -0.5, 0, 1.5);
-  --footer-gradient: linear-gradient(#9150cf, #6700df);
+  --nav-link-active-text: var(--nav-link);
+  --default-heading-color: #1c1d20;
+  --default-paragraph-color: #8c8c8c;
+  --default-paragraph-hover-color: #646464;
+  --tag-hover-background: #ececec;
+  --tag-color: var(--default-paragraph-color);
+  --tag-font-weight: normal;
+  --tag-border: #dbdbdb;
 }
 
 /* Dark theme */
@@ -34,5 +42,13 @@
   --nav-link: #a4a4a4;
   --nav-link-hover: rgb(120, 120, 120, 0.2);
   --nav-link-active: rgb(255, 255, 255, 0.75);
+  --nav-link-active-text: var(--color-black);
   --footer-gradient: linear-gradient(#1f102d, var(--color-black));
+  --default-heading-color: #ececec;
+  --default-paragraph-color: #b0b0b0;
+  --default-paragraph-hover-color: #d0d0d0;
+  --tag-hover-background: #151515;
+  --tag-color: var(--default-paragraph-color);
+  --tag-font-weight: 500;
+  --tag-border: #333333;
 }

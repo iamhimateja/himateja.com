@@ -43,6 +43,14 @@ const Navigation = () => {
             Projects
           </Link>
           <Link
+            href="/products"
+            className={clsx(styles.link, pathname === '/products' && styles.active)}
+            aria-label="Products"
+            tabIndex={0}
+          >
+            Products
+          </Link>
+          <Link
             href="/about"
             className={clsx(styles.link, pathname === '/about' && styles.active)}
             aria-label="About"

@@ -1,12 +1,36 @@
 const myMailId = 'hello@himateja.com'
 const myAlternativeEmailId = 'himatejamerlapaka@gmail.com'
-const linkedInURL = 'https://www.linkedin.com/in/himateja/'
-const githubURL = 'https://github.com/iamhimateja/'
-const codepenURL = 'https://codepen.io/himateja/'
+const linkedIn = 'https://www.linkedin.com/in/himateja/'
+const github = 'https://github.com/iamhimateja/'
+const codepen = 'https://codepen.io/himateja/'
+const calendly = 'https://calendly.com/himateja'
 
 const socialLinks = {
-  linkedIn: linkedInURL,
-  github: githubURL,
-  codepen: codepenURL,
+  linkedIn,
+  github,
+  codepen,
+  calendly,
 }
-export { myAlternativeEmailId, myMailId, socialLinks }
+
+const skills = [
+  'JavaScript',
+  'TypeScript',
+  'HTML',
+  'CSS',
+  'SASS',
+  'SCSS',
+  'UI/UX Design',
+  'Markdown',
+  'Ruby',
+  'React',
+  'Next.js',
+  'Tailwind CSS',
+  'GraphQL',
+  'Ruby on Rails',
+  'Node.js',
+  'jQuery',
+  'MySQL',
+  'PostgreSQL',
+]
+
+export { myAlternativeEmailId, myMailId, skills, socialLinks }
