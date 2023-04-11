@@ -20,7 +20,7 @@ const defaultMeta = {
 type SeoProps = {
   theme?: ThemeType
   date?: string
-  templateTitle?: string
+  pageTitle?: string
 } & Partial<typeof defaultMeta>
 
 export default function Seo(props: SeoProps) {
@@ -30,7 +30,7 @@ export default function Seo(props: SeoProps) {
     ...props,
   }
 
-  meta['title'] = props.templateTitle ? `${props.templateTitle} | ${meta.siteName}` : meta.title
+  meta['title'] = props.pageTitle ? `${props.pageTitle} | ${meta.siteName}` : meta.title
 
   return (
     <Head>

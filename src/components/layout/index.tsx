@@ -1,14 +1,13 @@
 import React from 'react'
 
-import PageFooter from '@/components/Footer'
-import Navigation from '@/components/Navigation'
+import { Footer, Navigation } from '@/components'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navigation />
       {children}
-      <PageFooter />
+      <Footer />
     </>
   )
 }

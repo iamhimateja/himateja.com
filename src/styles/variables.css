@@ -22,9 +22,9 @@
 
 /* Dark theme */
 [data-theme='dark'] {
-  --body-gradient-line-1: hsla(0, 0%, 100%, 0.04);
-  --body-gradient-line-2: hsla(0, 0%, 100%, 0.05);
-  --body-main-gradient-start: #20002e;
+  --body-gradient-line-1: hsla(0, 0%, 100%, 0.01);
+  --body-gradient-line-2: hsla(0, 0%, 100%, 0.02);
+  --body-main-gradient-start: #1f102d;
   --body-main-gradient-end: var(--color-black);
   --default-text-color: #bfbfbf;
   --avatar-tooltip-background: var(--color-white);

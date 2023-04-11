@@ -20,12 +20,12 @@
     &.darkThemeIcon,
     &.lightThemeIcon {
       position: absolute;
-      width: 30px;
-      height: 30px;
+      width: 25px;
+      height: 25px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) scale(1);
-      transition: 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      transition: 0.35s var(--default-transition);
 
       svg {
         fill: var(--nav-link);

@@ -3,17 +3,18 @@ import * as React from 'react'
 import MoonIcon from '@/components/svg/Moon'
 import SunIcon from '@/components/svg/Sun'
 import { isDarkThemeEnabled } from '@/lib/helpers'
+import { ThemeType } from '@/lib/types'
 
 import styles from './styles.module.scss'
 
 const ThemeSwitch = () => {
   const toggleTheme = () => {
     if (isDarkThemeEnabled()) {
-      localStorage.setItem('selectedTheme', 'light')
-      document.body.setAttribute('data-theme', 'light')
+      localStorage.setItem('selectedTheme', ThemeType.Light)
+      document.body.setAttribute('data-theme', ThemeType.Light)
     } else {
-      localStorage.setItem('selectedTheme', 'dark')
-      document.body.setAttribute('data-theme', 'dark')
+      localStorage.setItem('selectedTheme', ThemeType.Dark)
+      document.body.setAttribute('data-theme', ThemeType.Dark)
     }
   }
 

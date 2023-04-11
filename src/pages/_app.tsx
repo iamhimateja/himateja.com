@@ -2,17 +2,11 @@ import '@/styles/globals.css'
 import '@/styles/variables.css'
 
 import type { AppProps } from 'next/app'
-import { useEffect } from 'react'
 
-import { getColorScheme } from '@/lib/helpers'
+import useThemeSettings from '@/hooks/useThemeSettings'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    const colorScheme = getColorScheme()
-    if (colorScheme) {
-      document.body.setAttribute('data-theme', colorScheme)
-    }
-  })
+  useThemeSettings()
 
   return <Component {...pageProps} />
 }

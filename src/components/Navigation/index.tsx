@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
 
-import ThemeSwitch from '@/components/ThemeSwitch'
+import { ThemeSwitch } from '@/components'
 import { myMailId } from '@/lib/variables'
 
 import styles from './styles.module.scss'
@@ -32,7 +32,7 @@ const Navigation = () => {
             aria-label="Home"
             tabIndex={0}
           >
-            <Image src="/favicon/favicon-96x96.png" alt="Home" width="20" height="20" />
+            <Image src="/images/logo.webp" alt="Home" width="20" height="20" />
           </Link>
           <Link
             href="/projects"

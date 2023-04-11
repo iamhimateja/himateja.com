@@ -1,6 +1,4 @@
-import { NameAnimation } from '@/components'
-import Layout from '@/components/layout/Layout'
-import Seo from '@/components/Seo'
+import { Layout, NameAnimation, Seo } from '@/components'
 
 export default function HomePage() {
   return (

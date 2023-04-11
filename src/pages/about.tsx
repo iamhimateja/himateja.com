@@ -1,10 +1,9 @@
-import Layout from '@/components/layout/Layout'
-import Seo from '@/components/Seo'
+import { Layout, Seo } from '@/components'
 
 export default function About() {
   return (
     <Layout>
-      <Seo title="About" />
+      <Seo pageTitle="About" />
     </Layout>
   )
 }
