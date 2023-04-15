@@ -1,13 +1,13 @@
-@import '../../../styles/mixins';
+@import '../../styles/mixins';
 
 .contact {
   position: relative;
   display: flex;
   flex-direction: row;
-  background: #fff;
+  background: var(--contact-background);
   backdrop-filter: blur(5px);
   border-radius: 5px;
-  box-shadow: 0 0 0 1px #dbdbdb;
+  box-shadow: 0 0 0 1px var(--contact-shadow);
   overflow: hidden;
 
   @media screen and (min-width: 769px) {
@@ -17,14 +17,14 @@
       display: flex;
       width: 30px;
       height: 30px;
-      background: white;
+      background: var(--contact-after-background);
       place-content: center;
       place-items: center;
       border-radius: 50%;
       font-size: 0.8rem;
       letter-spacing: 0.05rem;
-      box-shadow: 0 0 0 1px #dbdbdb, 0px 0px 10px 5px #dbdbdb;
-      color: #646464;
+      box-shadow: var(--contact-after-shadow);
+      color: var(--default-paragraph-color);
     }
   }
 
@@ -37,11 +37,13 @@
     text-decoration: none;
 
     &:first-child {
-      box-shadow: inset -1px 0 0 #dbdbdb;
+      box-shadow: inset -1px 0 0 var(--contact-shadow);
     }
 
-    &:hover {
-      background: #f5f5f5;
+    &:hover,
+    &:focus {
+      outline: none;
+      background: var(--contact-background-hover);
     }
 
     span {
@@ -53,7 +55,7 @@
 
       &:last-child {
         font-size: 0.9rem;
-        color: #646464;
+        color: var(--default-paragraph-color);
       }
     }
   }

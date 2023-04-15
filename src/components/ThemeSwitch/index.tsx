@@ -1,7 +1,6 @@
 import * as React from 'react'
 
-import MoonIcon from '@/components/svg/Moon'
-import SunIcon from '@/components/svg/Sun'
+import { MoonIcon, SunIcon } from '@/components/svg'
 import { isDarkThemeEnabled } from '@/lib/helpers'
 import { ThemeType } from '@/lib/types'
 

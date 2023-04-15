@@ -1,3 +1,14 @@
+@keyframes loadAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .nav-container {
   position: fixed;
   top: 20px;
@@ -8,6 +19,7 @@
   place-content: center;
   height: 4rem;
   z-index: 100;
+  animation: loadAnimation 1s var(--default-transition);
 
   .navigation {
     width: 100%;

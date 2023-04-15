@@ -2,9 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-import CodepenIcon from '@/components/svg/codepen'
-import GithubIcon from '@/components/svg/github'
-import LinkedInIcon from '@/components/svg/linkedin'
+import { CodepenIcon, GithubIcon, LinkedInIcon } from '@/components/svg'
 import { myAlternativeEmailId, myMailId, socialLinks } from '@/lib/variables'
 
 import styles from './styles.module.scss'

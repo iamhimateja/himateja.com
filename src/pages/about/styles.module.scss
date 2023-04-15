@@ -1,3 +1,14 @@
+@keyframes loadAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -6,14 +17,35 @@
   width: 100%;
   max-width: 1440px;
   margin: 10rem auto 5rem;
+  animation: loadAnimation 1s var(--default-transition);
+
+  .heading {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    padding: 2.5rem 0;
+
+    h1 {
+      color: var(--default-heading-color);
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    span {
+      font-size: 1rem;
+      color: #727272;
+    }
+  }
 
   .content {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 40rem;
+    width: inherit;
+    max-width: 50rem;
 
-    .heading {
+    .subHeading {
       font-size: 1.5rem;
       font-weight: 500;
       color: var(--default-heading-color);

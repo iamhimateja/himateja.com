@@ -30,7 +30,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) scale(1);
-      transition: 0.35s var(--default-transition);
+      // transition: 0.35s var(--default-transition);
+      transition: 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
       svg {
         fill: var(--nav-link);

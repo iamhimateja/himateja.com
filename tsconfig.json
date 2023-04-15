@@ -39,7 +39,8 @@
     "**/*.js",
     "**/*.jsx",
     "**/*.cjs",
-    "**/*.mjs"
+    "**/*.mjs",
+    "src/lib/Overlay.ks"
   ],
   "exclude": ["node_modules"]
 }

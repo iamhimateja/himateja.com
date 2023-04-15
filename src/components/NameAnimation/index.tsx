@@ -49,11 +49,11 @@ const NameAnimation = () => (
         </div>
       </div>
       <div className={styles.description}>
-        Full-stack engineer currently positioned at{' '}
+        Full-stack engineer currently working at{' '}
         <Link href="https://index.app/" target="_blank" tabIndex={0} aria-label="Go to Index's website">
           Index
         </Link>
-        . <br /> Formerly at{' '}
+        . <br /> Previously at{' '}
         <Link href="https://involvio.com/" target="_blank" tabIndex={0} aria-label="Go to Involvio's website">
           Involvio
         </Link>{' '}

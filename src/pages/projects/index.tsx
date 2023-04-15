@@ -1,14 +1,21 @@
-import { Layout, Seo } from '@/components'
+import { Layout, ProjectItem, Seo } from '@/components'
+import { completedProjects } from '@/lib/variables'
 
 import styles from './styles.module.scss'
 
-export default function About() {
+export default function Projects() {
   return (
     <Layout>
       <Seo pageTitle="Projects" />
       <div className={styles.container}>
-        <div className={styles.content}>
-          <h1 className={styles.heading}>Projects</h1>
+        <div className={styles.heading}>
+          <h1>Projects</h1>
+          <span>Some of the things I made.</span>
+        </div>
+        <div className={styles.projects}>
+          {completedProjects.map((project) => (
+            <ProjectItem key={project.title} project={project} />
+          ))}
         </div>
       </div>
     </Layout>
