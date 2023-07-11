@@ -1,0 +1,138 @@
+@keyframes loadAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-container {
+  position: fixed;
+  top: 20px;
+  right: 0;
+  left: 0;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  height: 4rem;
+  z-index: 100;
+  animation: loadAnimation 1s var(--default-transition);
+
+  .navigation {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+    padding: 0 1rem;
+
+    .avatarLink {
+      position: relative;
+      display: flex;
+      gap: 0.75rem;
+      place-items: center;
+      text-decoration: none;
+
+      img {
+        transform: none;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .message {
+        width: max-content;
+        position: absolute;
+        opacity: 0;
+        background: var(--avatar-tooltip-background);
+        padding: 10px 15px;
+        color: #595959;
+        text-decoration: none;
+        border-radius: 30px;
+        backdrop-filter: blur(5px);
+        transform: translateX(85px);
+        transition:
+          opacity 0.3s ease-in-out,
+          transform 0.3s ease-in-out;
+      }
+
+      &:hover {
+        img {
+          transform: scale(0.95);
+        }
+
+        .message {
+          transform: translateX(75px);
+          opacity: 1;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+    }
+
+    .navMenu {
+      display: flex;
+      flex-direction: row;
+      padding: 10px;
+      gap: 10px;
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+      background-color: var(--nav-background);
+      box-shadow: 0px 24px 48px 8px rgba(0, 0, 0, 0.1);
+
+      .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 50px;
+        padding: 0.6rem 1rem;
+        color: var(--nav-link);
+
+        &:first-child {
+          padding: 0.6rem;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: var(--nav-link-hover);
+        }
+
+        &.active {
+          backdrop-filter: blur(10px);
+          background-color: var(--nav-link-active);
+          color: var(--nav-link-active-text);
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    top: 15px;
+    height: min-content;
+
+    .navigation {
+      .navMenu {
+        padding: 5px;
+        gap: 5px;
+
+        .link {
+          padding: 0.35rem 0.7rem;
+          font-size: 0.9rem;
+          font-weight: 500;
+
+          &:first-child {
+            padding: 0.35rem;
+          }
+        }
+
+        // &:first-child {
+        //   padding: 0.2rem;
+        // }
+      }
+    }
+  }
+}

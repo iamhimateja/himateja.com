@@ -21,12 +21,20 @@
     "noFallthroughCasesInSwitch": true,
     "noErrorTruncation": true,
     "incremental": true,
-    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      },
+      {
+        "name": "next"
+      }
+    ],
     // Using "baseUrl" allows you to use absolute paths
     "baseUrl": ".",
     // Using "paths" allows you to configure module path aliases
     "paths": {
       "@/*": ["./src/*"],
+      "@v3/*": ["./src/app/(v3)/v3/_utils/*"],
       "~/*": ["./public/*"]
     }
   },
@@ -40,7 +48,7 @@
     "**/*.jsx",
     "**/*.cjs",
     "**/*.mjs",
-    "src/lib/Overlay.ks"
+    ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }
