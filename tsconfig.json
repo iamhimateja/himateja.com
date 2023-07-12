@@ -33,8 +33,20 @@
     "baseUrl": ".",
     // Using "paths" allows you to configure module path aliases
     "paths": {
-      "@/*": ["./src/*"],
-      "@v3/*": ["./src/app/(v3)/v3/_utils/*"],
+      "@/*": ["src/*"],
+      "@globals/*": ["src/globals/*"],
+      "@latest/*": ["src/app/(current)/*"],
+
+      // for latest portfolio version
+      "@components/*": ["src/app/(current)/_components/*"],
+      "@styles/*": ["src/app/(current)/_styles/*"],
+      "@icons/*": ["src/app/(current)/_icons/*"],
+      "@utils/*": ["src/app/(current)/_utils/*"],
+
+      // for each portfolio version
+      "@v1/*": ["src/app/(versions)/v1/_utils/*"],
+      "@v2/*": ["src/app/(versions)/v2/_utils/*"],
+      "@v3/*": ["src/app/(versions)/v3/_utils/*"],
       "~/*": ["./public/*"]
     }
   },

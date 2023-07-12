@@ -1,0 +1,24 @@
+:root,
+[data-theme='dark'] {
+  --background: #0f0f0f;
+
+  /* bottom footer */
+  --footer-background: rgba(51, 51, 51, 0.8);
+  --footer-link-background: #434343;
+  --footer-link-highlighted-background: #fff;
+  --footer-link-highlighted-color: #1e1e1e;
+  --footer-link-color: #9a9a9a;
+  --footer-link-separator: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='light'] {
+  --background: white;
+
+  /* bottom footer */
+  --footer-background: rgba(255, 255, 255, 0.8);
+  --footer-link-background: #f0f0f0;
+  --footer-link-color: rgb(136, 136, 136);
+  --footer-link-highlighted-background: #009eff;
+  --footer-link-highlighted-color: #fafafa;
+  --footer-link-separator: rgba(0, 0, 0, 0.08);
+}
