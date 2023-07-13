@@ -34,7 +34,7 @@ const ThemeSwitch = () => {
       position="top"
       trigger="mouseenter"
     >
-      <button id={styles.themeSwitch} onClick={toggleTheme} role="button" tabIndex={0} title="Toggle theme">
+      <button id={styles.themeSwitch} onClick={toggleTheme} role="button" tabIndex={0}>
         <span className={`${styles.icon} ${styles.lightThemeIcon}`}>
           <SunIcon />
         </span>

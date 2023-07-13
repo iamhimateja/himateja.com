@@ -18,3 +18,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.main-section {
+  position: relative;
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 1.5rem 0 5rem;
+}

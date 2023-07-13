@@ -10,7 +10,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultMeta.url),
-  title: defaultMeta.title,
+  title: 'himateja.',
   description: defaultMeta.description,
   robots: defaultMeta.robots,
   keywords: defaultMeta.keywords,
@@ -54,7 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <ClientHelpers />
-        {children}
+        <section className="main-section">{children}</section>
         <Navigation />
       </body>
     </html>
