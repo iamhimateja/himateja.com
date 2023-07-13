@@ -3,10 +3,16 @@ import '@styles/variables.css'
 import '@styles/globals.scss'
 
 import ClientHelpers from '@components/ClientHelpers'
+import Footer from '@components/Footer'
 import Navigation from '@components/Navigation'
 import { defaultMeta } from '@globals/constants'
 import { favicons } from '@utils/constants'
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
+
+const pxllFont = localFont({ src: './_fonts/pxll-webfont.woff2', variable: '--pixel-font-family' })
+const inter = Inter({ subsets: ['latin'], variable: '--inter-font-family' })
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultMeta.url),
@@ -52,9 +58,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${pxllFont.variable} ${inter.variable}`}>
         <ClientHelpers />
-        <section className="main-section">{children}</section>
+        <section className="main-section">
+          {children}
+          <Footer />
+        </section>
         <Navigation />
       </body>
     </html>

@@ -16,8 +16,6 @@ import styles from './Navigation.module.scss'
 const Navigation = () => {
   const pathname = usePathname()
 
-  console.log({ pathname })
-
   return (
     <div className={styles.navigation}>
       <Tooltip animateFill size="small" inertia distance={15} title="Home" position="top" trigger="mouseenter">

@@ -2,16 +2,13 @@
 
 import TextScramble from '@components/TextScramble'
 
-interface Props extends React.HTMLAttributes<HTMLHeadingElement> {
+interface Props {
   text: string
+  className?: string
 }
 
-const ScrambleHeading = ({ text, ...rest }: Props) => {
-  return (
-    <h2 {...rest}>
-      <TextScramble text={text} />
-    </h2>
-  )
+const ScrambleHeading = ({ text, className }: Props) => {
+  return <TextScramble text={text} className={className} />
 }
 
 export default ScrambleHeading

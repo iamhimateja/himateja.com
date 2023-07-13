@@ -4,6 +4,7 @@ const linkedIn = 'https://www.linkedin.com/in/himateja/'
 const github = 'https://github.com/iamhimateja/'
 const codepen = 'https://codepen.io/himateja/'
 const calendly = 'https://calendly.com/himateja'
+const twitter = 'https://twitter.com/iamhimateja'
 
 const defaultMeta = {
   title: 'Himateja - Designer & Developer',
@@ -23,6 +24,7 @@ const socialLinks = {
   github,
   codepen,
   calendly,
+  twitter,
 }
 
-export { calendly, codepen, defaultMeta, github, linkedIn, myAlternativeEmailId, myMailId, socialLinks }
+export { defaultMeta, myAlternativeEmailId, myMailId, socialLinks }
