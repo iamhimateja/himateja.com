@@ -7,7 +7,7 @@ import { ThemeType } from '@globals/types'
 import { useState } from 'react'
 import { Tooltip } from 'react-tippy'
 
-import styles from './ThemeSwitch.module.scss'
+import styles from './ThemeSwitch.module.css'
 
 const ThemeSwitch = () => {
   const [theme, setTheme] = useState<ThemeType>(ThemeType.Light)
@@ -15,10 +15,12 @@ const ThemeSwitch = () => {
   const toggleTheme = () => {
     if (isDarkThemeEnabled()) {
       localStorage.setItem('selectedTheme', ThemeType.Light)
+      document.documentElement.classList.remove('dark')
       document.body.setAttribute('data-theme', ThemeType.Light)
       setTheme(ThemeType.Light)
     } else {
       localStorage.setItem('selectedTheme', ThemeType.Dark)
+      document.documentElement.classList.add('dark')
       document.body.setAttribute('data-theme', ThemeType.Dark)
       setTheme(ThemeType.Dark)
     }

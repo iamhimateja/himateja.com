@@ -1,0 +1,25 @@
+#themeSwitch {
+  @apply relative flex h-10 w-10 cursor-pointer flex-row items-center rounded-[50px] border-0 bg-[unset] text-[color:var(--navigation-link-color)] no-underline;
+}
+
+#themeSwitch:hover,
+#themeSwitch:focus {
+  background: var(--navigation-link-background);
+}
+
+#themeSwitch span.icon.darkThemeIcon,
+#themeSwitch span.icon.lightThemeIcon {
+  @apply absolute left-2/4 top-2/4 h-6 w-6 origin-[center_center] -translate-x-2/4 -translate-y-2/4 transition-[0.35s] duration-[cubic-bezier(0.785,0.135,0.15,0.86)];
+}
+
+:global(body[data-theme='dark']) :local(.icon).darkThemeIcon {
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  visibility: hidden;
+}
+
+:global(body[data-theme='light']) :local(.icon).lightThemeIcon {
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  visibility: hidden;
+}

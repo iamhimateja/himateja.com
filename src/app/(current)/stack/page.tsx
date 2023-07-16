@@ -1,7 +1,9 @@
-export default function StackPage() {
-  return (
-    <div>
-      <h1>Stack Page</h1>
-    </div>
-  )
+import StackPage from './_components'
+
+export const metadata = {
+  title: 'Stack · himateja.',
+}
+
+export default function Page() {
+  return <StackPage />
 }

@@ -1,0 +1,16 @@
+.container {
+  @apply isolate inline-flex rounded-md shadow-sm;
+}
+
+.button {
+  @apply relative inline-flex items-center px-2 py-2 focus:z-10 border-t-[color:var(--link-card-border)] text-[color:var(--text)] border-t border-solid bg-[color:var(--link-card-background)];
+  /* background: var(--link-card-background); */
+}
+
+.button:hover {
+  @apply bg-[color:var(--link-card-hover)];
+}
+
+.button.active {
+  @apply bg-[#6d6d6d] text-white border-[#161616];
+}

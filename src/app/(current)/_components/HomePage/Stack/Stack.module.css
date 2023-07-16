@@ -1,0 +1,15 @@
+.container {
+  @apply flex gap-2 place-items-center flex-wrap;
+}
+
+.container .stackItem {
+  @apply flex items-center flex-1 grow-0 w-[35px] h-[35px] rounded bg-no-repeat bg-contain transition-all duration-[0.2s] ease-[ease-in-out] hover:scale-110;
+}
+
+.container .moreItem {
+  @apply flex no-underline text-xs text-[color:var(--text)];
+}
+
+.container .moreItem .stackItem {
+  @apply bg-[color:var(--link-card-background)] basis-auto place-content-center;
+}

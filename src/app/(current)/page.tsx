@@ -1,4 +1,8 @@
 import NameInfo from '@components/HomePage/NameInfo'
+import Stack from '@components/HomePage/Stack'
+import SectionHeading from '@components/SectionHeading'
+
+import ArrowRight from '@/app/(current)/_icons/ArrowRight'
 
 export default function HomePage() {
   return (
@@ -21,6 +25,19 @@ export default function HomePage() {
         collaborate with diverse teams. When not creating digital experiences, I find joy in movies, video games, and
         spending quality time with my family.
       </p>
+
+      <SectionHeading
+        title="Stack"
+        pageLink="/stack"
+        pageLinkText={
+          <>
+            All
+            <ArrowRight />
+          </>
+        }
+      />
+
+      <Stack />
     </>
   )
 }

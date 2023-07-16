@@ -1,0 +1,134 @@
+.divider {
+  @apply relative my-10 h-[0.031rem] w-full bg-[color:var(--divider-color)] after:absolute after:left-2/4 after:top-2/4 after:z-[1] after:h-2.5 after:w-10 after:-translate-x-2/4 after:-translate-y-2/4 after:content-[''] after:bg-[color:var(--background)];
+}
+
+.diamond {
+  @apply absolute w-5 h-5 -translate-x-2/4 -translate-y-2/4 z-[2] left-2/4 top-2/4 after:content-[''] after:absolute after:w-full after:h-full after:bg-[color:var(--divider-dot-color)];
+}
+
+.diamond:after {
+  clip-path: polygon(75% 0, 100% 30%, 50% 100%, 0 30%, 25% 0);
+}
+
+.container {
+  @apply flex flex-col gap-3;
+}
+
+.container .emailSection,
+.container .calendly,
+.container .links .link:not([data-tooltipped]) {
+  @apply rounded-[10px] border-t border-solid border-t-[color:var(--link-card-border)] p-4 bg-[color:var(--link-card-background)];
+}
+
+.container .contactLinks {
+  @apply flex flex-col sm:flex-row gap-3;
+}
+
+.container .contactLinks .contactMeOn {
+  @apply flex flex-1 flex-col place-items-baseline gap-2 rounded-[10px] sm:border-t sm:border-solid sm:border-t-[color:var(--link-card-border)] p-4 bg-[color:var(--link-card-background)];
+}
+
+@media screen and (max-width: 639px) {
+  .container .contactLinks .contactMeOn {
+    background: none;
+  }
+}
+
+.container .contactLinks .contactMeOn .avatar {
+  background: url('/images/headshot/latest.webp');
+  @apply h-28 w-28 sm:h-12 sm:w-12 rounded-[50%] bg-contain;
+  filter: var(--photo-filter);
+}
+
+.container .contactLinks .contactMeOn span {
+  @apply text-base sm:text-xl leading-[1.3] text-[color:var(--text)] hidden sm:inline-block;
+}
+
+.container .contactLinks .links {
+  @apply flex flex-[3] flex-col gap-3;
+}
+
+.container .contactLinks .links .calendly {
+  @apply relative flex flex-1 flex-col place-content-center gap-3 text-[color:var(--text)] no-underline after:absolute after:right-4 after:top-4 after:text-base after:opacity-20 after:content-['↗'] hover:bg-[color:var(--link-card-hover)] hover:after:opacity-[var(--link-hover-after-opacity)];
+}
+
+.container .contactLinks .links .calendly span {
+  @apply text-base sm:text-[1.2rem] text-[color:var(--link-heading)] last:text-base sm:last:text-2xl last:text-[color:var(--link-text)] last:font-medium;
+}
+
+.container .contactLinks .links .calendly:hover span:last-child {
+  @apply text-[color:var(--link-heading-hover)];
+}
+
+.container .contactLinks .links .social {
+  @apply flex flex-1 flex-row gap-3;
+}
+
+.container .contactLinks .links .social .link {
+  @apply flex-1;
+}
+
+.container .contactLinks .links .social .link:not([data-tooltipped]) {
+  @apply flex place-content-center place-items-center hover:text-white !important;
+}
+
+.container .contactLinks .links .social .link:not([data-tooltipped]) svg {
+  @apply h-[25px] w-[25px] sm:h-[30px] sm:w-[30px];
+}
+
+.container .contactLinks .links .social .link:not([data-tooltipped]).linkedin {
+  @apply text-[color:var(--link-linkedin-color)] hover:bg-[color:var(--link-linkedin-background)];
+}
+
+.container .contactLinks .links .social .link:not([data-tooltipped]).github {
+  @apply text-[color:var(--link-github-color)] hover:bg-[color:var(--link-github-background)];
+}
+
+.container .contactLinks .links .social .link:not([data-tooltipped]).twitter {
+  @apply text-[color:var(--link-twitter-color)] hover:bg-[color:var(--link-twitter-background)];
+}
+
+.container .contactLinks .links .social .link:not([data-tooltipped]).codepen {
+  @apply text-[color:var(--link-codepen-color)] hover:bg-[color:var(--link-codepen-background)];
+}
+
+.container .emailSection {
+  @apply flex flex-col place-content-between place-items-center gap-4 sm:flex-row;
+}
+
+.container .emailSection span {
+  @apply text-base leading-[1.3] text-[color:var(--text)];
+}
+
+.container .emailSection .emailAddressButton {
+  @apply relative flex place-content-center place-items-center gap-2 overflow-hidden rounded-[20px] px-4 py-2 transition-all duration-[0.2s] ease-[ease-in-out] hover:bg-[color:var(--email-link-hover-background)] hover:pr-[2.3rem];
+  background: var(--email-link-background);
+}
+
+.container .emailSection .emailAddressButton .emailId {
+  @apply text-base text-white no-underline;
+}
+
+.container .emailSection .emailAddressButton .copyEmailButton {
+  @apply absolute -right-full flex h-full cursor-pointer place-content-center place-items-center border-0 bg-transparent px-2 py-0 text-white transition-all duration-[0.2s] ease-[ease-in-out];
+}
+
+.container .emailSection .emailAddressButton .copyEmailButton svg {
+  @apply h-[15px] w-[15px];
+}
+
+.container .emailSection .emailAddressButton .copyEmailButton:hover:not([data-tooltipped]) {
+  @apply bg-[rgba(255,255,255,0.1)];
+}
+
+.container .emailSection .emailAddressButton:hover .copyEmailButton {
+  @apply right-0;
+}
+
+.container .copyrightSection {
+  @apply flex place-content-between place-items-center gap-2;
+}
+
+.container .copyrightSection .link {
+  @apply text-[color:var(--text)] no-underline hover:underline;
+}

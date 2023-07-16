@@ -1,6 +1,6 @@
-import 'react-tippy/dist/tippy.css'
 import '@styles/variables.css'
-import '@styles/globals.scss'
+import '@styles/globals.css'
+import 'react-tippy/dist/tippy.css'
 
 import ClientHelpers from '@components/ClientHelpers'
 import Footer from '@components/Footer'

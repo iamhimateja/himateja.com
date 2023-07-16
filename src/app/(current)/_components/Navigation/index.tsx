@@ -11,7 +11,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Tooltip } from 'react-tippy'
 
-import styles from './Navigation.module.scss'
+import styles from './Navigation.module.css'
 
 const Navigation = () => {
   const pathname = usePathname()

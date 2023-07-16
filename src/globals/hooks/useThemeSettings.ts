@@ -8,6 +8,11 @@ const useThemeSettings = (autoChange?: boolean) => {
   useEffect(() => {
     const setThemeClass = (isDark: boolean) => {
       document.body.setAttribute('data-theme', isDark ? ThemeType.Dark : ThemeType.Light)
+      if (isDark) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
     }
 
     const handleSystemThemeChange = (e: MediaQueryListEvent) => {

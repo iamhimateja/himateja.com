@@ -4,7 +4,7 @@ import CopyIcon from '@icons/CopyIcon'
 import { useState } from 'react'
 import { Tooltip } from 'react-tippy'
 
-import styles from './Footer.module.scss'
+import styles from './Footer.module.css'
 
 const CopyEmailButton = () => {
   const [isCopied, setIsCopied] = useState(false)
@@ -14,7 +14,6 @@ const CopyEmailButton = () => {
       animateFill
       size="small"
       inertia
-      distance={15}
       title={isCopied ? 'copied!' : 'copy email to clipboard'}
       position="top"
       trigger="mouseenter"

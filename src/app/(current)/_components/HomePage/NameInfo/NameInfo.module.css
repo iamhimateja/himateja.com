@@ -1,0 +1,34 @@
+.container {
+  @apply leading-[0.75];
+}
+
+.heading,
+.subHeading {
+  @apply relative tracking-[1px] text-white;
+  font-family: var(--pixel-font-family);
+  background: var(--name-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heading {
+  @apply text-[4rem] sm:text-[5rem];
+}
+
+.heading::after {
+  @apply absolute content-['.'];
+  background: var(--name-dot-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subHeading {
+  @apply flex gap-2 text-[1.7rem] md:text-[2.5rem];
+}
+
+.subHeading span:not(:last-child)::after {
+  @apply ml-2 content-['·'];
+  background: var(--name-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

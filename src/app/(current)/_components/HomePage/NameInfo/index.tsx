@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 
-import styles from './NameInfo.module.scss'
+import styles from './NameInfo.module.css'
 
 const ScrambleHeading = dynamic(() => import('@components/ScrambleHeading'), { ssr: false })
 

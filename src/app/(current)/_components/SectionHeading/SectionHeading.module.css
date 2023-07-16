@@ -1,0 +1,15 @@
+.container {
+  @apply flex place-content-between place-items-center;
+}
+
+.container .heading {
+  @apply text-lg font-medium text-[color:var(--heading)];
+}
+
+.container .link {
+  @apply flex flex-row gap-1 place-items-center text-base text-[color:var(--text)] no-underline transition-all duration-[0.2s] ease-[ease-in-out] hover:text-[color:var(--heading-link-hover)];
+}
+
+.container .link svg {
+  @apply h-4 w-4;
+}

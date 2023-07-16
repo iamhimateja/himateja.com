@@ -1,0 +1,40 @@
+@keyframes animateIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  @apply flex flex-row gap-4 flex-wrap;
+}
+
+.item {
+  @apply flex basis-[calc(50%_-_0.5rem)] flex-row place-items-center  gap-2	 rounded-md border-t border-solid border-t-[color:var(--link-card-border)] bg-[color:var(--link-card-background)] px-3 py-2 transition-colors;
+  flex-basis: calc(50% - 0.5rem);
+  animation-name: animateIn;
+  animation-duration: 100ms;
+  animation-delay: calc(var(--delay, 0) * 20ms);
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+.item:hover {
+  background: var(--stack-item-hover-background);
+}
+
+.image {
+  @apply flex shrink-0;
+}
+
+.image img {
+  @apply aspect-[1] h-fit;
+}
+
+.title {
+  @apply text-sm font-semibold;
+  color: var(--stack-item-title-color);
+}

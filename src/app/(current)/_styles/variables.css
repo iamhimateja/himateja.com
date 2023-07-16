@@ -1,35 +1,91 @@
 :root,
+.dark,
 [data-theme='dark'] {
   --background: #0f0f0f;
   --text: #888888;
+  --heading: #ffffff;
+  --heading-link-hover: #ffffff;
 
   --name-gradient: -webkit-linear-gradient(#cccccc, #717171);
   --name-dot-gradient: -webkit-linear-gradient(#0094ff, #00488a);
-  --photo-filter: grayscale(1);
 
-  /* bottom footer */
-  --footer-background: rgba(51, 51, 51, 0.8);
-  --footer-link-background: #434343;
-  --footer-link-highlighted-background: #fff;
-  --footer-link-highlighted-color: #1e1e1e;
-  --footer-link-color: #9a9a9a;
-  --footer-link-separator: rgba(255, 255, 255, 0.08);
+  /* Footer */
+  --divider-color: #242424;
+  --divider-dot-color: #ababab;
+  --photo-filter: grayscale(1);
+  --link-card-background: #1a1a1a;
+  --link-card-border: #292929;
+  --link-card-hover: #232323;
+  --link-heading: var(--text);
+  --link-text: #bbbbbb;
+  --link-heading-hover: #fff;
+  --link-text-hover: inherit;
+  --link-hover-after-opacity: 0.2;
+  --link-linkedin-background: #2466c2;
+  --link-github-background: #333;
+  --link-twitter-background: #1da1f2;
+  --link-codepen-background: #000;
+  --link-linkedin-color: #fff;
+  --link-github-color: #fff;
+  --link-twitter-color: #fff;
+  --link-codepen-color: #fff;
+  --email-link-background: #772af4;
+  --email-link-hover-background: #333333;
+
+  /* bottom navigation */
+  --navigation-background: rgba(26, 26, 26, 0.6);
+  --navigation-link-background: #373737;
+  --navigation-link-highlighted-background: #fff;
+  --navigation-link-highlighted-color: #1e1e1e;
+  --navigation-link-color: #9a9a9a;
+  --navigation-link-separator: rgba(255, 255, 255, 0.08);
+
+  --stack-item-background: #151515;
+  --stack-item-hover-background: #1d1d1d;
+  --stack-item-title-color: #fff;
 }
 
 [data-theme='light'] {
-  --background: white;
+  --background: #f0f0f0;
   --text: #333333;
+  --heading: #000000;
+  --heading-link-hover: #838383;
 
   --name-gradient: -webkit-linear-gradient(#353535, #6e6e6e);
   --name-dot-gradient: -webkit-linear-gradient(#006db1, #009eff);
 
+  /* Footer */
+  --divider-color: #cecece;
+  --divider-dot-color: #a8a8a8;
   --photo-filter: none;
+  --link-card-background: #ffffff;
+  --link-card-border: #cecece;
+  --link-card-hover: #d9d9d9;
+  --link-heading: #959595;
+  --link-text: var(--text);
+  --link-heading-hover: #2b2b2b;
+  --link-text-hover: #414141;
+  --link-hover-after-opacity: 0.8;
+  --link-linkedin-background: #2466c2;
+  --link-github-background: #333;
+  --link-twitter-background: #1da1f2;
+  --link-codepen-background: #000;
+  --link-linkedin-color: #2466c2;
+  --link-github-color: #333;
+  --link-twitter-color: #1da1f2;
+  --link-codepen-color: #000;
+  --email-link-background: #772af4;
+  --email-link-hover-background: #333333;
 
-  /* bottom footer */
-  --footer-background: rgba(255, 255, 255, 0.8);
-  --footer-link-background: #f0f0f0;
-  --footer-link-color: rgb(136, 136, 136);
-  --footer-link-highlighted-background: #009eff;
-  --footer-link-highlighted-color: #fafafa;
-  --footer-link-separator: rgba(0, 0, 0, 0.08);
+  /* bottom navigation */
+  --navigation-background: rgba(255, 255, 255, 0.6);
+  --navigation-link-background: #f0f0f0;
+  --navigation-link-color: rgb(136, 136, 136);
+  --navigation-link-highlighted-background: #009eff;
+  --navigation-link-highlighted-color: #fafafa;
+  --navigation-link-separator: rgba(0, 0, 0, 0.08);
+
+  --stack-item-background: #ffffff;
+  --stack-item-hover-background: #e5e5e5;
+  --stack-item-title-color: #1e1e1e;
 }

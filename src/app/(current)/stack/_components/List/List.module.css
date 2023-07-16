@@ -1,0 +1,47 @@
+@keyframes animateIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  @apply flex flex-col gap-4;
+}
+
+.item {
+  @apply flex flex-row gap-4 rounded-xl p-4 bg-[color:var(--link-card-background)] border-t border-solid border-t-[color:var(--link-card-border)] transition-colors;
+  animation-name: animateIn;
+  animation-duration: 100ms;
+  animation-delay: calc(var(--delay, 0) * 30ms);
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+.item:hover {
+  background: var(--stack-item-hover-background);
+}
+
+.image {
+  @apply flex shrink-0;
+}
+
+.image img {
+  @apply aspect-[1] h-fit;
+}
+
+.info {
+  @apply flex flex-col gap-1;
+}
+
+.title {
+  @apply text-sm font-semibold;
+  color: var(--stack-item-title-color);
+}
+
+.description {
+  @apply text-[var(--text)] text-xs;
+}
