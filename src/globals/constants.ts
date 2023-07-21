@@ -56,7 +56,7 @@ const myStack = [
   {
     name: 'Next.js',
     description:
-      "Next.js is my top pick for web development - it's my secret sauce for building fast and dynamic websites!",
+      "Next.js is my top pick for web development - it's my go-to framework for building fast and dynamic websites!",
     image: '/images/stack/nextjs.webp',
     url: 'https://nextjs.org/',
   },
@@ -123,4 +123,43 @@ const myStack = [
   },
 ]
 
-export { defaultMeta, myAlternativeEmailId, myMailId, myStack, socialLinks }
+const experiences = [
+  {
+    companyName: 'Index',
+    duration: "Sep '21 - Apr '23",
+    title: 'Full Stack Engineer',
+    description:
+      'As a Full Stack Engineer at Index, I significantly improved user experience by migrating to Radix-UI, integrated key features such as Onboarding and Alerts, and ensured secure payments by integrating the Stripe payment gateway.',
+    url: 'https://index.app/',
+    image: '/images/index.webp',
+  },
+  {
+    companyName: 'Feathery',
+    duration: "Jun '21 - Aug '21",
+    title: 'Full Stack Engineer',
+    description:
+      'During my short tenure at Feathery, I contributed to enhancing the user experience by implementing Live Edit functionality for the form builder, using cutting-edge frontend technologies, and collaborated with cross-functional teams to ensure seamless integration of new features.',
+    url: 'https://feathery.io',
+    image: '/images/feathery.webp',
+  },
+  {
+    companyName: 'Involvio (Acquired by Cisco)',
+    duration: "Jul '19 - May '21",
+    title: 'Software Engineer',
+    description:
+      'As a Software Engineer at Involvio, I led the development of the Sub-Admin teams feature, optimized admin staff permissions, contributed significantly to a COVID-19 Safe Reopen module, boosted admin tool performance, and integrated crucial APIs for efficient data synchronization.',
+    url: 'https://involvio.com',
+    image: '/images/involvio.webp',
+  },
+  {
+    companyName: 'HaleMind',
+    duration: "Dec '15 - Jun '19",
+    title: 'Sr. Software Engineer',
+    description:
+      'At HaleMind, as a Sr. Software Engineer, I led a dynamic team of 9, introduced a centralized chat system, revolutionized user dashboards, built comprehensive patient examination tools, and innovated an Appointment Dashboard; all leading to improved user experience, enhanced patient engagement, increased test accuracy, and optimized appointment management.',
+    url: 'https://halemind.com',
+    image: '/images/halemind.webp',
+  },
+]
+
+export { defaultMeta, experiences, myAlternativeEmailId, myMailId, myStack, socialLinks }

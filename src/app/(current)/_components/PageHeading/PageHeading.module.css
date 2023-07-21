@@ -1,5 +1,22 @@
+.container {
+  @apply flex flex-row gap-2 place-items-center;
+}
+
+.homeIcon {
+  @apply flex text-white place-items-center place-content-center;
+}
+
+.homeIcon svg {
+  @apply w-5 h-5 flex-[1_0_0];
+}
+
+.homeIcon:after {
+  font-family: var(--inter-font-family);
+  @apply content-['/'] font-thin text-4xl opacity-20 ml-2 text-[color:var(--text)];
+}
+
 .heading {
-  @apply relative text-[2.5rem] tracking-[1px] text-white after:absolute after:content-['.'] leading-none;
+  @apply relative text-4xl tracking-[1px] text-white after:absolute after:content-['.'] leading-none;
   font-family: var(--pixel-font-family);
   background: var(--name-gradient);
   -webkit-background-clip: text;

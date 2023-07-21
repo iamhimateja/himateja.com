@@ -30,7 +30,7 @@
 }
 
 .image img {
-  @apply aspect-[1] h-fit;
+  @apply aspect-[1] h-fit rounded-[100%];
 }
 
 .info {
@@ -44,4 +44,12 @@
 
 .description {
   @apply text-[var(--text)] text-xs;
+}
+
+.externalLinkIndicator {
+  @apply absolute top-0 right-0 w-4 h-4 m-2 text-base opacity-20 text-[color:var(--text)] transition-opacity;
+}
+
+.item:hover .externalLinkIndicator {
+  @apply opacity-80;
 }

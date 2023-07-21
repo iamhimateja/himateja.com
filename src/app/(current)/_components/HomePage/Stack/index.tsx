@@ -18,12 +18,12 @@ const Stack = () => {
           animateFill
           size="small"
           inertia
-          title={item.name}
+          title={`${item.name} ↗`}
           position="top"
           trigger="mouseenter"
           className={styles.stackItem}
         >
-          <Link href={item.url} target="_blank">
+          <Link href={item.url} target="_blank" aria-label={item.name} tabIndex={0}>
             <div style={{ backgroundImage: `url('${item.image}')` }} className={styles.stackItem} />
           </Link>
         </Tooltip>
@@ -39,7 +39,7 @@ const Stack = () => {
         trigger="mouseenter"
         className={styles.stackItem}
       >
-        <Link href="/stack" className={styles.moreItem}>
+        <Link href="/stack" className={styles.moreItem} aria-label="See all stack items" tabIndex={0}>
           <div className={styles.stackItem}>
             <span className={styles.more}>+{myStack.length - 7}</span>
           </div>

@@ -1,4 +1,4 @@
-import { myMailId, socialLinks } from '@globals/constants'
+import { socialLinks } from '@globals/constants'
 import clsx from 'clsx'
 import Link from 'next/link'
 
@@ -17,12 +17,20 @@ const Footer = () => {
         <div className={styles.contactLinks}>
           <div className={styles.contactMeOn}>
             <div className={styles.avatar} />
-            <span>Contact me on</span>
-            <span>↳</span>
+            <span>
+              Ready to collaborate? <br /> Let&#39;s connect.
+            </span>
           </div>
           <div className={styles.links}>
-            <Link className={clsx(styles.link, styles.calendly)} href={socialLinks.calendly} target="_blank">
-              <span>Book a call</span>
+            <Link
+              aria-label="Schedule a chat"
+              className={clsx(styles.link, styles.calendly)}
+              href={socialLinks.calendly}
+              target="_blank"
+              tabIndex={0}
+              prefetch={false}
+            >
+              <span>Schedule a chat</span>
               <span>calendly.com/himateja</span>
             </Link>
 
@@ -31,12 +39,7 @@ const Footer = () => {
         </div>
         <div className={styles.emailSection}>
           <span>Wanna work together?</span>
-          <div className={styles.emailAddressButton}>
-            <a className={styles.emailId} href={`mailto:${myMailId}`} target="_blank">
-              {myMailId}
-            </a>
-            <CopyEmailButton />
-          </div>
+          <CopyEmailButton />
         </div>
 
         <CopyrightSection />

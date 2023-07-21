@@ -1,4 +1,5 @@
 'use client'
+import ArrowTopRight from '@icons/ArrowTopRight'
 import Link from 'next/link'
 import { Tooltip } from 'react-tippy'
 
@@ -28,7 +29,8 @@ const CopyRightSection = () => {
           tabIndex={0}
           target="_blank"
         >
-          Source Code ↗
+          Source Code
+          <ArrowTopRight className="w-3.5	h-3.5" />
         </Link>
       </Tooltip>
     </div>

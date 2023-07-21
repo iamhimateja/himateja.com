@@ -1,8 +1,8 @@
+import ExperienceSection from '@components/ExperienceSection'
 import NameInfo from '@components/HomePage/NameInfo'
 import Stack from '@components/HomePage/Stack'
 import SectionHeading from '@components/SectionHeading'
-
-import ArrowRight from '@/app/(current)/_icons/ArrowRight'
+import ArrowRight from '@icons/ArrowRight'
 
 export default function HomePage() {
   return (
@@ -13,31 +13,79 @@ export default function HomePage() {
       </p>
 
       <p>
-        I&#39;m a passionate full-stack engineer with rich experience in frontend technologies such as Node.js, React,
-        and Ruby on Rails.
-      </p>
-      <p>
-        I pride myself on transforming complex project requirements into efficient, user-centric solutions, gained from
-        years of working on personal projects to partnering with established companies.
-      </p>
-      <p>
-        Besides being a coding enthusiast, I excel in teamwork and communication, relishing the opportunity to
-        collaborate with diverse teams. When not creating digital experiences, I find joy in movies, video games, and
-        spending quality time with my family.
+        Full-stack engineer, creative spirit, a perfectionist at heart, with an enthusiasm for frontend technologies and
+        an excitement for the instant gratification it provides.
       </p>
 
-      <SectionHeading
-        title="Stack"
-        pageLink="/stack"
-        pageLinkText={
-          <>
-            All
-            <ArrowRight />
-          </>
-        }
-      />
+      <p>
+        A dedicated team player off the coding field, cherishing collaboration, movies, video games, and family time.
+      </p>
 
-      <Stack />
+      {/* <p>
+        Currently perfecting{' '}
+        <Link href="/products/slug" className="link">
+          slug.
+        </Link>
+      </p> */}
+
+      <section>
+        <SectionHeading title="recent experience" />
+        <ExperienceSection />
+      </section>
+
+      <section>
+        <SectionHeading
+          title="products"
+          pageLink="/products"
+          pageLinkText={
+            <>
+              All
+              <ArrowRight />
+            </>
+          }
+        />
+      </section>
+
+      <section>
+        <SectionHeading
+          title="experiments"
+          pageLink="/labs"
+          pageLinkText={
+            <>
+              All
+              <ArrowRight />
+            </>
+          }
+        />
+      </section>
+
+      {/* <section>
+        <SectionHeading
+          title="writing"
+          pageLink="/articles"
+          pageLinkText={
+            <>
+              All
+              <ArrowRight />
+            </>
+          }
+        />
+      </section> */}
+
+      <section>
+        <SectionHeading
+          title="stack"
+          pageLink="/stack"
+          pageLinkText={
+            <>
+              All
+              <ArrowRight />
+            </>
+          }
+        />
+
+        <Stack />
+      </section>
     </>
   )
 }

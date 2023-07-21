@@ -26,15 +26,19 @@
   background: var(--stack-item-hover-background);
 }
 
-.image {
-  @apply flex shrink-0;
-}
-
-.image img {
-  @apply aspect-[1] h-fit;
+.item img {
+  @apply aspect-[1] h-fit rounded-[100%];
 }
 
 .title {
   @apply text-sm font-semibold;
   color: var(--stack-item-title-color);
+}
+
+.externalLinkIndicator {
+  @apply absolute top-0 right-0 w-4 h-4 m-2 text-base opacity-20 text-[color:var(--text)] transition-opacity;
+}
+
+.item:hover .externalLinkIndicator {
+  @apply opacity-80;
 }

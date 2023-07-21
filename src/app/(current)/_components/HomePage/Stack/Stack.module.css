@@ -1,9 +1,9 @@
 .container {
-  @apply flex gap-2 place-items-center flex-wrap;
+  @apply flex gap-3 place-items-center flex-wrap;
 }
 
 .container .stackItem {
-  @apply flex items-center flex-1 grow-0 w-[35px] h-[35px] rounded bg-no-repeat bg-contain transition-all duration-[0.2s] ease-[ease-in-out] hover:scale-110;
+  @apply flex items-center flex-1 grow-0 w-10 h-10 rounded-[100%] bg-no-repeat bg-contain transition-all duration-[0.2s] ease-[ease-in-out] hover:scale-110;
 }
 
 .container .moreItem {

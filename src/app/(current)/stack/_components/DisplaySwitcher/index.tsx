@@ -19,6 +19,8 @@ const DisplaySwitcher = ({
     <span className={styles.container}>
       <Tooltip animateFill size="small" inertia title="view as list" position="top" trigger="mouseenter">
         <button
+          aria-label="view as list"
+          tabIndex={0}
           type="button"
           className={clsx(styles.button, 'rounded-l-md', display === 'list' && styles.active)}
           onClick={() => setDisplay('list')}
@@ -28,6 +30,8 @@ const DisplaySwitcher = ({
       </Tooltip>
       <Tooltip animateFill size="small" inertia title="view as grid" position="top" trigger="mouseenter">
         <button
+          aria-label="view as grid"
+          tabIndex={0}
           type="button"
           className={clsx(styles.button, 'rounded-r-md', display === 'grid' && styles.active)}
           onClick={() => setDisplay('grid')}

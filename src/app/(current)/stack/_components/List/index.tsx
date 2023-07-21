@@ -1,3 +1,4 @@
+import ArrowTopRight from '@icons/ArrowTopRight'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -10,10 +11,13 @@ const StackList = () => {
     <div className={styles.container}>
       {myStack.map((item, index) => (
         <Link
+          aria-label={`click to open ${item.name}'s website`}
+          tabIndex={0}
           key={index}
           className={styles.item}
           href={item.url}
           target="_blank"
+          prefetch={false}
           style={{ '--delay': index } as React.CSSProperties}
         >
           <div className={styles.image}>
@@ -22,6 +26,9 @@ const StackList = () => {
           <div className={styles.info}>
             <div className={styles.title}>{item.name}</div>
             <div className={styles.description}>{item.description}</div>
+          </div>
+          <div className={styles.externalLinkIndicator}>
+            <ArrowTopRight />
           </div>
         </Link>
       ))}

@@ -2,14 +2,24 @@
   @apply flex place-content-between place-items-center;
 }
 
-.container .heading {
-  @apply text-lg font-medium text-[color:var(--heading)];
+.heading {
+  font-family: var(--pixel-font-family);
+  @apply text-4xl leading-none tracking-[0.063rem] font-medium text-[color:var(--heading)] after:absolute after:content-['.'];
+  background: var(--name-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.container .link {
-  @apply flex flex-row gap-1 place-items-center text-base text-[color:var(--text)] no-underline transition-all duration-[0.2s] ease-[ease-in-out] hover:text-[color:var(--heading-link-hover)];
+.heading::after {
+  background: var(--name-dot-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.container .link svg {
+.link {
+  @apply flex flex-row gap-1 place-items-center font-medium text-base text-[color:var(--text)] no-underline transition-all duration-[0.2s] ease-[ease-in-out] hover:text-[color:var(--heading-link-hover)];
+}
+
+.link svg {
   @apply h-4 w-4;
 }

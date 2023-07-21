@@ -17,7 +17,7 @@ const SectionHeading = ({ title, pageLink, pageLinkText }: Props) => {
   return (
     <div className={styles.container}>
       <h2 className={styles.heading}>{title}</h2>
-      <Link href={pageLink} className={styles.link}>
+      <Link href={pageLink} className={styles.link} aria-label={(pageLinkText ?? 'Go to page') as string} tabIndex={0}>
         {pageLinkText}
       </Link>
     </div>

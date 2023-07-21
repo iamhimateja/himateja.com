@@ -1,7 +1,7 @@
 import StackPage from './_components'
 
 export const metadata = {
-  title: 'Stack · himateja.',
+  title: 'stack · himateja.',
 }
 
 export default function Page() {

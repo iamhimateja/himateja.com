@@ -16,7 +16,7 @@ body {
 }
 
 .main-section {
-  @apply relative mx-auto my-0 flex w-full max-w-lg flex-col gap-5 px-6 pb-28 pt-6;
+  @apply relative mx-auto my-0 flex w-full max-w-xl flex-col gap-5 px-6 pb-28 pt-6;
 }
 
 .main-section p {
@@ -25,6 +25,23 @@ body {
 
 .main-section p.font-sm {
   @apply text-sm;
+}
+
+.main-section section {
+  @apply flex flex-col gap-5 my-5;
+}
+
+.heading-container {
+  @apply flex flex-col sm:flex-row place-items-center place-content-between;
+}
+
+.heading {
+  font-family: var(--pixel-font-family);
+  @apply my-4 text-5xl text-[color:var(--text)] font-medium;
+}
+
+.link {
+  @apply inline-block text-[color:var(--text)] no-underline pb-1 hover:shadow-[inset_0_-1px_0_0_var(--text)];
 }
 
 .pulseAnimation {

@@ -6,7 +6,6 @@ import { useState } from 'react'
 import DisplaySwitcher from './DisplaySwitcher'
 import StackGrid from './Grid'
 import StackList from './List'
-import styles from './StackPage.module.css'
 
 const StackPage = () => {
   const [display, setDisplay] = useState<'list' | 'grid'>('list')
@@ -14,9 +13,9 @@ const StackPage = () => {
     <>
       <PageHeading title="my stack" />
 
-      <div className={styles.headingContainer}>
-        <h2 className={styles.heading}>
-          Things I <span className="text-blue-400 dark:text-white">use</span> and{' '}
+      <div className="heading-container">
+        <h2 className="heading">
+          things I <span className="text-blue-400 dark:text-white">use</span> and{' '}
           <span className="text-blue-400 dark:text-white">love</span>
         </h2>
         <DisplaySwitcher display={display} setDisplay={setDisplay} />
