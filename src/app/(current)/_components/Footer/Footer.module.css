@@ -43,14 +43,18 @@
 }
 
 .container .contactLinks .links .calendly {
-  @apply relative flex flex-1 flex-col place-content-center gap-3 text-[color:var(--text)] no-underline after:absolute after:right-4 after:top-4 after:text-base after:opacity-20 after:content-['↗'] hover:bg-[color:var(--link-card-hover)] hover:after:opacity-[var(--link-hover-after-opacity)];
+  @apply relative flex flex-1 flex-col place-content-center gap-3 text-[color:var(--text)] no-underline hover:bg-[color:var(--link-card-hover)];
 }
 
 .container .contactLinks .links .calendly span {
-  @apply text-base text-[color:var(--link-heading)] last:text-[color:var(--link-text)] last:font-medium;
+  @apply text-base text-[color:var(--link-heading)];
 }
 
-.container .contactLinks .links .calendly:hover span:last-child {
+.container .contactLinks .links .calendly span:nth-child(2) {
+  @apply text-[color:var(--link-text)] font-medium;
+}
+
+.container .contactLinks .links .calendly:hover span:nth-child(2) {
   @apply text-[color:var(--link-heading-hover)];
 }
 
@@ -125,4 +129,12 @@
 
 .container .copyrightSection .link {
   @apply flex gap-1 place-items-center text-[color:var(--text)] no-underline pb-1 hover:shadow-[inset_0_-1px_0_0_var(--text)];
+}
+
+.externalLinkIndicator {
+  @apply absolute top-0 right-0 w-4 h-4 m-2 text-base opacity-20 text-[color:var(--text)] transition-opacity;
+}
+
+.calendly:hover .externalLinkIndicator {
+  @apply opacity-80;
 }

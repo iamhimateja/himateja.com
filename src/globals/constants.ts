@@ -1,3 +1,5 @@
+import type { Project } from '@globals/types'
+
 const myMailId = 'hello@himateja.com'
 const myAlternativeEmailId = 'himatejamerlapaka@gmail.com'
 const linkedIn = 'https://www.linkedin.com/in/himateja/'
@@ -18,6 +20,88 @@ const defaultMeta = {
     'himu, himateja, merlapaka, full-stack developer, index.app, halemind, involvio, himateja.com, himateja portfolio, himateja blog, himateja blog, hima',
   twitterHandle: '@iamhimateja',
 }
+
+const onGoingProjects: Project[] = [
+  {
+    slug: 'slug',
+    title: 'Slug - Shorten, build and share',
+    subtitle: 'Re-imagining URLs, Contextual and Simple',
+    url: 'https://slug.io/',
+    description:
+      'Slug is a versatile URL shortening platform with custom domains and advanced analytics, designed to enhance user engagement, trust, and streamline online content sharing.',
+    github: 'private',
+    year: 2022,
+    status: 'In Progress',
+    tags: ['fullstack', 'mobile app', 'browser extension', 'AI'],
+    imagePath: '/images/products/slug.webp',
+  },
+]
+
+const completedProjects: Project[] = [
+  {
+    slug: 'rick-and-morty-charecteropedia',
+    title: 'Rick and Morty Charecteropedia',
+    url: 'https://rick-n-morty.himateja.com/',
+    description: 'A web application to find information about Rick and Morty characters',
+    github: 'https://github.com/iamhimateja/rick-and-morty-charecteropedia',
+    year: 2021,
+    status: 'Completed',
+    tags: ['web app', 'frontend', 'API'],
+  },
+  {
+    slug: 'trendz-fashion',
+    title: 'Trendz.fashion - E-commerce website',
+    shortTitle: 'Trendz.fashion',
+    url: 'https://trendz.himateja.com/',
+    description: 'E-commerce website for a fashion brand',
+    github: 'https://github.com/iamhimateja/trendz.fashion-frontend',
+    year: 2021,
+    status: 'Completed',
+    tags: ['web app', 'frontend', 'backend', 'API'],
+  },
+  {
+    slug: 'lyrics-finder',
+    title: 'Lyrics finder',
+    url: 'https://lyrix.himateja.com/',
+    description: "A web application to find lyrics of a song. It uses Lyrics.ovh's API to fetch lyrics.",
+    github: 'https://github.com/iamhimateja/lyrics-finder',
+    year: 2021,
+    status: 'Completed',
+    tags: ['web app', 'frontend', 'API'],
+  },
+  {
+    slug: 'virtual-keyboard',
+    title: 'Virtual keyboard',
+    url: 'https://virtual-keyboard.himateja.com/',
+    github: 'https://github.com/iamhimateja/onscreen-keyboard',
+    description: 'A virtual keyboard to type in any language',
+    year: 2020,
+    status: 'Completed',
+    tags: ['web app', 'frontend'],
+  },
+  {
+    slug: 'breaking-bad-grocery-list',
+    title: 'Breaking Bad grocery list',
+    url: 'https://breaking-bad-groceries.himateja.com/',
+    description: 'Breaking Bad themed grocery list app.',
+    github: 'https://github.com/iamhimateja/grocery-list',
+    year: 2020,
+    status: 'Completed',
+    tags: ['web app', 'frontend'],
+  },
+  {
+    slug: 'algorithm-visualizer',
+    title: 'Algorithm Visualizer',
+    description: 'A web application to visualize algorithms',
+    url: 'https://algorithm-visualizer.himateja.com/',
+    github: 'https://github.com/iamhimateja/algorithm-visualizer',
+    year: 2020,
+    status: 'Completed',
+    tags: ['web app', 'frontend'],
+  },
+]
+
+const projects = [...onGoingProjects, ...completedProjects]
 
 const socialLinks = {
   linkedIn,
@@ -162,4 +246,14 @@ const experiences = [
   },
 ]
 
-export { defaultMeta, experiences, myAlternativeEmailId, myMailId, myStack, socialLinks }
+export {
+  completedProjects,
+  defaultMeta,
+  experiences,
+  myAlternativeEmailId,
+  myMailId,
+  myStack,
+  onGoingProjects,
+  projects,
+  socialLinks,
+}

@@ -1,7 +1,7 @@
 'use client'
 
 import ThemeSwitch from '@components/ThemeSwitch'
-import BlogIcon from '@icons/BlogIcon'
+// import BlogIcon from '@icons/BlogIcon'
 import HomeIcon from '@icons/HomeIcon'
 import ProductsIcon from '@icons/ProductsIcon'
 import SmileIcon from '@icons/SmileIcon'
@@ -50,7 +50,7 @@ const Navigation = () => {
           <WorkshopIcon />
         </Link>
       </Tooltip>
-      <Tooltip animateFill size="small" inertia distance={15} title="Articles" position="top" trigger="mouseenter">
+      {/* <Tooltip animateFill size="small" inertia distance={15} title="Articles" position="top" trigger="mouseenter">
         <Link
           aria-label="Articles"
           href="/articles"
@@ -59,7 +59,7 @@ const Navigation = () => {
         >
           <BlogIcon />
         </Link>
-      </Tooltip>
+      </Tooltip> */}
       <Tooltip animateFill size="small" inertia distance={15} title="Stack" position="top" trigger="mouseenter">
         <Link
           aria-label="Stack"

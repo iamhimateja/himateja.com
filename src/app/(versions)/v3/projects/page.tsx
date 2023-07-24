@@ -1,6 +1,5 @@
-import { defaultMeta } from '@globals/constants'
+import { completedProjects, defaultMeta } from '@globals/constants'
 import { Layout, ProjectItem } from '@v3/components'
-import { completedProjects } from '@v3/lib/variables'
 
 import styles from './styles.module.scss'
 

@@ -36,15 +36,15 @@ const ExperienceSection = ({ showAll = false }: { showAll?: boolean }) => {
 
       {!showAll && (
         <div>
-          <Link href="/about" tabIndex={0} className="link">
+          <Link href="/about" tabIndex={0} className={clsx('link', 'text-sm ml-16 sm:ml-0')}>
             Read more about my experience
           </Link>
         </div>
       )}
 
       {showAll && (
-        <p className="text-sm">
-          Check out my{' '}
+        <p className={styles.resumeLinkWrap}>
+          Check out{' '}
           <Link
             aria-label="Download my resume"
             href="/files/Himateja - Resume.pdf"

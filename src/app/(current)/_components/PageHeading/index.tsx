@@ -1,6 +1,6 @@
 'use client'
 
-import HomePixelGlyph from '@icons/HomePixelGlyph'
+import Home from '@icons/PixelGlyph/Home'
 import clsx from 'clsx'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
@@ -45,7 +45,7 @@ const PageHeading = ({ title, className }: Props) => {
     <div className={styles.container}>
       <Tooltip animateFill size="small" inertia title="Return home" position="bottom-start" trigger="mouseenter">
         <Link href="/" className={styles.homeIcon} tabIndex={0} aria-label="Return home">
-          <HomePixelGlyph gradientType={gradientId} />
+          <Home gradientType={gradientId} />
         </Link>
       </Tooltip>
       <ScrambleHeading className={clsx(styles.heading, className)} text={title} />

@@ -1,15 +1,18 @@
 import ExperienceSection from '@components/ExperienceSection'
+import Experiments from '@components/HomePage/Experiments'
+import MiniProductsList from '@components/HomePage/MiniProductsList'
 import NameInfo from '@components/HomePage/NameInfo'
 import Stack from '@components/HomePage/Stack'
 import SectionHeading from '@components/SectionHeading'
-import ArrowRight from '@icons/ArrowRight'
+import ArrowRight from '@icons/PixelGlyph/ArrowRight'
+import Link from 'next/link'
 
 export default function HomePage() {
   return (
     <>
       <NameInfo />
       <p className="font-sm">
-        <span className="pulseAnimation" /> Available for new opportunities.
+        <span className="pulseAnimation" /> Open for new opportunities.
       </p>
 
       <p>
@@ -21,12 +24,12 @@ export default function HomePage() {
         A dedicated team player off the coding field, cherishing collaboration, movies, video games, and family time.
       </p>
 
-      {/* <p>
+      <p>
         Currently perfecting{' '}
         <Link href="/products/slug" className="link">
           slug.
         </Link>
-      </p> */}
+      </p>
 
       <section>
         <SectionHeading title="recent experience" />
@@ -44,6 +47,8 @@ export default function HomePage() {
             </>
           }
         />
+
+        <MiniProductsList />
       </section>
 
       <section>
@@ -57,6 +62,8 @@ export default function HomePage() {
             </>
           }
         />
+
+        <Experiments />
       </section>
 
       {/* <section>

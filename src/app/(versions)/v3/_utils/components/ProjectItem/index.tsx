@@ -1,5 +1,5 @@
+import type { Project } from '@globals/types'
 import { ArrowTopRight, GithubIcon } from '@v3/components/svg'
-import type { Project } from '@v3/lib/types'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'

@@ -51,3 +51,7 @@
 .description {
   @apply text-sm;
 }
+
+.resumeLinkWrap {
+  @apply !text-sm ml-16 sm:ml-0;
+}

@@ -34,7 +34,7 @@ const CopyEmailButton = () => {
       >
         <button
           aria-label="copy email to clipboard"
-          tabIndex={0}
+          tabIndex={-1}
           className={styles.copyEmailButton}
           onClick={() => {
             if (navigator.clipboard) {

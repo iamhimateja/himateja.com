@@ -11,6 +11,8 @@ const useArrowKeyNavigation = () => {
         (a, b) => parseInt(a.getAttribute('tabindex') || '0') - parseInt(b.getAttribute('tabindex') || '0'),
       )
 
+      console.log({ orderedElements })
+
       const currentElementIndex = orderedElements.findIndex((el) => el === document.activeElement)
 
       if (e.ctrlKey || e.altKey || e.metaKey || e.shiftKey) {

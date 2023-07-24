@@ -1,0 +1,138 @@
+:root,
+.dark,
+[data-theme='dark'] {
+  /* General */
+  --default-background: #0f0f0f;
+  --default-text: #888888;
+
+  /* Headings */
+  --color-heading: #ffffff;
+  --color-heading-link-hover: #ffffff;
+
+  /* Selection */
+  --color-selection-background: #34d399;
+  --color-selection-text: #fff;
+
+  /* Name */
+  --name-gradient: -webkit-linear-gradient(#cccccc, #717171);
+  --name-dot-gradient: -webkit-linear-gradient(#0094ff, #00488a);
+
+  /* Highlighted Line */
+  --color-highlighted-line-background: rgba(255, 255, 255, 0.08);
+  --color-highlighted-line-hover-background: rgba(255, 255, 255, 0.4);
+
+  /* Footer */
+  --color-divider: #242424;
+  --color-divider-dot: #ababab;
+  --photo-filter: grayscale(1);
+
+  /* Link Card */
+  --color-link-card-background: #1a1a1a;
+  --color-link-card-border: #292929;
+  --color-link-card-hover-background: #232323;
+  --color-link-heading: var(--color-text);
+  --color-link-text: #bbbbbb;
+  --color-link-heading-hover: #fff;
+  --color-link-text-hover: inherit;
+  --link-hover-after-opacity: 0.2;
+
+  /* Social Media Links */
+  --color-link-linkedin-background: #2466c2;
+  --color-link-github-background: #333;
+  --color-link-twitter-background: #1da1f2;
+  --color-link-codepen-background: #000;
+  --color-link-linkedin: #fff;
+  --color-link-github: #fff;
+  --color-link-twitter: #fff;
+  --color-link-codepen: #fff;
+
+  /* Email Link */
+  --color-email-link-background: #772af4;
+  --color-email-link-hover-background: #333333;
+
+  /* Navigation */
+  --color-navigation-background: rgba(26, 26, 26, 0.6);
+  --color-navigation-link-background: rgba(55, 55, 55, 0.6);
+  --color-navigation-link-highlighted-background: #fff;
+  --color-navigation-link-highlighted: #1e1e1e;
+  --color-navigation-link: #9a9a9a;
+  --color-navigation-link-separator: rgba(255, 255, 255, 0.08);
+
+  /* Stack Item */
+  --color-stack-item-background: #151515;
+  --color-stack-item-hover-background: #1d1d1d;
+  --color-stack-item-title: #fff;
+}
+
+[data-theme='light'] {
+  /* General */
+  --color-background: #f0f0f0;
+  --color-text: #333333;
+
+  /* Headings */
+  --color-heading: var(--color-text);
+  --color-heading-link-hover: #838383;
+
+  /* Selection */
+  --color-selection-background: #34d399;
+  --color-selection-text: #fff;
+
+  /* Name */
+  --name-gradient: -webkit-linear-gradient(#353535, #6e6e6e);
+  --name-dot-gradient: -webkit-linear-gradient(#006db1, #009eff);
+
+  /* Highlighted Line */
+  --color-highlighted-line-background: rgba(0, 0, 0, 0.08);
+  --color-highlighted-line-hover-background: rgba(0, 0, 0, 0.4);
+
+  /* Footer */
+  --color-divider: #cecece;
+  --color-divider-dot: #a8a8a8;
+  --photo-filter: none;
+
+  /* Link Card */
+  --color-link-card-background: #ffffff;
+  --color-link-card-border: #cecece;
+  --color-link-card-hover-background: #d9d9d9;
+  --color-link-heading: #959595;
+  --color-link-text: var(--color-text);
+  --color-link-heading-hover: #2b2b2b;
+  --color-link-text-hover: #414141;
+  --link-hover-after-opacity: 0.8;
+
+  /* Social Media Links */
+  --color-link-linkedin-background: #2466c2;
+  --color-link-github-background: #333;
+  --color-link-twitter-background: #1da1f2;
+  --color-link-codepen-background: #000;
+  --color-link-linkedin: #2466c2;
+  --color-link-github: #333;
+  --color-link-twitter: #1da1f2;
+  --color-link-codepen: #000;
+
+  /* Email Link */
+  --color-email-link-background: #772af4;
+  --color-email-link-hover-background: #333333;
+
+  /* Navigation */
+  --color-navigation-background: rgba(255, 255, 255, 0.6);
+  --color-navigation-link-background: rgba(240, 240, 240, 0.6);
+  --color-navigation-link: rgb(136, 136, 136);
+  --color-navigation-link-highlighted-background: #009eff;
+  --color-navigation-link-highlighted: #fafafa;
+  --color-navigation-link-separator: rgba(0, 0, 0, 0.08);
+
+  /* Stack Item */
+  --color-stack-item-background: #ffffff;
+  --color-stack-item-hover-background: #e5e5e5;
+  --color-stack-item-title: #1e1e1e;
+}
+
+/* selection */
+[data-theme='dark']::selection {
+  @apply text-[#0f0f0f] bg-white;
+}
+
+[data-theme='light']::selection {
+  @apply text-white bg-[#0f0f0f];
+}

@@ -1,0 +1,27 @@
+.item {
+  @apply flex flex-row gap-4 place-items-center text-[color:var(--text)] -mr-6 -ml-6 my-0 p-4 rounded-xl border-t border-solid border-t-transparent hover:border-t-[color:var(--link-card-border)] hover:bg-[color:var(--link-card-background)];
+}
+
+.content {
+  @apply flex flex-1 flex-row place-content-between place-items-center;
+}
+
+.main {
+  @apply flex flex-col gap-1;
+}
+
+.title {
+  @apply text-sm font-bold text-[color:var(--link-text)];
+}
+
+.subtitle {
+  @apply text-xs text-[color:var(--text)];
+}
+
+.status {
+  @apply text-xs text-[color:var(--text)];
+}
+
+.item:hover .title {
+  @apply text-[color:var(--link-heading-hover)];
+}
