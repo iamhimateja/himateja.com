@@ -1,6 +1,6 @@
 import { socialLinks } from '@globals/constants'
 import ArrowTopRight from '@icons/ArrowTopRight'
-import clsx from 'clsx'
+import { cn } from '@utils/index'
 import Link from 'next/link'
 
 import CopyEmailButton from './CopyEmailButton'
@@ -25,7 +25,7 @@ const Footer = () => {
           <div className={styles.links}>
             <Link
               aria-label="Schedule a chat"
-              className={clsx(styles.link, styles.calendly)}
+              className={cn(styles.link, styles.calendly)}
               href={socialLinks.calendly}
               target="_blank"
               tabIndex={0}

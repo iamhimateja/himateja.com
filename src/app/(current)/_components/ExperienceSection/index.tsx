@@ -1,5 +1,5 @@
 import { experiences } from '@globals/constants'
-import clsx from 'clsx'
+import { cn } from '@utils/index'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -14,7 +14,7 @@ const ExperienceSection = ({ showAll = false }: { showAll?: boolean }) => {
         {experienceList.map((experience, index) => (
           <div
             key={index}
-            className={clsx(styles.item, showAll && styles.showAll)}
+            className={cn(styles.item, showAll && styles.showAll)}
             style={{ '--delay': index } as React.CSSProperties}
           >
             <Image src={experience.image} alt={experience.companyName} width={40} height={40} />
@@ -36,7 +36,7 @@ const ExperienceSection = ({ showAll = false }: { showAll?: boolean }) => {
 
       {!showAll && (
         <div>
-          <Link href="/about" tabIndex={0} className={clsx('link', 'text-sm ml-16 sm:ml-0')}>
+          <Link href="/about" tabIndex={0} className={cn('link', 'text-sm ml-16 sm:ml-0')}>
             Read more about my experience
           </Link>
         </div>

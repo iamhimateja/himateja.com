@@ -5,13 +5,13 @@ import { useEffect } from 'react'
 const useArrowKeyNavigation = () => {
   useEffect(() => {
     const handleArrowKeyPress = (e: KeyboardEvent) => {
-      const tabIndexedElements = document.querySelectorAll('[tabindex]')
-
-      const orderedElements = Array.from(tabIndexedElements).sort(
-        (a, b) => parseInt(a.getAttribute('tabindex') || '0') - parseInt(b.getAttribute('tabindex') || '0'),
+      const tabIndexedElements = Array.from(document.querySelectorAll('[tabindex]')).filter(
+        (el) => parseInt(el.getAttribute('tabindex') || '0') >= 0,
       )
 
-      console.log({ orderedElements })
+      const orderedElements = tabIndexedElements.sort(
+        (a, b) => parseInt(a.getAttribute('tabindex') || '0') - parseInt(b.getAttribute('tabindex') || '0'),
+      )
 
       const currentElementIndex = orderedElements.findIndex((el) => el === document.activeElement)
 
@@ -21,14 +21,14 @@ const useArrowKeyNavigation = () => {
 
       if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
         e.preventDefault()
-        const nextElement = (tabIndexedElements[currentElementIndex + 1] || tabIndexedElements[0]) as HTMLElement
+        const nextElement = (orderedElements[currentElementIndex + 1] || orderedElements[0]) as HTMLElement
 
         nextElement.focus()
         nextElement.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' })
       } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
         e.preventDefault()
-        const prevElement = (tabIndexedElements[currentElementIndex - 1] ||
-          tabIndexedElements[tabIndexedElements.length - 1]) as HTMLElement
+        const prevElement = (orderedElements[currentElementIndex - 1] ||
+          orderedElements[orderedElements.length - 1]) as HTMLElement
 
         prevElement.focus()
         prevElement.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' })

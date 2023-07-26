@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 
+const { withContentlayer } = require('next-contentlayer')
+
 const nextConfig = {
+  reactStrictMode: true,
   eslint: {
     dirs: ['src'],
   },
@@ -63,4 +66,4 @@ const securityHeaders = [
   },
 ]
 
-module.exports = nextConfig
+module.exports = withContentlayer(nextConfig)

@@ -2,7 +2,7 @@
 
 import GridIcon from '@icons/GridIcon'
 import ListIcon from '@icons/ListIcon'
-import clsx from 'clsx'
+import { cn } from '@utils/index'
 import type { Dispatch, SetStateAction } from 'react'
 import { Tooltip } from 'react-tippy'
 
@@ -22,7 +22,7 @@ const DisplaySwitcher = ({
           aria-label="view as list"
           tabIndex={0}
           type="button"
-          className={clsx(styles.button, 'rounded-l-md', display === 'list' && styles.active)}
+          className={cn(styles.button, 'rounded-l-md', display === 'list' && styles.active)}
           onClick={() => setDisplay('list')}
         >
           <ListIcon className="h-4 w-4" aria-hidden="true" />
@@ -33,7 +33,7 @@ const DisplaySwitcher = ({
           aria-label="view as grid"
           tabIndex={0}
           type="button"
-          className={clsx(styles.button, 'rounded-r-md', display === 'grid' && styles.active)}
+          className={cn(styles.button, 'rounded-r-md', display === 'grid' && styles.active)}
           onClick={() => setDisplay('grid')}
         >
           <GridIcon className="h-4 w-4" aria-hidden="true" />

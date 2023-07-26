@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "ES5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "noUncheckedIndexedAccess": true,
     "allowJs": true,
@@ -14,7 +14,7 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "jsx": "preserve",
-    "strict": true,
+    "strict": false,
     "downlevelIteration": true,
     "isolatedModules": true,
     "strictNullChecks": true,
@@ -33,6 +33,8 @@
     "baseUrl": ".",
     // Using "paths" allows you to configure module path aliases
     "paths": {
+      "contentlayer/generated": ["./.contentlayer/generated"],
+
       "@/*": ["src/*"],
       "@globals/*": ["src/globals/*"],
       "@latest/*": ["src/app/(current)/*"],
@@ -60,7 +62,8 @@
     "**/*.jsx",
     "**/*.cjs",
     "**/*.mjs",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".contentlayer/generated"
   ],
   "exclude": ["node_modules"]
 }

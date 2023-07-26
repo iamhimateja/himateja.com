@@ -1,7 +1,7 @@
 'use client'
 
 import Home from '@icons/PixelGlyph/Home'
-import clsx from 'clsx'
+import { cn } from '@utils/index'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -48,7 +48,7 @@ const PageHeading = ({ title, className }: Props) => {
           <Home gradientType={gradientId} />
         </Link>
       </Tooltip>
-      <ScrambleHeading className={clsx(styles.heading, className)} text={title} />
+      <ScrambleHeading className={cn(styles.heading, className)} text={title} />
     </div>
   )
 }

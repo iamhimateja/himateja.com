@@ -6,19 +6,19 @@ import remarkGfm from 'remark-gfm'
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
-  slug: {
+  url: {
     type: 'string',
-    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+    resolve: (doc) => `/articles/${doc._raw.flattenedPath}`,
   },
-  slugAsParams: {
-    type: 'string',
-    resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
-  },
+  // slugAsParams: {
+  //   type: 'string',
+  //   resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
+  // },
 }
 
 export const Article = defineDocumentType(() => ({
   name: 'Article',
-  filePathPattern: `articles/**/*.mdx`,
+  filePathPattern: `**/*.mdx`,
   contentType: 'mdx',
   fields: {
     title: {
@@ -38,24 +38,15 @@ export const Article = defineDocumentType(() => ({
     },
     image: {
       type: 'string',
-      required: true,
-    },
-    authors: {
-      // Reference types are not embedded.
-      // Until this is fixed, we can use a simple list.
-      // type: "reference",
-      // of: Author,
-      type: 'list',
-      of: { type: 'string' },
-      required: true,
+      required: false,
     },
   },
   computedFields,
 }))
 
 export default makeSource({
-  contentDirPath: './content',
-  documentTypes: [Post],
+  contentDirPath: 'articles',
+  documentTypes: [Article],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
