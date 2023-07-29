@@ -1,9 +1,7 @@
 'use client'
 
+import { Icons } from '@components/Icons'
 import { socialLinks } from '@globals/constants'
-import GitHubIcon from '@icons/social/GitHub'
-import LinkedinIcon from '@icons/social/Linkedin'
-import TwitterIcon from '@icons/social/Twitter'
 import { cn } from '@utils/index'
 import { CodepenIcon } from '@v3/components/svg'
 import Link from 'next/link'
@@ -31,7 +29,7 @@ const SocialLinks = () => {
           target="_blank"
           aria-label="LinkedIn"
         >
-          <LinkedinIcon />
+          <Icons.Linkedin />
         </Link>
       </Tooltip>
       <Tooltip
@@ -51,7 +49,7 @@ const SocialLinks = () => {
           href={socialLinks.github}
           target="_blank"
         >
-          <GitHubIcon />
+          <Icons.GitHub />
         </Link>
       </Tooltip>
       <Tooltip
@@ -91,7 +89,7 @@ const SocialLinks = () => {
           target="_blank"
           tabIndex={0}
         >
-          <TwitterIcon />
+          <Icons.Twitter />
         </Link>
       </Tooltip>
     </div>

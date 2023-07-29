@@ -1,10 +1,10 @@
 'use client'
 
-import GridIcon from '@icons/GridIcon'
-import ListIcon from '@icons/ListIcon'
 import { cn } from '@utils/index'
 import type { Dispatch, SetStateAction } from 'react'
 import { Tooltip } from 'react-tippy'
+
+import { Icons } from '@/app/(current)/_components/Icons'
 
 import styles from './DisplaySwitcher.module.css'
 
@@ -25,7 +25,7 @@ const DisplaySwitcher = ({
           className={cn(styles.button, 'rounded-l-md', display === 'list' && styles.active)}
           onClick={() => setDisplay('list')}
         >
-          <ListIcon className="h-4 w-4" aria-hidden="true" />
+          <Icons.List className="h-4 w-4" aria-hidden="true" />
         </button>
       </Tooltip>
       <Tooltip animateFill size="small" inertia title="view as grid" position="top" trigger="mouseenter">
@@ -36,7 +36,7 @@ const DisplaySwitcher = ({
           className={cn(styles.button, 'rounded-r-md', display === 'grid' && styles.active)}
           onClick={() => setDisplay('grid')}
         >
-          <GridIcon className="h-4 w-4" aria-hidden="true" />
+          <Icons.Grid className="h-4 w-4" aria-hidden="true" />
         </button>
       </Tooltip>
     </span>

@@ -3,15 +3,15 @@
 }
 
 .item {
-  @apply flex flex-row gap-4 items-center text-base text-[color:var(--text)] hover:text-[color:var(--heading-link-hover)] transition-colors duration-200;
+  @apply flex flex-row gap-4 items-center text-base text-[color:var(--default-text)] hover:text-[color:var(--color-heading-link-hover)] transition-colors duration-200;
 }
 
 .line {
-  @apply flex flex-[1_0_0px] h-px overflow-visible relative p-0 bg-[color:var(--highlighted-line-background)];
+  @apply flex flex-[1_0_0px] h-px overflow-visible relative p-0 bg-[color:var(--color-highlighted-line-background)];
 }
 
 .lineInner {
-  @apply absolute w-0 h-full bg-[color:var(--highlighted-line-background-hover)] transition-[width] duration-[0.2s] ease-[cubic-bezier(1,-0.2,0,1.2)];
+  @apply absolute w-0 h-full bg-[color:var(--color-highlighted-line-hover-background)] transition-[width] duration-[0.2s] ease-[cubic-bezier(1,-0.2,0,1.2)];
 }
 
 .title {

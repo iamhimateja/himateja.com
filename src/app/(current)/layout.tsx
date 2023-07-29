@@ -4,7 +4,7 @@ import 'react-tippy/dist/tippy.css'
 
 import ClientHelpers from '@components/ClientHelpers'
 import Footer from '@components/Footer'
-import Navigation from '@components/Navigation'
+import FooterNavigation from '@components/FooterNavigation'
 import { defaultMeta } from '@globals/constants'
 import { favicons } from '@utils/constants'
 import type { Metadata } from 'next'
@@ -64,7 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <Footer />
         </section>
-        <Navigation />
+        <FooterNavigation />
       </body>
     </html>
   )

@@ -1,0 +1,38 @@
+.container {
+  @apply flex flex-col gap-4 items-center justify-center my-4;
+}
+
+.title {
+  font-family: var(--pixel-font-family);
+  @apply relative text-[color:var(--default-text)] text-[5rem] leading-none tracking-[1px] after:absolute after:content-['.'] after:text-[5rem] after:leading-none after:tracking-[1px] lowercase;
+  /* background: var(--name-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+
+.title::after {
+  background: var(--name-dot-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagLine {
+  @apply text-lg text-[color:var(--default-text)];
+}
+
+.metaInfo {
+  /* @apply flex gap-4 text-[color:var(--default-text)] text-sm; */
+  @apply relative my-0 -ml-7 -mr-7 flex h-min w-max place-content-center place-items-center overflow-hidden rounded-full p-0 text-sm leading-5 text-[color:var(--default-text)] shadow-[0_0_0_1px_var(--default-text)];
+}
+
+.metaInfoItem {
+  @apply relative flex h-max w-max flex-[0_0_auto] place-content-center items-center gap-2 overflow-visible py-3 px-4;
+}
+
+.metaInfoItem:not(:last-child) {
+  box-shadow: inset -1px 0 0 0 var(--default-text);
+}
+
+.metaInfoItem:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}

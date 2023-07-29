@@ -13,7 +13,7 @@
 }
 
 .item {
-  @apply flex flex-row gap-4 rounded-xl p-4 bg-[color:var(--link-card-background)] border-t border-solid border-t-[color:var(--link-card-border)] transition-colors;
+  @apply flex flex-row gap-4 rounded-xl p-4 bg-[color:var(--color-link-card-background)] border-t border-solid border-t-[color:var(--color-link-card-border)] transition-colors hover:bg-[color:var(--color-stack-item-hover-background)];
   animation-name: animateIn;
   animation-duration: 100ms;
   animation-delay: calc(var(--delay, 0) * 30ms);
@@ -21,9 +21,9 @@
   animation-timing-function: ease-in-out;
 }
 
-.item:hover {
-  background: var(--stack-item-hover-background);
-}
+/* .item:hover {
+  background: var(--color-stack-item-hover-background);
+} */
 
 .image {
   @apply flex shrink-0;
@@ -39,15 +39,15 @@
 
 .title {
   @apply text-sm font-semibold;
-  color: var(--stack-item-title-color);
+  color: var(--color-stack-item-title);
 }
 
 .description {
-  @apply text-[var(--text)] text-xs;
+  @apply text-[var(--default-text)] text-xs;
 }
 
 .externalLinkIndicator {
-  @apply absolute top-0 right-0 w-4 h-4 m-2 text-base opacity-20 text-[color:var(--text)] transition-opacity;
+  @apply absolute top-0 right-0 w-4 h-4 m-2 text-base opacity-20 text-[color:var(--default-text)] transition-opacity;
 }
 
 .item:hover .externalLinkIndicator {

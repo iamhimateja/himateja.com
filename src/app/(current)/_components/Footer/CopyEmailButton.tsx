@@ -1,6 +1,6 @@
 'use client'
 
-import CopyIcon from '@icons/CopyIcon'
+import { Icons } from '@components/Icons'
 import Link from 'next/link'
 import { useState } from 'react'
 import { Tooltip } from 'react-tippy'
@@ -47,7 +47,7 @@ const CopyEmailButton = () => {
             }
           }}
         >
-          <CopyIcon />
+          <Icons.Copy />
         </button>
       </Tooltip>
     </div>

@@ -1,5 +1,5 @@
+import { Icons } from '@components/Icons'
 import { completedProjects } from '@globals/constants'
-import ArrowTopRight from '@icons/ArrowTopRight'
 import Link from 'next/link'
 
 import styles from './Experiments.module.css'
@@ -25,7 +25,7 @@ const Experiments = () => {
           <div className={styles.category}>{project.tags[0]}</div>
           <div className={styles.view}>
             View
-            <ArrowTopRight />
+            <Icons.ArrowTopRight />
           </div>
         </Link>
       ))}

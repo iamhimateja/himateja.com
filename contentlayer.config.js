@@ -6,19 +6,19 @@ import remarkGfm from 'remark-gfm'
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
-  url: {
+  slug: {
     type: 'string',
-    resolve: (doc) => `/articles/${doc._raw.flattenedPath}`,
+    resolve: (doc) => `/${doc._raw.flattenedPath}`,
   },
-  // slugAsParams: {
-  //   type: 'string',
-  //   resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
-  // },
+  slugAsParams: {
+    type: 'string',
+    resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
+  },
 }
 
 export const Article = defineDocumentType(() => ({
   name: 'Article',
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: `articles/**/*.mdx`,
   contentType: 'mdx',
   fields: {
     title: {
@@ -44,9 +44,63 @@ export const Article = defineDocumentType(() => ({
   computedFields,
 }))
 
+export const Product = defineDocumentType(() => ({
+  name: 'Product',
+  filePathPattern: `products/**/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      required: true,
+    },
+    tagLine: {
+      type: 'string',
+    },
+    description: {
+      type: 'string',
+    },
+    date: {
+      type: 'date',
+      required: true,
+    },
+    published: {
+      type: 'boolean',
+      default: true,
+    },
+    icon: {
+      type: 'string',
+    },
+    ogImage: {
+      type: 'string',
+    },
+    screenshot: {
+      type: 'string',
+    },
+    demoUrl: {
+      type: 'string',
+    },
+    gitSourceUrl: {
+      type: 'string',
+    },
+    inProgress: {
+      type: 'boolean',
+      default: false,
+    },
+    inResearch: {
+      type: 'boolean',
+      default: false,
+    },
+    tags: {
+      type: 'list',
+      of: { type: 'string' },
+    },
+  },
+  computedFields,
+}))
+
 export default makeSource({
-  contentDirPath: 'articles',
-  documentTypes: [Article],
+  contentDirPath: './content',
+  documentTypes: [Article, Product],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
@@ -56,8 +110,6 @@ export default makeSource({
         {
           theme: 'github-dark',
           onVisitLine(node) {
-            // Prevent lines from collapsing in `display: grid` mode, and allow empty
-            // lines to be copy/pasted
             if (node.children.length === 0) {
               node.children = [{ type: 'text', value: ' ' }]
             }

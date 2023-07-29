@@ -1,5 +1,5 @@
+import { Icons } from '@components/Icons'
 import { socialLinks } from '@globals/constants'
-import ArrowTopRight from '@icons/ArrowTopRight'
 import { cn } from '@utils/index'
 import Link from 'next/link'
 
@@ -34,7 +34,7 @@ const Footer = () => {
               <span>Schedule a chat</span>
               <span>calendly.com/himateja</span>
               <div className={styles.externalLinkIndicator}>
-                <ArrowTopRight />
+                <Icons.ArrowTopRight />
               </div>
             </Link>
 

@@ -13,7 +13,7 @@
 }
 
 .item {
-  @apply relative flex flex-row gap-6 items-start sm:items-center text-base text-[color:var(--text)];
+  @apply relative flex flex-row gap-6 items-start sm:items-center text-base text-[color:var(--default-text)];
 }
 
 .item.showAll {
@@ -37,7 +37,7 @@
 }
 
 .title {
-  @apply relative flex gap-2 items-center sm:-ml-11 text-base font-bold text-[color:var(--text)] transition-all duration-[0.2s] ease-[ease-in-out] hover:text-[color:var(--heading-link-hover)];
+  @apply relative flex gap-2 items-center sm:-ml-11 text-base font-bold text-[color:var(--default-text)] transition-all duration-[0.2s] ease-[ease-in-out] hover:text-[color:var(--color-heading-link-hover)];
 }
 
 .image {

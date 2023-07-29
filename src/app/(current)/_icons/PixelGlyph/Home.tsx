@@ -4,7 +4,7 @@ type Props = React.SVGAttributes<SVGSVGElement> & {
   gradientType?: 'lightGradient' | 'darkGradient'
 }
 
-export const Home = ({ gradientType, ...rest }: Props) => {
+const Home = ({ gradientType, ...rest }: Props) => {
   return (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" {...rest}>
       <path

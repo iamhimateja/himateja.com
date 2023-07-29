@@ -1,0 +1,19 @@
+.container {
+  @apply flex flex-auto flex-col place-content-between gap-10 rounded-[10px] border-t border-solid border-t-[color:var(--color-link-card-border)] p-6 sm:p-4 bg-[color:var(--color-link-card-background)] no-underline hover:bg-[color:var(--color-link-card-hover-background)] transition-all duration-300 ease-in-out;
+}
+
+.image {
+  @apply w-10	h-10 rounded-[50%] bg-contain bg-no-repeat bg-center;
+}
+
+.content {
+  @apply flex flex-col gap-2;
+}
+
+.title {
+  @apply text-lg leading-[1.3] font-semibold text-[color:var(--color-link-text)] text-left;
+}
+
+.description {
+  @apply !text-sm leading-[1.3] text-[color:var(--default-text)] text-left;
+}

@@ -20,7 +20,32 @@ export type Article = {
   image?: string | undefined
   /** MDX file body */
   body: MDX
-  url: string
+  slug: string
+  slugAsParams: string
+}
+
+export type Product = {
+  /** File path relative to `contentDirPath` */
+  _id: string
+  _raw: Local.RawDocumentData
+  type: 'Product'
+  title: string
+  tagLine?: string | undefined
+  description?: string | undefined
+  date: IsoDateTimeString
+  published: boolean
+  icon?: string | undefined
+  ogImage?: string | undefined
+  screenshot?: string | undefined
+  demoUrl?: string | undefined
+  gitSourceUrl?: string | undefined
+  inProgress: boolean
+  inResearch: boolean
+  tags?: string[] | undefined
+  /** MDX file body */
+  body: MDX
+  slug: string
+  slugAsParams: string
 }  
 
 /** Nested types */
@@ -31,8 +56,8 @@ export type Article = {
 export type AllTypes = DocumentTypes | NestedTypes
 export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 
-export type DocumentTypes = Article
-export type DocumentTypeNames = 'Article'
+export type DocumentTypes = Article | Product
+export type DocumentTypeNames = 'Article' | 'Product'
 
 export type NestedTypes = never
 export type NestedTypeNames = never
@@ -40,6 +65,7 @@ export type NestedTypeNames = never
 export type DataExports = {
   allDocuments: DocumentTypes[]
   allArticles: Article[]
+  allProducts: Product[]
 }
 
 
@@ -60,6 +86,7 @@ declare global {
 
 export type DocumentTypeMap = {
   Article: Article
+  Product: Product
 }
 
 export type NestedTypeMap = {

@@ -8,7 +8,7 @@
 }
 
 body {
-  @apply relative block h-screen w-screen bg-[color:var(--background)] bg-fixed text-xs;
+  @apply relative block h-screen w-screen bg-[color:var(--default-background)] bg-fixed text-xs;
   font-family: var(--inter-font-family), --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -19,8 +19,9 @@ body {
   @apply relative mx-auto my-0 flex w-full max-w-xl flex-col gap-5 px-6 pb-28 pt-6;
 }
 
-.main-section p {
-  @apply text-base leading-normal text-[color:var(--text)];
+.main-section p,
+.main-section .paragraph {
+  @apply text-base leading-normal text-[color:var(--default-text)];
 }
 
 .main-section p.font-sm {
@@ -37,20 +38,27 @@ body {
 
 .heading {
   font-family: var(--pixel-font-family);
-  @apply my-4 text-5xl text-[color:var(--text)] font-medium;
+  @apply my-4 text-5xl text-[color:var(--default-text)] font-medium;
 }
 
 .link {
-  @apply inline-block text-[color:var(--text)] no-underline pb-1 hover:shadow-[inset_0_-1px_0_0_var(--text)];
+  @apply inline-block text-[color:var(--default-text)] no-underline pb-1 hover:shadow-[inset_0_-1px_0_0_var(--default-text)];
 }
 
 .pulseAnimation {
-  @apply mr-2 inline-block h-2.5 w-2.5 animate-[pulse-box-shadow_1.5s_infinite] rounded-[50%] bg-emerald-400 shadow-[0_0_0_#34d399];
+  --color: #0b8100;
+  @apply mr-2 inline-block h-2.5 w-2.5 animate-[pulse-box-shadow_1.5s_infinite] rounded-[50%] bg-[color:var(--color)] shadow-[0_0_0_0_var(--color)];
+}
+
+.iconLoading {
+  --color: var(--default-text);
+  border-style: inset;
+  @apply inline-block h-3 w-3 animate-[spinning_1.5s_infinite] bg-transparent border-[color:var(--color)] rounded-[50%] border-2;
 }
 
 @keyframes pulse-box-shadow {
   0% {
-    box-shadow: 0 0 0 0 #34d399;
+    box-shadow: 0 0 0 0 var(--color);
   }
 
   70% {
@@ -59,5 +67,15 @@ body {
 
   100% {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
   }
 }

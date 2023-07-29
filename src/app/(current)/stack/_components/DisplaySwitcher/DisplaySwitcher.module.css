@@ -3,12 +3,12 @@
 }
 
 .button {
-  @apply relative inline-flex items-center px-2 py-2 focus:z-10 border-t-[color:var(--link-card-border)] text-[color:var(--text)] border-t border-solid bg-[color:var(--link-card-background)];
-  /* background: var(--link-card-background); */
+  @apply relative inline-flex items-center px-2 py-2 focus:z-10 border-t-[color:var(--color-link-card-border)] text-[color:var(--default-text)] border-t border-solid bg-[color:var(--color-link-card-background)];
+  /* background: var(--color-link-card-background); */
 }
 
 .button:hover {
-  @apply bg-[color:var(--link-card-hover)];
+  @apply bg-[color:var(--link-card-hover-background)];
 }
 
 .button.active {

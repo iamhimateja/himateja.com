@@ -7,9 +7,9 @@
 }
 
 .container .moreItem {
-  @apply flex no-underline text-xs text-[color:var(--text)];
+  @apply flex no-underline text-xs text-[color:var(--default-text)];
 }
 
 .container .moreItem .stackItem {
-  @apply bg-[color:var(--link-card-background)] basis-auto place-content-center;
+  @apply bg-[color:var(--color-link-card-background)] basis-auto place-content-center;
 }

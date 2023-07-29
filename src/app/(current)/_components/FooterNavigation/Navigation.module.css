@@ -1,0 +1,25 @@
+.navigation {
+  @apply fixed bottom-[-15px] left-2/4 flex h-min w-min -translate-x-2/4 -translate-y-2/4 flex-row flex-nowrap content-center items-center justify-center gap-2 rounded-[50px] bg-[color:var(--color-navigation-background)] p-2 shadow-[rgba(0,0,0,0.16)_0px_1px_2px_0px,rgba(0,0,0,0.16)_0px_4px_16px_0px] backdrop-blur-lg z-50;
+}
+
+.navigation .link {
+  @apply flex flex-row items-center gap-2 rounded-[50px] p-2 text-[color:var(--color-navigation-link)] no-underline;
+}
+
+.navigation .link:hover,
+.navigation .link:focus {
+  background: var(--color-navigation-link-background);
+}
+
+.navigation .link svg {
+  @apply h-6 w-6;
+}
+
+.navigation .link.highlighted {
+  @apply text-[color:var(--color-navigation-link-highlighted)];
+  background: var(--color-navigation-link-highlighted-background);
+}
+
+.navigation .separator {
+  @apply h-6 w-px bg-[color:var(--color-navigation-link-separator)];
+}

@@ -1,105 +1,131 @@
 :root,
 .dark,
 [data-theme='dark'] {
-  --background: #0f0f0f;
-  --text: #888888;
-  --heading: #ffffff;
-  --heading-link-hover: #ffffff;
+  /* General */
+  --default-background: #0f0f0f;
+  --default-text: #888888;
 
-  --selection: #34d399;
-  --selection-text: #fff;
+  /* Headings */
+  --color-heading: #ffffff;
+  --color-heading-link-hover: #ffffff;
 
+  /* Selection */
+  --color-selection-background: #34d399;
+  --color-selection-text: #fff;
+
+  /* Name */
   --name-gradient: -webkit-linear-gradient(#cccccc, #717171);
   --name-dot-gradient: -webkit-linear-gradient(#0094ff, #00488a);
 
-  --highlighted-line-background: rgba(255, 255, 255, 0.08);
-  --highlighted-line-background-hover: rgba(255, 255, 255, 0.4);
+  /* Highlighted Line */
+  --color-highlighted-line-background: rgba(255, 255, 255, 0.08);
+  --color-highlighted-line-hover-background: rgba(255, 255, 255, 0.4);
 
   /* Footer */
-  --divider-color: #242424;
-  --divider-dot-color: #ababab;
+  --color-divider: #242424;
+  --color-divider-dot: #ababab;
   --photo-filter: grayscale(1);
-  --link-card-background: #1a1a1a;
-  --link-card-border: #292929;
-  --link-card-hover: #232323;
-  --link-heading: var(--text);
-  --link-text: #bbbbbb;
-  --link-heading-hover: #fff;
-  --link-text-hover: inherit;
+
+  /* Link Card */
+  --color-link-card-background: #1a1a1a;
+  --color-link-card-border: #292929;
+  --color-link-card-hover-background: #232323;
+  --color-link-heading: var(--color-text);
+  --color-link-text: #bbbbbb;
+  --color-link-heading-hover: #fff;
+  --color-link-text-hover: inherit;
   --link-hover-after-opacity: 0.2;
-  --link-linkedin-background: #2466c2;
-  --link-github-background: #333;
-  --link-twitter-background: #1da1f2;
-  --link-codepen-background: #000;
-  --link-linkedin-color: #fff;
-  --link-github-color: #fff;
-  --link-twitter-color: #fff;
-  --link-codepen-color: #fff;
-  --email-link-background: #772af4;
-  --email-link-hover-background: #333333;
 
-  /* bottom navigation */
-  --navigation-background: rgba(26, 26, 26, 0.6);
-  --navigation-link-background: rgba(55, 55, 55, 0.6);
-  --navigation-link-highlighted-background: #fff;
-  --navigation-link-highlighted-color: #1e1e1e;
-  --navigation-link-color: #9a9a9a;
-  --navigation-link-separator: rgba(255, 255, 255, 0.08);
+  /* Social Media Links */
+  --color-link-linkedin-background: #2466c2;
+  --color-link-github-background: #333;
+  --color-link-twitter-background: #1da1f2;
+  --color-link-codepen-background: #000;
+  --color-link-linkedin: #fff;
+  --color-link-github: #fff;
+  --color-link-twitter: #fff;
+  --color-link-codepen: #fff;
 
-  --stack-item-background: #151515;
-  --stack-item-hover-background: #1d1d1d;
-  --stack-item-title-color: #fff;
+  /* Email Link */
+  --color-email-link-background: #772af4;
+  --color-email-link-hover-background: #333333;
+
+  /* Navigation */
+  --color-navigation-background: rgba(26, 26, 26, 0.6);
+  --color-navigation-link-background: rgba(55, 55, 55, 0.6);
+  --color-navigation-link-highlighted-background: #fff;
+  --color-navigation-link-highlighted: #1e1e1e;
+  --color-navigation-link: #9a9a9a;
+  --color-navigation-link-separator: rgba(255, 255, 255, 0.08);
+
+  /* Stack Item */
+  --color-stack-item-background: #151515;
+  --color-stack-item-hover-background: #1d1d1d;
+  --color-stack-item-title: #fff;
 }
 
 [data-theme='light'] {
-  --background: #f0f0f0;
-  --text: #333333;
-  --heading: var(--text);
-  --heading-link-hover: #838383;
+  /* General */
+  --default-background: #f0f0f0;
+  --default-text: #333333;
 
-  --selection: #34d399;
-  --selection-text: #fff;
+  /* Headings */
+  --color-heading: var(--color-text);
+  --color-heading-link-hover: #838383;
 
+  /* Selection */
+  --color-selection-background: #34d399;
+  --color-selection-text: #fff;
+
+  /* Name */
   --name-gradient: -webkit-linear-gradient(#353535, #6e6e6e);
   --name-dot-gradient: -webkit-linear-gradient(#006db1, #009eff);
 
-  --highlighted-line-background: rgba(0, 0, 0, 0.08);
-  --highlighted-line-background-hover: rgba(0, 0, 0, 0.4);
+  /* Highlighted Line */
+  --color-highlighted-line-background: rgba(0, 0, 0, 0.08);
+  --color-highlighted-line-hover-background: rgba(0, 0, 0, 0.4);
 
   /* Footer */
-  --divider-color: #cecece;
-  --divider-dot-color: #a8a8a8;
+  --color-divider: #cecece;
+  --color-divider-dot: #a8a8a8;
   --photo-filter: none;
-  --link-card-background: #ffffff;
-  --link-card-border: #cecece;
-  --link-card-hover: #d9d9d9;
-  --link-heading: #959595;
-  --link-text: var(--text);
-  --link-heading-hover: #2b2b2b;
-  --link-text-hover: #414141;
+
+  /* Link Card */
+  --color-link-card-background: #ffffff;
+  --color-link-card-border: #cecece;
+  --color-link-card-hover-background: #d9d9d9;
+  --color-link-heading: #959595;
+  --color-link-text: var(--default-text);
+  --color-link-heading-hover: #2b2b2b;
+  --color-link-text-hover: #414141;
   --link-hover-after-opacity: 0.8;
-  --link-linkedin-background: #2466c2;
-  --link-github-background: #333;
-  --link-twitter-background: #1da1f2;
-  --link-codepen-background: #000;
-  --link-linkedin-color: #2466c2;
-  --link-github-color: #333;
-  --link-twitter-color: #1da1f2;
-  --link-codepen-color: #000;
-  --email-link-background: #772af4;
-  --email-link-hover-background: #333333;
 
-  /* bottom navigation */
-  --navigation-background: rgba(255, 255, 255, 0.6);
-  --navigation-link-background: rgba(240, 240, 240, 0.6);
-  --navigation-link-color: rgb(136, 136, 136);
-  --navigation-link-highlighted-background: #009eff;
-  --navigation-link-highlighted-color: #fafafa;
-  --navigation-link-separator: rgba(0, 0, 0, 0.08);
+  /* Social Media Links */
+  --color-link-linkedin-background: #2466c2;
+  --color-link-github-background: #333;
+  --color-link-twitter-background: #1da1f2;
+  --color-link-codepen-background: #000;
+  --color-link-linkedin: #2466c2;
+  --color-link-github: #333;
+  --color-link-twitter: #1da1f2;
+  --color-link-codepen: #000;
 
-  --stack-item-background: #ffffff;
-  --stack-item-hover-background: #e5e5e5;
-  --stack-item-title-color: #1e1e1e;
+  /* Email Link */
+  --color-email-link-background: #772af4;
+  --color-email-link-hover-background: #333333;
+
+  /* Navigation */
+  --color-navigation-background: rgba(255, 255, 255, 0.6);
+  --color-navigation-link-background: rgba(240, 240, 240, 0.6);
+  --color-navigation-link: rgb(136, 136, 136);
+  --color-navigation-link-highlighted-background: #009eff;
+  --color-navigation-link-highlighted: #fafafa;
+  --color-navigation-link-separator: rgba(0, 0, 0, 0.08);
+
+  /* Stack Item */
+  --color-stack-item-background: #ffffff;
+  --color-stack-item-hover-background: #e5e5e5;
+  --color-stack-item-title: #1e1e1e;
 }
 
 /* selection */

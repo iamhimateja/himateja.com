@@ -1,10 +1,10 @@
 #themeSwitch {
-  @apply relative flex h-10 w-10 cursor-pointer flex-row items-center rounded-[50px] border-0 bg-[unset] text-[color:var(--navigation-link-color)] no-underline;
+  @apply relative flex h-10 w-10 cursor-pointer flex-row items-center rounded-[50px] border-0 bg-[unset] text-[color:var(--color-navigation-link)] no-underline;
 }
 
 #themeSwitch:hover,
 #themeSwitch:focus {
-  background: var(--navigation-link-background);
+  background: var(--color-navigation-link-background);
 }
 
 #themeSwitch span.icon.darkThemeIcon,

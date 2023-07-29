@@ -1,5 +1,5 @@
 'use client'
-import ArrowTopRight from '@icons/ArrowTopRight'
+import { Icons } from '@components/Icons'
 import Link from 'next/link'
 import { Tooltip } from 'react-tippy'
 
@@ -30,7 +30,7 @@ const CopyRightSection = () => {
           target="_blank"
         >
           Source Code
-          <ArrowTopRight className="w-3.5	h-3.5" />
+          <Icons.ArrowTopRight className="w-3.5	h-3.5" />
         </Link>
       </Tooltip>
     </div>

@@ -4,7 +4,7 @@
 
 .heading {
   font-family: var(--pixel-font-family);
-  @apply text-4xl leading-none tracking-[0.063rem] font-medium text-[color:var(--heading)] after:absolute after:content-['.'];
+  @apply text-4xl leading-none tracking-[0.063rem] font-medium text-[color:var(--color-heading)] after:absolute after:content-['.'];
   background: var(--name-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -17,7 +17,7 @@
 }
 
 .link {
-  @apply flex flex-row gap-1 place-items-center font-medium text-base text-[color:var(--text)] no-underline transition-all duration-[0.2s] ease-[ease-in-out] hover:text-[color:var(--heading-link-hover)];
+  @apply flex flex-row gap-1 place-items-center font-medium text-base text-[color:var(--default-text)] no-underline transition-all duration-[0.2s] ease-[ease-in-out] hover:text-[color:var(--color-heading-link-hover)];
 }
 
 .link svg {

@@ -1,4 +1,5 @@
 import PageHeading from '@components/PageHeading'
+import WorkItems from '@components/WorkItems'
 
 export const metadata = {
   title: 'articles · himateja.',
@@ -14,8 +15,10 @@ export default function BlogPage() {
         </h2>
       </div>
 
+      <WorkItems type="articles" />
+
       <div className="flex items-center place-content-center p-12">
-        <span className="text-base text-[color:var(--text)] p-4">coming soon...</span>
+        <span className="text-base text-[color:var(--default-text)] p-4">coming soon...</span>
       </div>
     </>
   )

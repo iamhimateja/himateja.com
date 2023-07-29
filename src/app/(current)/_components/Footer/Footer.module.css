@@ -1,9 +1,9 @@
 .divider {
-  @apply relative my-10 h-[0.031rem] w-full bg-[color:var(--divider-color)] after:absolute after:left-2/4 after:top-2/4 after:z-[1] after:h-2.5 after:w-10 after:-translate-x-2/4 after:-translate-y-2/4 after:content-[''] after:bg-[color:var(--background)];
+  @apply relative my-10 h-[0.031rem] w-full bg-[color:var(--color-divider)] after:absolute after:left-2/4 after:top-2/4 after:z-[1] after:h-2.5 after:w-10 after:-translate-x-2/4 after:-translate-y-2/4 after:content-[''] after:bg-[color:var(--default-background)];
 }
 
 .diamond {
-  @apply absolute w-4 h-3.5 -translate-x-2/4 -translate-y-2/4 z-[2] left-2/4 top-2/4 after:content-[''] after:absolute after:w-full after:h-full after:bg-[color:var(--divider-dot-color)];
+  @apply absolute w-4 h-3.5 -translate-x-2/4 -translate-y-2/4 z-[2] left-2/4 top-2/4 after:content-[''] after:absolute after:w-full after:h-full after:bg-[color:var(--color-divider-dot)];
 }
 
 .diamond:after {
@@ -17,7 +17,7 @@
 .container .emailSection,
 .container .calendly,
 .container .links .link:not([data-tooltipped]) {
-  @apply rounded-[10px] border-t border-solid border-t-[color:var(--link-card-border)] p-4 bg-[color:var(--link-card-background)];
+  @apply rounded-[10px] border-t border-solid border-t-[color:var(--color-link-card-border)] p-4 bg-[color:var(--color-link-card-background)];
 }
 
 .container .contactLinks {
@@ -25,7 +25,7 @@
 }
 
 .container .contactLinks .contactMeOn {
-  @apply flex flex-auto flex-col place-items-center sm:place-items-baseline place-content-between gap-5 sm:gap-2 rounded-[10px] border-t border-solid border-t-[color:var(--link-card-border)] p-8 sm:p-4 bg-[color:var(--link-card-background)];
+  @apply flex flex-auto flex-col place-items-center sm:place-items-baseline place-content-between gap-5 sm:gap-2 rounded-[10px] border-t border-solid border-t-[color:var(--color-link-card-border)] p-8 sm:p-4 bg-[color:var(--color-link-card-background)];
 }
 
 .container .contactLinks .contactMeOn .avatar {
@@ -35,7 +35,7 @@
 }
 
 .container .contactLinks .contactMeOn span {
-  @apply text-base sm:text-base leading-[1.3] text-[color:var(--text)] text-center sm:text-left;
+  @apply text-base sm:text-base leading-[1.3] text-[color:var(--default-text)] text-center sm:text-left;
 }
 
 .container .contactLinks .links {
@@ -43,19 +43,19 @@
 }
 
 .container .contactLinks .links .calendly {
-  @apply relative flex flex-1 flex-col place-content-center gap-3 text-[color:var(--text)] no-underline hover:bg-[color:var(--link-card-hover)];
+  @apply relative flex flex-1 flex-col place-content-center gap-3 text-[color:var(--default-text)] no-underline hover:bg-[color:var(--color-link-card-hover-background)];
 }
 
 .container .contactLinks .links .calendly span {
-  @apply text-base text-[color:var(--link-heading)];
+  @apply text-base text-[color:var(--color-link-heading)];
 }
 
 .container .contactLinks .links .calendly span:nth-child(2) {
-  @apply text-[color:var(--link-text)] font-medium;
+  @apply text-[color:var(--color-link-text)] font-medium;
 }
 
 .container .contactLinks .links .calendly:hover span:nth-child(2) {
-  @apply text-[color:var(--link-heading-hover)];
+  @apply text-[color:var(--color-link-heading-hover)];
 }
 
 .container .contactLinks .links .social {
@@ -75,19 +75,19 @@
 }
 
 .container .contactLinks .links .social .link:not([data-tooltipped]).linkedin {
-  @apply text-[color:var(--link-linkedin-color)] hover:bg-[color:var(--link-linkedin-background)];
+  @apply text-[color:var(--color-link-linkedin)] hover:bg-[color:var(--color-link-linkedin-background)];
 }
 
 .container .contactLinks .links .social .link:not([data-tooltipped]).github {
-  @apply text-[color:var(--link-github-color)] hover:bg-[color:var(--link-github-background)];
+  @apply text-[color:var(--color-link-github)] hover:bg-[color:var(--color-link-github-background)];
 }
 
 .container .contactLinks .links .social .link:not([data-tooltipped]).twitter {
-  @apply text-[color:var(--link-twitter-color)] hover:bg-[color:var(--link-twitter-background)];
+  @apply text-[color:var(--color-link-twitter)] hover:bg-[color:var(--color-link-twitter-background)];
 }
 
 .container .contactLinks .links .social .link:not([data-tooltipped]).codepen {
-  @apply text-[color:var(--link-codepen-color)] hover:bg-[color:var(--link-codepen-background)];
+  @apply text-[color:var(--color-link-codepen)] hover:bg-[color:var(--color-link-codepen-background)];
 }
 
 .container .emailSection {
@@ -95,12 +95,12 @@
 }
 
 .container .emailSection span {
-  @apply text-base leading-[1.3] text-[color:var(--text)];
+  @apply text-base leading-[1.3] text-[color:var(--default-text)];
 }
 
 .container .emailSection .emailAddressButton {
-  @apply relative flex place-content-center place-items-center gap-2 overflow-hidden rounded-[20px] px-4 py-2 transition-all duration-[0.2s] ease-[ease-in-out] hover:bg-[color:var(--email-link-hover-background)] hover:pr-[2.3rem];
-  background: var(--email-link-background);
+  @apply relative flex place-content-center place-items-center gap-2 overflow-hidden rounded-[20px] px-4 py-2 transition-all duration-[0.2s] ease-[ease-in-out] hover:bg-[color:var(--color-email-link-hover-background)] hover:pr-[2.3rem];
+  background: var(--color-email-link-background);
 }
 
 .container .emailSection .emailAddressButton .emailId {
@@ -128,11 +128,11 @@
 }
 
 .container .copyrightSection .link {
-  @apply flex gap-1 place-items-center text-[color:var(--text)] no-underline pb-1 hover:shadow-[inset_0_-1px_0_0_var(--text)];
+  @apply flex gap-1 place-items-center text-[color:var(--default-text)] no-underline pb-1 hover:shadow-[inset_0_-1px_0_0_var(--default-text)];
 }
 
 .externalLinkIndicator {
-  @apply absolute top-0 right-0 w-4 h-4 m-2 text-base opacity-20 text-[color:var(--text)] transition-opacity;
+  @apply absolute top-0 right-0 w-4 h-4 m-2 text-base opacity-20 text-[color:var(--default-text)] transition-opacity;
 }
 
 .calendly:hover .externalLinkIndicator {
