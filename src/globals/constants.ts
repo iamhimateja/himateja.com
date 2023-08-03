@@ -31,7 +31,7 @@ const onGoingProjects: Project[] = [
       'Slug is a versatile URL shortening platform with custom domains and advanced analytics, designed to enhance user engagement, trust, and streamline online content sharing.',
     github: 'private',
     year: 2022,
-    status: 'In Progress',
+    status: 'Work in progress',
     tags: ['fullstack', 'mobile app', 'browser extension', 'AI'],
     imagePath: '/images/products/slug.webp',
   },

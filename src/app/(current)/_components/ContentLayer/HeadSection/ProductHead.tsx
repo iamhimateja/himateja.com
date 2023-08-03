@@ -1,6 +1,7 @@
 import { Icons } from '@components/Icons'
 import { formatDate } from '@utils/index'
 import type { Product } from 'contentlayer/generated'
+import Link from 'next/link'
 
 import styles from '../contentLayer.module.css'
 
@@ -23,32 +24,32 @@ const ProductHead = ({ product }: Props) => {
 
       <div className={styles.metaInfo}>
         <div className={styles.metaInfoItem}>
-          <Icons.Calendar className="w-4 h-4" />
+          <Icons.Calendar className="w-3.5 h-3.5" />
           {formatDate(product.date)}
         </div>
         {product.inProgress && (
           <div className={styles.metaInfoItem}>
-            <Icons.ProjectStatus className="w-4 h-4" />
+            <Icons.ProjectStatus className="w-3.5 h-3.5" />
             Work in progress
           </div>
         )}
         {(product.tags?.length || 0) > 0 && (
           <div className={styles.metaInfoItem}>
-            <Icons.Tags className="w-4 h-4" />
+            <Icons.Tags className="w-3.5 h-3.5" />
             {tags}
           </div>
         )}
         {product.gitSourceUrl && (
-          <div className={styles.metaInfoItem}>
-            <Icons.GitHub className="w-4 h-4" />
+          <Link href={product.gitSourceUrl} className={styles.metaInfoItem}>
+            <Icons.GitHub className="w-3.5 h-3.5" />
             {product.gitSourceUrl}
-          </div>
+          </Link>
         )}
         {product.demoUrl && (
-          <div className={styles.metaInfoItem}>
-            <Icons.Link className="w-4 h-4" />
+          <Link href={product.demoUrl} className={styles.metaInfoItem}>
+            <Icons.Link className="w-3.5 h-3.5" />
             {product.demoUrl}
-          </div>
+          </Link>
         )}
       </div>
     </div>

@@ -21,12 +21,11 @@
 }
 
 .metaInfo {
-  /* @apply flex gap-4 text-[color:var(--default-text)] text-sm; */
-  @apply relative my-0 -ml-7 -mr-7 flex h-min w-max place-content-center place-items-center overflow-hidden rounded-full p-0 text-sm leading-5 text-[color:var(--default-text)] shadow-[0_0_0_1px_var(--default-text)];
+  @apply relative my-0 -ml-7 -mr-7 flex h-min w-max place-content-center place-items-center overflow-hidden rounded-full p-0 text-xs leading-none text-[color:var(--default-text)] shadow-[0_0_0_1px_var(--default-text)];
 }
 
 .metaInfoItem {
-  @apply relative flex h-max w-max flex-[0_0_auto] place-content-center items-center gap-2 overflow-visible py-3 px-4;
+  @apply relative flex h-7 w-max flex-[0_0_auto] place-content-center items-center gap-2 overflow-visible px-3 py-2;
 }
 
 .metaInfoItem:not(:last-child) {

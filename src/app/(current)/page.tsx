@@ -48,12 +48,8 @@ export default function HomePage() {
         <SectionHeading
           title="products"
           pageLink="/products"
-          pageLinkText={
-            <>
-              All
-              <Icons.PXLArrowRight />
-            </>
-          }
+          label="Open to view all products"
+          pageLinkContent={<Icons.PXLArrowRight aria-hidden="true" />}
         />
 
         <MiniProductsList />
@@ -63,12 +59,8 @@ export default function HomePage() {
         <SectionHeading
           title="experiments"
           pageLink="/labs"
-          pageLinkText={
-            <>
-              All
-              <Icons.PXLArrowRight />
-            </>
-          }
+          label="Open to view all experiments"
+          pageLinkContent={<Icons.PXLArrowRight aria-hidden="true" />}
         />
 
         <Experiments />
@@ -78,12 +70,8 @@ export default function HomePage() {
         <SectionHeading
           title="writing"
           pageLink="/articles"
-          pageLinkText={
-            <>
-              All
-              <ArrowRight />
-            </>
-          }
+          label="Open to view all articles"
+          pageLinkContent={<Icons.PXLArrowRight  aria-hidden="true"/>}
         />
       </section> */}
 
@@ -91,12 +79,8 @@ export default function HomePage() {
         <SectionHeading
           title="stack"
           pageLink="/stack"
-          pageLinkText={
-            <>
-              All
-              <Icons.PXLArrowRight />
-            </>
-          }
+          label="Open to view all stack"
+          pageLinkContent={<Icons.PXLArrowRight aria-hidden="true" />}
         />
 
         <Stack />

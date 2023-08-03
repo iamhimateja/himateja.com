@@ -3,6 +3,7 @@
 import { Icons } from '@components/Icons'
 import ThemeSwitch from '@components/ThemeSwitch'
 import { cn } from '@utils/index'
+import { allArticles } from 'contentlayer/generated'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Tooltip } from 'react-tippy'
@@ -45,16 +46,18 @@ const FooterNavigation = () => {
           <Icons.Workshop />
         </Link>
       </Tooltip>
-      <Tooltip animateFill size="small" inertia distance={15} title="Articles" position="top" trigger="mouseenter">
-        <Link
-          aria-label="Articles"
-          href="/articles"
-          className={cn(styles.link, pathname === '/articles' && styles.highlighted)}
-          tabIndex={0}
-        >
-          <Icons.Blog />
-        </Link>
-      </Tooltip>
+      {allArticles.length > 0 && (
+        <Tooltip animateFill size="small" inertia distance={15} title="Articles" position="top" trigger="mouseenter">
+          <Link
+            aria-label="Articles"
+            href="/articles"
+            className={cn(styles.link, pathname === '/articles' && styles.highlighted)}
+            tabIndex={0}
+          >
+            <Icons.Blog />
+          </Link>
+        </Tooltip>
+      )}
       <Tooltip animateFill size="small" inertia distance={15} title="Stack" position="top" trigger="mouseenter">
         <Link
           aria-label="Stack"

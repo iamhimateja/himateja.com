@@ -6,6 +6,7 @@ import ClientHelpers from '@components/ClientHelpers'
 import Footer from '@components/Footer'
 import FooterNavigation from '@components/FooterNavigation'
 import { defaultMeta } from '@globals/constants'
+import GoogleAnalytics from '@globals/GoogleAnalytics'
 import { favicons } from '@utils/constants'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
         </section>
         <FooterNavigation />
+        <GoogleAnalytics />
       </body>
     </html>
   )

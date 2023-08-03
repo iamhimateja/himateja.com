@@ -26,7 +26,7 @@ export type Project = {
   description: string
   github: string | 'private'
   year: number
-  status: 'Completed' | 'Ongoing' | 'In Progress' | 'In Research'
+  status: 'Completed' | 'Ongoing' | 'Work in progress' | 'In research'
   tags: ProjectTag[]
   imagePath?: string
   shortTitle?: string
