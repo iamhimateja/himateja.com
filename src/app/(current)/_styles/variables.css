@@ -4,6 +4,7 @@
   /* General */
   --default-background: #0f0f0f;
   --default-text: #888888;
+  --default-theme-color: #2953ff;
 
   /* Headings */
   --color-heading: #ffffff;
@@ -66,11 +67,12 @@
 
 [data-theme='light'] {
   /* General */
-  --default-background: #f0f0f0;
+  --default-background: #f8fafc;
   --default-text: #333333;
+  --default-theme-color: #2953ff;
 
   /* Headings */
-  --color-heading: var(--color-text);
+  --color-heading: var(--default-text);
   --color-heading-link-hover: #838383;
 
   /* Selection */
@@ -118,7 +120,7 @@
   --color-navigation-background: rgba(255, 255, 255, 0.6);
   --color-navigation-link-background: rgba(240, 240, 240, 0.6);
   --color-navigation-link: rgb(136, 136, 136);
-  --color-navigation-link-highlighted-background: #009eff;
+  --color-navigation-link-highlighted-background: var(--default-theme-color);
   --color-navigation-link-highlighted: #fafafa;
   --color-navigation-link-separator: rgba(0, 0, 0, 0.08);
 

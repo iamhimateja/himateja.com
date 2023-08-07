@@ -11,9 +11,9 @@ export default function ProductPage() {
       <PageHeading title="my products" />
       <div className="heading-container">
         <h2 className="heading">
-          things i&apos;ve <span className="text-blue-400 dark:text-white">made</span>
+          things i&apos;ve <span className="text-[color:var(--default-theme-color)] dark:text-white">made</span>
           {' , '}
-          <span className="text-blue-400 dark:text-white">working on</span>
+          <span className="text-[color:var(--default-theme-color)] dark:text-white">working on</span>
         </h2>
       </div>
 

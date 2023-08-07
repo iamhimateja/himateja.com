@@ -20,7 +20,6 @@ const ProductHead = ({ product }: Props) => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>{product.title}</h1>
-      {/* <h1 className={styles.tagLine}>{product.tagLine}</h1> */}
 
       <div className={styles.metaInfo}>
         <div className={styles.metaInfoItem}>

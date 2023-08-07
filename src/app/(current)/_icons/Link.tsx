@@ -8,7 +8,7 @@ const Link = (props: React.SVGAttributes<SVGSVGElement>) => (
       strokeWidth="1.5"
       strokeLinecap="round"
     />
-    <path d="M9 12H15" stroke="currentColor" stroke-width="1.5" strokeLinecap="round" />
+    <path d="M9 12H15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
   </svg>
 )
 

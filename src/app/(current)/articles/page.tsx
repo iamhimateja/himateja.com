@@ -11,7 +11,7 @@ export default function BlogPage() {
       <PageHeading title="my blog" />
       <div className="heading-container">
         <h2 className="heading">
-          some of my <span className="text-blue-400 dark:text-white">writings</span>
+          some of my <span className="text-[color:var(--default-theme-color)] dark:text-white">writings</span>
         </h2>
       </div>
 

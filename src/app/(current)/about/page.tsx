@@ -13,8 +13,8 @@ export default function AboutPage() {
       <PageHeading title="about me" />
       <div className="heading-container">
         <h2 className="heading">
-          a peek into my <span className="text-blue-400 dark:text-white">life</span> and{' '}
-          <span className="text-blue-400 dark:text-white">career</span>
+          a peek into my <span className="text-[color:var(--default-theme-color)] dark:text-white">life</span> and{' '}
+          <span className="text-[color:var(--default-theme-color)] dark:text-white">career</span>
         </h2>
       </div>
 

@@ -5,9 +5,6 @@
 .title {
   font-family: var(--pixel-font-family);
   @apply relative text-[color:var(--default-text)] text-[5rem] leading-none tracking-[1px] after:absolute after:content-['.'] after:text-[5rem] after:leading-none after:tracking-[1px] lowercase;
-  /* background: var(--name-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
 }
 
 .title::after {
@@ -21,7 +18,7 @@
 }
 
 .metaInfo {
-  @apply relative my-0 -ml-7 -mr-7 flex h-min w-max place-content-center place-items-center overflow-hidden rounded-full p-0 text-xs leading-none text-[color:var(--default-text)] shadow-[0_0_0_1px_var(--default-text)];
+  @apply relative mb-4 flex h-min w-max place-content-center place-items-center overflow-hidden rounded-full p-0 text-xs leading-none text-[color:var(--default-text)] shadow-[0_0_0_1px_var(--default-text)];
 }
 
 .metaInfoItem {

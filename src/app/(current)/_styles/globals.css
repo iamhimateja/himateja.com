@@ -5,6 +5,8 @@
 * {
   box-sizing: border-box;
   font-smoothing: antialiased;
+
+  @apply transition-all;
 }
 
 body {
@@ -43,6 +45,14 @@ body {
 
 .link {
   @apply inline-block text-[color:var(--default-text)] no-underline pb-1 hover:shadow-[inset_0_-1px_0_0_var(--default-text)];
+}
+
+.mdx .subheading-anchor {
+  @apply absolute -left-8 opacity-25 hover:opacity-70 no-underline;
+}
+
+.mdx .subheading-anchor .icon:before {
+  content: '#';
 }
 
 .pulseAnimation {

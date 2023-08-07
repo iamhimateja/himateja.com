@@ -15,8 +15,8 @@ const StackPage = () => {
 
       <div className="heading-container">
         <h2 className="heading">
-          things I <span className="text-blue-400 dark:text-white">use</span> and{' '}
-          <span className="text-blue-400 dark:text-white">love</span>
+          things I <span className="text-[color:var(--default-theme-color)] dark:text-white">use</span> and{' '}
+          <span className="text-[color:var(--default-theme-color)] dark:text-white">love</span>
         </h2>
         <DisplaySwitcher display={display} setDisplay={setDisplay} />
       </div>
