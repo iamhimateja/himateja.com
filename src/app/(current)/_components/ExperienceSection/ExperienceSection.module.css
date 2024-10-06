@@ -49,7 +49,7 @@
 }
 
 .description {
-  @apply text-sm;
+  @apply text-sm flex flex-col gap-2;
 }
 
 .resumeLinkWrap {

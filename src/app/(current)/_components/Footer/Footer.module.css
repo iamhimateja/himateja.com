@@ -1,3 +1,7 @@
+.footer {
+  @apply mt-auto;
+}
+
 .divider {
   @apply relative my-10 h-[0.031rem] w-full bg-[color:var(--color-divider)] after:absolute after:left-2/4 after:top-2/4 after:z-[1] after:h-2.5 after:w-10 after:-translate-x-2/4 after:-translate-y-2/4 after:bg-[color:var(--default-background)] after:content-[''];
 }
@@ -107,7 +111,7 @@
 }
 
 .container .emailSection .emailAddressButton .copyEmailButton {
-  @apply absolute -right-full flex h-full cursor-pointer place-content-center place-items-center border-0 bg-transparent py-0 pl-2 pr-3 text-white transition-all duration-[0.2s] ease-[ease-in-out];
+  @apply absolute -right-full !flex h-full cursor-pointer place-content-center place-items-center border-0 bg-transparent py-0 pl-2 pr-3 text-white transition-all duration-[0.2s] ease-[ease-in-out];
 }
 
 .container .emailSection .emailAddressButton .copyEmailButton svg {

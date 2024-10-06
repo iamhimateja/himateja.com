@@ -18,7 +18,7 @@ body {
 }
 
 .main-section {
-  @apply relative mx-auto my-0 flex w-full max-w-xl flex-col gap-5 px-6 pb-28 pt-6;
+  @apply relative mx-auto my-0 flex w-full max-w-xl min-h-full flex-col gap-5 px-6 pb-28 pt-6;
 }
 
 .main-section p,

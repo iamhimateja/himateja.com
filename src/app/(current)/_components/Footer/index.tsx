@@ -10,7 +10,7 @@ import SocialLinks from './SocialLinks'
 
 const Footer = () => {
   return (
-    <>
+    <div className={styles.footer}>
       <div className={styles.divider}>
         <div className={styles.diamond} />
       </div>
@@ -48,7 +48,7 @@ const Footer = () => {
 
         <CopyrightSection />
       </div>
-    </>
+    </div>
   )
 }
 

@@ -15,7 +15,7 @@ export default function HomePage() {
         <div className="flex gap-4">
           <div className="flex gap-2 place-items-center text-sm">
             <Icons.Pin className="w-5 h-5" />
-            Andhra Pradesh, India
+            Bengaluru, India
           </div>
           <div className="text-sm">
             <span className="pulseAnimation" /> Open for new opportunities.

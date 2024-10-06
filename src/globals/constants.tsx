@@ -209,6 +209,23 @@ const myStack = [
 
 const experiences = [
   {
+    companyName: 'BlackBerry',
+    duration: "Sep '23 - Present",
+    title: 'Senior Frontend Engineer',
+    description: (
+      <>
+        <span>
+          As a Senior Frontend Engineer at BlackBerry, I drive the development of intuitive interfaces for both the
+          Endpoint Protection Platform and OnPrem solutions. Currently leading the BlackBerry Assistant project, an
+          AI-driven chat assistant powered by Amazon Bedrock.
+        </span>
+        <span>I collaborate across multiple teams to deliver robust, cutting-edge cybersecurity products.</span>
+      </>
+    ),
+    url: 'https://www.blackberry.com/us/en',
+    image: '/images/blackberry.webp',
+  },
+  {
     companyName: 'Index',
     duration: "Sep '21 - Apr '23",
     title: 'Full Stack Engineer',
