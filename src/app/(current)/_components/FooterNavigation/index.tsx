@@ -26,7 +26,7 @@ const FooterNavigation = () => {
           <Icons.Home />
         </Link>
       </Tooltip>
-      <Tooltip animateFill size="small" inertia distance={15} title="Products" position="top" trigger="mouseenter">
+      {/* <Tooltip animateFill size="small" inertia distance={15} title="Products" position="top" trigger="mouseenter">
         <Link
           aria-label="Products"
           href="/products"
@@ -35,7 +35,7 @@ const FooterNavigation = () => {
         >
           <Icons.Products />
         </Link>
-      </Tooltip>
+      </Tooltip> */}
       <Tooltip animateFill size="small" inertia distance={15} title="Labs" position="top" trigger="mouseenter">
         <Link
           aria-label="Labs"

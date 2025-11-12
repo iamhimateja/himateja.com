@@ -1,11 +1,9 @@
 import ExperienceSection from '@components/ExperienceSection'
 import Experiments from '@components/HomePage/Experiments'
-import MiniProductsList from '@components/HomePage/MiniProductsList'
 import NameInfo from '@components/HomePage/NameInfo'
 import Stack from '@components/HomePage/Stack'
 import { Icons } from '@components/Icons'
 import SectionHeading from '@components/SectionHeading'
-import Link from 'next/link'
 
 export default function HomePage() {
   return (
@@ -32,19 +30,19 @@ export default function HomePage() {
         A dedicated team player off the coding field, cherishing collaboration, movies, video games, and family time.
       </p>
 
-      <p>
+      {/* <p>
         Currently perfecting{' '}
         <Link href="/products/slug" className="link">
           slug.
         </Link>
-      </p>
+      </p> */}
 
       <section>
         <SectionHeading title="recent experience" />
         <ExperienceSection />
       </section>
 
-      <section>
+      {/* <section>
         <SectionHeading
           title="products"
           pageLink="/products"
@@ -53,7 +51,7 @@ export default function HomePage() {
         />
 
         <MiniProductsList />
-      </section>
+      </section> */}
 
       <section>
         <SectionHeading

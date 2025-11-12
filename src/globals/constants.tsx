@@ -15,9 +15,9 @@ const defaultMeta = {
   robots: 'follow, index',
   ogImage: '/images/og-metadata.webp',
   ogImageAlt:
-    'Himateja - Designer & Developer, Works as a full-stack developer at Index, contact @ hello[at]himateja[dot]com, visit https://himateja.com/',
+    'Himateja - Designer & Developer, Works as a senior-frontend engineer at Arctic Wolf India, contact @ hello[at]himateja[dot]com, visit https://himateja.com/',
   keywords:
-    'himu, himateja, merlapaka, full-stack developer, index.app, halemind, involvio, himateja.com, himateja portfolio, himateja blog, himateja blog, hima',
+    'himu, himateja, merlapaka, frontend engineer, full-stack developer, arctic wolf, blackberry, index.app, halemind, involvio, himateja.com, himateja portfolio, himateja blog, himateja blog, hima',
   twitterHandle: '@iamhimateja',
 }
 
@@ -209,8 +209,28 @@ const myStack = [
 
 const experiences = [
   {
+    companyName: 'Arctic Wolf Networks',
+    duration: "Feb '25 - Present",
+    title: 'Senior Frontend Engineer',
+    description: (
+      <>
+        <span>
+          At Arctic Wolf Networks, I&apos;m leading the frontend modernization and architecture for the cybersecurity
+          platform using React, Next.js, TypeScript, and GraphQL. I ensure scalability, performance, and design
+          consistency across teams following BlackBerry&apos;s Cylance acquisition.
+        </span>
+        <span>
+          I collaborate cross-functionally with backend, design, and product teams to establish and implement scalable
+          UI patterns and standards across the organization.
+        </span>
+      </>
+    ),
+    url: 'https://arcticwolf.com/',
+    image: '/images/awn.webp',
+  },
+  {
     companyName: 'BlackBerry',
-    duration: "Sep '23 - Present",
+    duration: "Sep '23 - Feb '25",
     title: 'Senior Frontend Engineer',
     description: (
       <>

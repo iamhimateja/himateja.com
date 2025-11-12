@@ -84,5 +84,6 @@
     "app/**/*.{json,css,scss,md}": [
       "prettier -w"
     ]
-  }
+  },
+  "license": "UNLICENSED"
 }

@@ -24,10 +24,8 @@ export default function AboutPage() {
       </p>
 
       <p>
-        As a seasoned full-stack engineer with a passion for frontend technologies and a knack for transforming complex
-        requirements into user-friendly solutions, I thrive on teamwork, enjoy creating digital experiences, and balance
-        my coding pursuits with leisure activities, always ready to embrace new challenges in the dynamic tech
-        landscape.
+        I enjoy building fast, intuitive interfaces and turning complex ideas into simple, scalable products. I value
+        clean design, collaboration, and solving real-world problems through code.
       </p>
 
       <section>
