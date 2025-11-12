@@ -33,10 +33,11 @@
       "**/.git": true,
       "**/.svn": true,
       "**/.hg": true,
-      "**/CVS": true,
       "**/.DS_Store": true,
       "**/Thumbs.db": true,
-      "**/node_modules": true
+      "**/CVS": true,
+      "**/.ruby-lsp": true,
+      "**/node_modules": false
     }
   }
 }

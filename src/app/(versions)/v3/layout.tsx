@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   robots: defaultMeta.robots,
   keywords: defaultMeta.keywords,
   manifest: '/favicon/manifest.json',
-  themeColor: '#ffffff',
   alternates: {
     canonical: defaultMeta.url,
   },
@@ -54,6 +53,10 @@ export const metadata: Metadata = {
       },
     ],
   },
+}
+
+export const viewport = {
+  themeColor: '#FFFFFF', // Move themeColor here
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

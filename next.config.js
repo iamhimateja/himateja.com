@@ -7,7 +7,8 @@ const nextConfig = {
   eslint: {
     dirs: ['src'],
   },
-  headers() {
+  allowedDevOrigins: ['himateja', 'localhost'],
+  async headers() {
     return [
       {
         source: '/(.*)',

@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   description: defaultMeta.description,
   robots: defaultMeta.robots,
   keywords: defaultMeta.keywords,
-  themeColor: '#ffffff',
   alternates: {
     canonical: defaultMeta.url,
   },
@@ -54,6 +53,10 @@ export const metadata: Metadata = {
       },
     ],
   },
+}
+
+export const viewport = {
+  themeColor: '#ffffff',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
