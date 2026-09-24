@@ -10,10 +10,10 @@
     "noImplicitAny": false,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "noEmit": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "strict": false,
     "downlevelIteration": true,
     "isolatedModules": true,
@@ -34,28 +34,23 @@
     // Using "paths" allows you to configure module path aliases
     "paths": {
       "contentlayer/generated": ["./.contentlayer/generated"],
-
       "@/*": ["src/*"],
       "@globals/*": ["src/globals/*"],
-      "@latest/*": ["src/app/(current)/*"],
-
       // for latest portfolio version
       "@components/*": ["src/app/(current)/_components/*"],
       "@styles/*": ["src/app/(current)/_styles/*"],
+      "@icons": ["src/app/(current)/_icons"],
       "@icons/*": ["src/app/(current)/_icons/*"],
       "@utils/*": ["src/app/(current)/_utils/*"],
-
       // for each portfolio version
-      "@v1/*": ["src/app/(versions)/v1/_utils/*"],
       "@v2/*": ["src/app/(versions)/v2/_utils/*"],
+      "@v2b/*": ["src/app/(versions)/v2b/_utils/*"],
       "@v3/*": ["src/app/(versions)/v3/_utils/*"],
-      "~/*": ["./public/*"]
+      "@v-1/*": ["src/app/(versions)/v-1/*"]
     }
   },
   "include": [
-    "helper.mjs",
     "next-env.d.ts",
-    "loaders.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
@@ -63,7 +58,8 @@
     "**/*.cjs",
     "**/*.mjs",
     ".next/types/**/*.ts",
-    ".contentlayer/generated"
+    ".contentlayer/generated",
+    ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "_to_delete"]
 }

@@ -1,5 +1,5 @@
 'use client'
-import { Icons } from '@components/Icons'
+import { Icons } from '@icons'
 import Link from 'next/link'
 import { Tooltip } from 'react-tippy'
 
@@ -10,15 +10,21 @@ const CopyRightSection = () => {
 
   return (
     <div className={styles.copyrightSection}>
-      <Link href="/" className={styles.link} aria-label="This website's copyright" tabIndex={0}>
+      <Link href="/" className={styles.link} tabIndex={0}>
         © {currentYear} Himateja Merlapaka
       </Link>
+      <span id="source-code-tip" hidden>
+        <span className="flex items-center gap-1.5">
+          <Icons.GitHub className="h-3.5 w-3.5" />
+          iamhimateja/himateja.com
+        </span>
+      </span>
       <Tooltip
         interactive
         animateFill
         size="small"
         inertia
-        title="This website's source code, don't forget to star it! 🌟"
+        rawTemplate="#source-code-tip"
         position="top-end"
         trigger="mouseenter"
       >
@@ -30,7 +36,7 @@ const CopyRightSection = () => {
           target="_blank"
         >
           Source Code
-          <Icons.ArrowTopRight className="w-3.5	h-3.5" />
+          <Icons.ArrowTopRight className="h-3.5 w-3.5" />
         </Link>
       </Tooltip>
     </div>

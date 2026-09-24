@@ -1,5 +1,5 @@
-import { Icons } from '@components/Icons'
 import { socialLinks } from '@globals/constants'
+import { Icons } from '@icons'
 import { cn } from '@utils/index'
 import Link from 'next/link'
 
@@ -24,7 +24,6 @@ const Footer = () => {
           </div>
           <div className={styles.links}>
             <Link
-              aria-label="Schedule a chat"
               className={cn(styles.link, styles.calendly)}
               href={socialLinks.calendly}
               target="_blank"

@@ -22,7 +22,7 @@ const Navigation = () => {
           target="_blank"
           href={`mailto:${myMailId}`}
         >
-          <Image src="/images/headShot.webp" alt="Himateja" width="60" height="60" />
+          <Image src="/images/headshot/latest.webp" alt="Himateja" width="60" height="60" />
           <h4 className={styles.message}>Hi, let&#39;s chat.</h4>
         </Link>
 
@@ -43,12 +43,8 @@ const Navigation = () => {
           >
             Projects
           </Link>
-          <Link
-            href="/v3/about"
-            className={clsx(styles.link, pathname === '/v3/about' && styles.active)}
-            aria-label="About"
-            tabIndex={0}
-          >
+          {/* v3 no longer has its own about page; this goes to the about section on the main site */}
+          <Link href="/#about" className={styles.link} aria-label="About" tabIndex={0}>
             About
           </Link>
         </div>

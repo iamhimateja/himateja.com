@@ -10,6 +10,14 @@
 
 # next.js
 .next
+.contentlayer
+
+# moved out, pending manual delete
+_to_delete
+
+# past versions kept as their original code
+/public/v1
+/public/v2-5
 /.next/
 /out/
 

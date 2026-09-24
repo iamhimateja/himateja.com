@@ -1,0 +1,55 @@
+import { Icons } from '@v-1/_components/Icons'
+import { socialLinks } from '@v-1/_globals/constants'
+import { cn } from '@v-1/_utils/index'
+import Link from 'next/link'
+
+import CopyEmailButton from './CopyEmailButton'
+import CopyrightSection from './CopyrightSection'
+import styles from './Footer.module.css'
+import SocialLinks from './SocialLinks'
+
+const Footer = () => {
+  return (
+    <div className={styles.footer}>
+      <div className={styles.divider}>
+        <div className={styles.diamond} />
+      </div>
+      <div className={styles.container}>
+        <div className={styles.contactLinks}>
+          <div className={styles.contactMeOn}>
+            <div className={styles.avatar} />
+            <span>
+              Ready to collaborate? <br /> Let&#39;s connect.
+            </span>
+          </div>
+          <div className={styles.links}>
+            <Link
+              aria-label="Schedule a chat"
+              className={cn(styles.link, styles.calendly)}
+              href={socialLinks.calendly}
+              target="_blank"
+              tabIndex={0}
+              prefetch={false}
+            >
+              <span>Schedule a chat</span>
+              <span>calendly.com/himateja</span>
+              <div className={styles.externalLinkIndicator}>
+                <Icons.ArrowTopRight />
+              </div>
+            </Link>
+
+            <SocialLinks />
+          </div>
+        </div>
+        <div className={styles.emailSection}>
+          <span>Wanna work together?</span>
+          <CopyEmailButton />
+        </div>
+
+        <CopyrightSection />
+      </div>
+    </div>
+  )
+}
+
+export default Footer

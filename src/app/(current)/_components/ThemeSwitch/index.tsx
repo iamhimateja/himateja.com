@@ -1,9 +1,8 @@
 'use client'
 
 import { isDarkThemeEnabled } from '@globals/helpers'
-import MoonIcon from '@globals/icons/Moon'
-import SunIcon from '@globals/icons/Sun'
 import { ThemeType } from '@globals/types'
+import { Icons } from '@icons'
 import { useState } from 'react'
 import { Tooltip } from 'react-tippy'
 
@@ -44,10 +43,10 @@ const ThemeSwitch = () => {
         tabIndex={0}
       >
         <span className={`${styles.icon} ${styles.lightThemeIcon}`}>
-          <SunIcon />
+          <Icons.Sun />
         </span>
         <span className={`${styles.icon} ${styles.darkThemeIcon}`}>
-          <MoonIcon />
+          <Icons.Moon />
         </span>
       </button>
     </Tooltip>

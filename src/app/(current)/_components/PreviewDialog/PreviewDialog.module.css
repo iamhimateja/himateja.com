@@ -1,0 +1,159 @@
+/* dimmed, blurred page; the bottom inset leaves room for the nav */
+.overlay {
+  @apply fixed inset-0 z-[44] bg-[rgba(0,0,0,0.55)];
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: fadeIn 0.2s ease both;
+}
+
+.dialog {
+  @apply fixed z-[45] flex flex-col overflow-hidden rounded-2xl border border-[color:var(--color-link-card-border)] bg-[color:var(--default-background)] shadow-[0_30px_90px_rgba(0,0,0,0.45)];
+  inset: 24px 24px 88px;
+  animation: dialogIn 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.head {
+  @apply flex items-center justify-between gap-3 border-b border-[color:var(--color-link-card-border)] bg-[color:var(--color-link-card-background)] py-2.5 pl-4 pr-3 font-mono text-xs text-[color:var(--default-text)];
+}
+
+.meta {
+  @apply flex min-w-0 items-center gap-2.5;
+}
+
+.slug {
+  @apply text-[color:var(--color-heading)];
+}
+
+.url {
+  @apply hidden overflow-hidden text-ellipsis whitespace-nowrap opacity-70 sm:block;
+}
+
+.actions {
+  @apply flex flex-shrink-0 items-center gap-3.5;
+}
+
+.actions button + button {
+  @apply -ml-1.5;
+}
+
+.actions a {
+  @apply flex items-center gap-1 text-[color:var(--default-text)] transition-all hover:text-[color:var(--color-heading)];
+}
+
+.actions svg {
+  @apply h-3 w-3;
+}
+
+/* browser full screen: the panel is the whole screen */
+.dialog.full,
+.dialog:fullscreen {
+  @apply rounded-none border-0;
+  inset: 0;
+}
+
+/* full screen: no header, two floating controls that show when the pointer reaches the top edge
+   (a 4px hot zone, so it does not cover the site's own header) */
+.hotzone {
+  @apply absolute inset-x-0 top-0 z-[9] h-1;
+}
+
+.hotzoneOff {
+  @apply pointer-events-none;
+}
+
+/* same shape as the floating nav. Solid colours: a backdrop blur cannot reach the iframe. */
+.floating {
+  @apply pointer-events-none absolute right-3 top-3 z-10 flex -translate-y-2 scale-95 items-center gap-1 rounded-[50px] bg-[color:var(--color-navigation-background-solid)] p-1.5 opacity-0 shadow-[rgba(0,0,0,0.16)_0px_1px_2px_0px,rgba(0,0,0,0.16)_0px_4px_16px_0px];
+  transition:
+    opacity 0.25s ease,
+    transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.floatingIn {
+  @apply pointer-events-auto translate-y-0 scale-100 opacity-100;
+}
+
+.floating .iconButton {
+  @apply h-9 w-9 rounded-[50px] border-transparent bg-transparent text-[color:var(--color-navigation-link)] hover:border-transparent hover:bg-[color:var(--color-navigation-link-background-solid)] hover:text-[color:var(--color-navigation-link)];
+}
+
+.floating .iconButton svg {
+  @apply h-4 w-4;
+}
+
+.iconButton {
+  @apply flex h-[30px] w-[30px] items-center justify-center rounded-lg border border-[color:var(--color-link-card-border)] text-[color:var(--default-text)] transition-all hover:border-[color:var(--default-text)] hover:bg-[color:var(--color-link-card-hover-background)] hover:text-[color:var(--color-heading)];
+}
+
+.iconButton svg {
+  @apply h-3.5 w-3.5;
+}
+
+.iframe {
+  @apply h-full w-full flex-1 border-0 bg-white;
+}
+
+/* closing: the same moves in reverse, a touch quicker. The panel stays mounted for CLOSE_MS. */
+.overlayOut {
+  @apply pointer-events-none;
+  animation: fadeOut 0.2s ease both;
+}
+
+.dialogOut {
+  @apply pointer-events-none;
+  animation: dialogOut 0.2s cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes dialogIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes dialogOut {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .dialog,
+  .overlayOut,
+  .dialogOut {
+    animation: none;
+  }
+
+  .overlayOut,
+  .dialogOut {
+    opacity: 0;
+  }
+}

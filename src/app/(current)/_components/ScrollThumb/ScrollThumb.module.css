@@ -1,0 +1,11 @@
+.thumb {
+  @apply pointer-events-none fixed right-1 top-2 z-[80] w-[5px] rounded-full bg-[color:var(--color-scrollbar-thumb)] opacity-0;
+  height: 0;
+  transition: opacity 0.35s ease;
+}
+
+@media print {
+  .thumb {
+    display: none;
+  }
+}

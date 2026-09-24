@@ -32,6 +32,8 @@
       transform: translate(-50%, -50%) scale(1);
       // transition: 0.35s var(--default-transition);
       transition: 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      /* the icons use currentColor */
+      color: var(--nav-link);
 
       svg {
         fill: var(--nav-link);
@@ -40,18 +42,8 @@
   }
 }
 
-:global(body[data-theme='dark']) {
-  :local(.icon) {
-    &.darkThemeIcon {
-      @include hide-transform;
-    }
-  }
-}
-
-:global(body[data-theme='light']) {
-  :local(.icon) {
-    &.lightThemeIcon {
-      @include hide-transform;
-    }
-  }
+/* outweighs the rule above, so the hidden icon scales out, not only fades */
+:global(body[data-theme='dark']) #themeSwitch span.icon.darkThemeIcon,
+:global(body[data-theme='light']) #themeSwitch span.icon.lightThemeIcon {
+  @include hide-transform;
 }

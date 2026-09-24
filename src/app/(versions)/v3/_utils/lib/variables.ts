@@ -1,26 +1,5 @@
 import type { IconDescriptor } from 'next/dist/lib/metadata/types/metadata-types'
 
-const skills = [
-  'JavaScript',
-  'TypeScript',
-  'HTML',
-  'CSS',
-  'SASS',
-  'SCSS',
-  'UI/UX Design',
-  'Markdown',
-  'Ruby',
-  'React',
-  'Next.js',
-  'Tailwind CSS',
-  'GraphQL',
-  'Ruby on Rails',
-  'Node.js',
-  'jQuery',
-  'MySQL',
-  'PostgreSQL',
-]
-
 const favicons: IconDescriptor[] = [
   {
     rel: 'apple-touch-icon',
@@ -102,4 +81,4 @@ const favicons: IconDescriptor[] = [
   },
 ]
 
-export { favicons, skills }
+export { favicons }

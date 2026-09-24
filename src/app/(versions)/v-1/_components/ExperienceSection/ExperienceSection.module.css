@@ -1,0 +1,69 @@
+@keyframes animateIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  @apply flex flex-col gap-8 sm:gap-4;
+}
+
+.item {
+  @apply relative flex flex-row gap-6 items-start sm:items-center text-base text-[color:var(--default-text)];
+}
+
+.item.showAll {
+  animation-name: animateIn;
+  animation-duration: 100ms;
+  animation-delay: calc(var(--delay, 0) * 30ms);
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+.item > img {
+  @apply sm:hidden;
+}
+
+.content {
+  @apply flex flex-col gap-2;
+}
+
+.duration {
+  @apply text-xs font-bold;
+}
+
+.title {
+  @apply relative flex gap-2 items-center w-fit sm:-ml-11 text-base font-bold text-[color:var(--default-text)] transition-all duration-[0.2s] ease-[ease-in-out] hover:text-[color:var(--color-heading-link-hover)];
+}
+
+.titleText {
+  @apply flex flex-col;
+}
+
+.role {
+  @apply text-lg font-bold leading-tight;
+}
+
+.company {
+  @apply text-base font-normal;
+}
+
+.companyNote {
+  @apply text-xs font-normal opacity-70;
+}
+
+.image {
+  @apply hidden sm:block;
+}
+
+.image img {
+  @apply mr-4;
+}
+
+.description {
+  @apply text-sm flex flex-col gap-2;
+}

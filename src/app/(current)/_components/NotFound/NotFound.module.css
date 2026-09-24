@@ -1,0 +1,15 @@
+.body {
+  @apply flex flex-col gap-3 text-[color:var(--default-text)];
+}
+
+.body .code {
+  @apply font-mono text-xs uppercase tracking-[0.12em];
+}
+
+.body .lead {
+  @apply text-2xl font-medium leading-[1.35] text-[color:var(--color-heading)];
+}
+
+.body p {
+  @apply text-base leading-normal;
+}

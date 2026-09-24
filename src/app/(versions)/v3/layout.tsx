@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(defaultMeta.url),
   title: defaultMeta.title,
   description: defaultMeta.description,
-  robots: defaultMeta.robots,
+  robots: 'noindex, nofollow',
   keywords: defaultMeta.keywords,
   manifest: '/favicon/manifest.json',
   alternates: {

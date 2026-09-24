@@ -1,0 +1,417 @@
+body {
+  margin: 0;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* src/App.scss + src/styles/animations.scss */
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInRightCentered {
+  from {
+    transform: translate(50%, -50%);
+    visibility: visible;
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideOutDown {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    visibility: hidden;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    visibility: hidden;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes slideOutRight {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    visibility: hidden;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@keyframes slideOutUp {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    visibility: hidden;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@keyframes mLeftSkew {
+  0% {
+    transform: translate(0, 100%);
+    visibility: visible;
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0) skewX(14deg);
+  }
+}
+@keyframes mRightSkew {
+  0% {
+    transform: translate(0, 100%);
+    visibility: visible;
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0) skewX(-14deg);
+  }
+}
+@keyframes aLeftSkew {
+  0% {
+    transform: translate(0, -100%);
+    visibility: visible;
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0) skewX(-14deg);
+  }
+}
+@keyframes aRightSkew {
+  0% {
+    transform: translate(0, -100%);
+    visibility: visible;
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0) skewX(14deg);
+  }
+}
+@keyframes tTopScale {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+body {
+  background-color: #00031b;
+}
+
+.home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.home .centered-grid {
+  display: flex;
+  gap: 15px;
+}
+.home .centered-grid [class*=letter-] {
+  position: relative;
+  overflow: hidden;
+}
+.home .centered-grid .letter-h {
+  height: 90px;
+  width: 65px;
+}
+.home .centered-grid .letter-h .h-left,
+.home .centered-grid .letter-h .h-right,
+.home .centered-grid .letter-h .h-center {
+  transition: all 0.5s cubic-bezier(1, 0, 0, 0.99);
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.home .centered-grid .letter-h .h-left,
+.home .centered-grid .letter-h .h-right {
+  position: absolute;
+  height: 100%;
+  width: 30px;
+}
+.home .centered-grid .letter-h .h-center {
+  position: absolute;
+  background-color: rgba(236, 98, 109, 0.7);
+  backdrop-filter: blur(5px);
+  height: 30px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: slideInRightCentered;
+  animation-delay: 0.9s;
+}
+.home .centered-grid .letter-h .h-left {
+  background-color: #17a2d6;
+  animation-name: slideInUp;
+}
+.home .centered-grid .letter-h .h-right {
+  background-color: #f2bc36;
+  right: 0;
+  animation-name: slideInDown;
+  animation-delay: 0.25s;
+}
+.home .centered-grid .letter-i {
+  height: 90px;
+  width: 30px;
+}
+.home .centered-grid .letter-i .i-main {
+  position: absolute;
+  background-color: #17a2d6;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  animation-name: slideInUp;
+  animation-delay: 1s;
+  transition: all 0.5s cubic-bezier(1, 0, 0, 0.99);
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.home .centered-grid .letter-m {
+  height: 90px;
+  width: 75px;
+  display: flex;
+}
+.home .centered-grid .letter-m .m-left,
+.home .centered-grid .letter-m .m-right,
+.home .centered-grid .letter-m .m-skew-left,
+.home .centered-grid .letter-m .m-skew-right {
+  position: absolute;
+  height: 100%;
+  width: 30px;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  transition: all 0.5s cubic-bezier(1, 0, 0, 0.99);
+}
+.home .centered-grid .letter-m .m-skew-left,
+.home .centered-grid .letter-m .m-skew-right {
+  top: 0;
+  left: calc(50% - 15px);
+  animation-duration: 1.5s;
+  transform-origin: bottom;
+  animation-delay: 1.5s;
+}
+.home .centered-grid .letter-m .m-left,
+.home .centered-grid .letter-m .m-right {
+  animation-name: slideInDown;
+  animation-delay: 2.5s;
+}
+.home .centered-grid .letter-m .m-left {
+  background-color: #18a4d6;
+  left: 0;
+}
+.home .centered-grid .letter-m .m-right {
+  background-color: #17a2d6;
+  right: 0;
+}
+.home .centered-grid .letter-m .m-skew-left {
+  background-color: rgba(237, 187, 51, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+  animation-name: mLeftSkew;
+}
+.home .centered-grid .letter-m .m-skew-right {
+  background-color: rgba(236, 98, 109, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  animation-name: mRightSkew;
+}
+.home .centered-grid .letter-a,
+.home .centered-grid .letter-a-right {
+  height: 90px;
+  width: 75px;
+  margin-right: 20px;
+}
+.home .centered-grid .letter-a .a-left,
+.home .centered-grid .letter-a .a-right,
+.home .centered-grid .letter-a-right .a-left,
+.home .centered-grid .letter-a-right .a-right {
+  position: absolute;
+  top: 0%;
+  width: 30px;
+  height: 100%;
+  left: calc(50% - 15px);
+  transform-origin: top;
+  animation-duration: 1.5s;
+  animation-delay: 3s;
+  animation-fill-mode: both;
+}
+.home .centered-grid .letter-a .a-left,
+.home .centered-grid .letter-a-right .a-left {
+  background-color: rgba(143, 211, 211, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  animation-name: aLeftSkew;
+}
+.home .centered-grid .letter-a .a-right,
+.home .centered-grid .letter-a-right .a-right {
+  background-color: #18a4d6;
+  animation-name: aRightSkew;
+}
+.home .centered-grid .letter-t {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  height: 90px;
+  width: 65px;
+}
+.home .centered-grid .letter-t .t-top,
+.home .centered-grid .letter-t .t-middle {
+  animation-duration: 1s;
+  transform-origin: bottom;
+  animation-delay: 4s;
+  animation-fill-mode: both;
+}
+.home .centered-grid .letter-t .t-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  background: rgba(143, 211, 211, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  animation-name: tTopScale;
+}
+.home .centered-grid .letter-t .t-middle {
+  width: 30px;
+  height: 100%;
+  background-color: #18a4d6;
+  animation-name: slideInDown;
+}
+.home .centered-grid .letter-e {
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  width: 60px;
+}
+.home .centered-grid .letter-e .e1,
+.home .centered-grid .letter-e .e2,
+.home .centered-grid .letter-e .e3 {
+  width: 100%;
+  height: 30px;
+  animation-duration: 1s;
+  transform-origin: bottom;
+  animation-name: slideInLeft;
+  animation-fill-mode: both;
+}
+.home .centered-grid .letter-e .e1,
+.home .centered-grid .letter-e .e3 {
+  background-color: #ec616d;
+}
+.home .centered-grid .letter-e .e1 {
+  animation-delay: 5.3s;
+}
+.home .centered-grid .letter-e .e2 {
+  width: calc(100% - 15px);
+  background-color: #8fd3d3;
+  animation-delay: 5.1s;
+}
+.home .centered-grid .letter-e .e3 {
+  animation-delay: 5s;
+}
+.home .centered-grid .letter-j {
+  height: 90px;
+  width: 55px;
+}
+.home .centered-grid .letter-j .j-right,
+.home .centered-grid .letter-j .j-bottom {
+  animation-duration: 1s;
+  transform-origin: bottom;
+  animation-fill-mode: both;
+}
+.home .centered-grid .letter-j .j-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background: rgba(143, 211, 211, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  animation-name: slideInRight;
+  animation-delay: 6.05s;
+}
+.home .centered-grid .letter-j .j-right {
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  background-color: #18a4d6;
+  animation-delay: 6s;
+  animation-name: slideInUp;
+}
+.home .centered-grid .letter-a-right .a-left,
+.home .centered-grid .letter-a-right .a-right {
+  animation-delay: 7s;
+}
+
+/* 2026: the app had no phone layout; scale the 645px word down to fit */
+@media (max-width: 680px) {
+  .home {
+    transform: translate(-50%, -50%) scale(0.75);
+  }
+}
+
+@media (max-width: 520px) {
+  .home {
+    transform: translate(-50%, -50%) scale(0.52);
+  }
+}

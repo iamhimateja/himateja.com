@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+  /* the native scrollbar is hidden, ScrollThumb draws a small one that fades out */
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 * {
   box-sizing: border-box;
   font-smoothing: antialiased;
@@ -10,9 +28,8 @@
 }
 
 body {
-  @apply relative block h-screen w-screen bg-[color:var(--default-background)] bg-fixed text-xs;
-  font-family: var(--inter-font-family), --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  @apply relative block min-h-screen w-full overflow-x-clip bg-[color:var(--default-background)] bg-fixed text-xs;
+  @apply font-sans;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -21,30 +38,74 @@ body {
   @apply relative mx-auto my-0 flex w-full max-w-xl min-h-full flex-col gap-5 px-6 pb-28 pt-6;
 }
 
-.main-section p,
-.main-section .paragraph {
-  @apply text-base leading-normal text-[color:var(--default-text)];
+/* The container keeps its element across pages, so width changes (the resume is wider) glide
+   instead of jumping. It also steps back while the version wheel is open. */
+.main-section {
+  transition:
+    filter 0.4s,
+    transform 0.4s,
+    max-width 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.main-section p.font-sm {
-  @apply text-sm;
+/* the footer wrapper moves with the content column on the resume page */
+.main-section > :last-child {
+  transition: margin-left 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Page entrance: everything a page renders into the container rises in, one block after
+   another. The footer (last child) stays put. Pages with their own stagger opt out. */
+.main-section > :not(:last-child) {
+  animation: riseIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.main-section > :nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.main-section > :nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.main-section > :nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+@keyframes riseIn {
+  from {
+    /* 0.01, not 0: text at opacity 0 does not count as painted, which delays LCP */
+    opacity: 0.01;
+    transform: translateY(14px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-section > :not(:last-child) {
+    animation: none;
+  }
+}
+
+body[data-wheel='open'] .main-section {
+  filter: blur(3px);
+  transform: scale(0.98);
+}
+
+.main-section p {
+  @apply text-base leading-normal text-[color:var(--default-text)];
 }
 
 .main-section section {
   @apply flex flex-col gap-5 my-5;
 }
 
-.heading-container {
-  @apply flex flex-col sm:flex-row place-items-center place-content-between;
-}
-
-.heading {
-  font-family: var(--pixel-font-family);
-  @apply my-4 text-5xl text-[color:var(--default-text)] font-medium;
-}
-
+/* inline text links: the colour stays, an underline appears on hover, focus, and active */
 .link {
-  @apply inline-block text-[color:var(--default-text)] no-underline pb-1 hover:shadow-[inset_0_-1px_0_0_var(--default-text)];
+  @apply inline-block text-[color:var(--default-text)] no-underline pb-1;
+}
+
+.link:hover,
+.link:focus-visible,
+.link:active {
+  box-shadow: inset 0 -1px 0 0 currentColor;
 }
 
 .mdx .subheading-anchor {
@@ -60,12 +121,6 @@ body {
   @apply mr-2 inline-block h-2.5 w-2.5 animate-[pulse-box-shadow_1.5s_infinite] rounded-[50%] bg-[color:var(--color)] shadow-[0_0_0_0_var(--color)];
 }
 
-.iconLoading {
-  --color: var(--default-text);
-  border-style: inset;
-  @apply inline-block h-3 w-3 animate-[spinning_1.5s_infinite] bg-transparent border-[color:var(--color)] rounded-[50%] border-2;
-}
-
 @keyframes pulse-box-shadow {
   0% {
     box-shadow: 0 0 0 0 var(--color);
@@ -77,15 +132,5 @@ body {
 
   100% {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  }
-}
-
-@keyframes spinning {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(359deg);
   }
 }

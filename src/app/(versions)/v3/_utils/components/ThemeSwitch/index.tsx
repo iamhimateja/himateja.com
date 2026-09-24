@@ -1,6 +1,6 @@
-import MoonIcon from '@globals/icons/Moon'
-import SunIcon from '@globals/icons/Sun'
 import { ThemeType } from '@globals/types'
+import MoonIcon from '@icons/Moon'
+import SunIcon from '@icons/Sun'
 import * as React from 'react'
 
 import { isDarkThemeEnabled } from '@/globals/helpers'

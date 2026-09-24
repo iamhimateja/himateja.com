@@ -1,0 +1,23 @@
+.list {
+  @apply flex flex-col gap-0.5;
+}
+
+.post {
+  @apply grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-4 py-3 text-[color:var(--default-text)] transition-all hover:text-[color:var(--color-heading)];
+}
+
+.text {
+  @apply flex min-w-0 flex-col gap-1;
+}
+
+.title {
+  @apply text-base font-medium leading-[1.35] text-[color:var(--color-heading)];
+}
+
+.dek {
+  @apply text-sm leading-normal;
+}
+
+.date {
+  @apply whitespace-nowrap font-mono text-xs opacity-70;
+}

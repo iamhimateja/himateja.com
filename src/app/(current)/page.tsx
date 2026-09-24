@@ -1,88 +1,85 @@
-import ExperienceSection from '@components/ExperienceSection'
-import Experiments from '@components/HomePage/Experiments'
+import Labs from '@components/HomePage/Labs'
 import NameInfo from '@components/HomePage/NameInfo'
-import Stack from '@components/HomePage/Stack'
-import { Icons } from '@components/Icons'
+import Writing from '@components/HomePage/Writing'
 import SectionHeading from '@components/SectionHeading'
+import { Icons } from '@icons'
+import { publishedPosts } from '@utils/posts'
+import Link from 'next/link'
+
+import styles from './Home.module.css'
 
 export default function HomePage() {
+  const hasPosts = publishedPosts().length > 0
+
   return (
-    <>
-      <NameInfo />
-      <div className="paragraph font-sm">
-        <div className="flex gap-4">
-          <div className="flex gap-2 place-items-center text-sm">
-            <Icons.Pin className="w-5 h-5" />
+    <div className={styles.home}>
+      <section className={styles.hero}>
+        <NameInfo />
+
+        <p className={styles.lead}>
+          Full-stack engineer, creative spirit, a perfectionist at heart, with an enthusiasm for frontend technologies
+          and an excitement for the instant gratification it provides.
+        </p>
+
+        <p className={styles.sub}>Off work: movies, video games, and family time.</p>
+
+        <div className={styles.status}>
+          <span>
+            <Icons.Pin className="h-4 w-4" />
             Bengaluru, India
-          </div>
-          <div className="text-sm">
-            <span className="pulseAnimation" /> Open for new opportunities.
-          </div>
+          </span>
+          <span>
+            <span className="pulseAnimation !mr-0" aria-hidden="true" />
+            Open for new opportunities
+          </span>
+          <Link href="/resume" className={styles.statusLink}>
+            resume
+            <Icons.ArrowTopRight />
+          </Link>
         </div>
-      </div>
-
-      <p>
-        Full-stack engineer, creative spirit, a perfectionist at heart, with an enthusiasm for frontend technologies and
-        an excitement for the instant gratification it provides.
-      </p>
-
-      <p>
-        A dedicated team player off the coding field, cherishing collaboration, movies, video games, and family time.
-      </p>
-
-      {/* <p>
-        Currently perfecting{' '}
-        <Link href="/products/slug" className="link">
-          slug.
-        </Link>
-      </p> */}
-
-      <section>
-        <SectionHeading title="recent experience" />
-        <ExperienceSection />
       </section>
 
-      {/* <section>
-        <SectionHeading
-          title="products"
-          pageLink="/products"
-          label="Open to view all products"
-          pageLinkContent={<Icons.PXLArrowRight aria-hidden="true" />}
-        />
-
-        <MiniProductsList />
-      </section> */}
-
-      <section>
-        <SectionHeading
-          title="experiments"
-          pageLink="/labs"
-          label="Open to view all experiments"
-          pageLinkContent={<Icons.PXLArrowRight aria-hidden="true" />}
-        />
-
-        <Experiments />
+      <section id="labs" className={styles.section}>
+        <SectionHeading title="experiments" />
+        <Labs />
       </section>
 
-      {/* <section>
-        <SectionHeading
-          title="writing"
-          pageLink="/articles"
-          label="Open to view all articles"
-          pageLinkContent={<Icons.PXLArrowRight  aria-hidden="true"/>}
-        />
-      </section> */}
+      {hasPosts && (
+        <section className={styles.section}>
+          <SectionHeading
+            title="writing"
+            pageLink="/blog"
+            label="Open to view all posts"
+            pageLinkContent={<Icons.PXLArrowRight aria-hidden="true" />}
+          />
+          <Writing />
+        </section>
+      )}
 
-      <section>
-        <SectionHeading
-          title="stack"
-          pageLink="/stack"
-          label="Open to view all stack"
-          pageLinkContent={<Icons.PXLArrowRight aria-hidden="true" />}
-        />
-
-        <Stack />
+      <section id="about" className={styles.section}>
+        <SectionHeading title="about" />
+        <div className={styles.about}>
+          <p className={styles.aboutLead}>
+            Namaste! I&#39;m Himateja, a seasoned full-stack engineer passionate about shaping the digital world one
+            line of code at a time.
+          </p>
+          <p>
+            I enjoy building fast, intuitive interfaces and turning complex ideas into simple products. I care about
+            clean design, collaboration, and code other people can work with.
+          </p>
+          <p>
+            Right now I am building{' '}
+            <Link href="https://code.care" className={styles.aboutLink} target="_blank" rel="noopener noreferrer">
+              code.care
+            </Link>
+            , an AI code review platform, and{' '}
+            <Link href="https://slug.io" className={styles.aboutLink} target="_blank" rel="noopener noreferrer">
+              slug.io
+            </Link>
+            .
+          </p>
+        </div>
       </section>
-    </>
+    </div>
   )
 }

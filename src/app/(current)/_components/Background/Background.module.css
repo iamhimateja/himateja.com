@@ -1,0 +1,23 @@
+.bg {
+  @apply pointer-events-none fixed inset-0 z-0;
+  animation: fadeIn 0.8s ease both;
+}
+
+.canvas {
+  @apply h-full w-full text-[color:var(--default-text)];
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media print {
+  .bg {
+    display: none;
+  }
+}

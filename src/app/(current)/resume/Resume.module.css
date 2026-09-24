@@ -1,0 +1,417 @@
+/* spacing from the v8 design, type a little tighter */
+
+/* the page container widens on this page (the transition is in globals.css) */
+:global(.main-section):has(.layout) {
+  @apply lg:max-w-[60rem];
+}
+
+/* lg: breadcrumb on top, rail on the left, content and footer on the right. The rail spans
+   both rows, so it stays sticky past the footer. */
+@screen lg {
+  :global(.main-section):has(.layout) {
+    display: grid;
+    grid-template-columns: 15rem minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    column-gap: 3.5rem;
+  }
+
+  :global(.main-section):has(.layout) > :first-child {
+    grid-column: 1 / -1;
+  }
+
+  :global(.main-section) > .layout {
+    display: contents;
+  }
+
+  .rail {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+
+  .content {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  /* the footer is the last child of the page container, it sits under the content column */
+  :global(.main-section):has(.layout) > div:last-child {
+    grid-column: 2;
+    grid-row: 3;
+  }
+}
+
+/* the width and footer changes glide via the transitions on .main-section in globals.css */
+
+/* the breadcrumb stays put while scrolling, like the rail */
+:global(.main-section):has(.layout) > :first-child {
+  @apply lg:sticky lg:top-6 lg:z-10 lg:w-fit;
+}
+
+/* one column below lg: 48px from the breadcrumb to the rail, as in the design */
+.layout {
+  @apply mt-7 flex flex-col gap-10 text-[color:var(--default-text)];
+}
+
+/* the rail and the sections have their own entrance, so the layout itself does not rise */
+:global(.main-section) > .layout {
+  animation: none;
+}
+
+/* rail: slides left into place while the container widens */
+.rail {
+  @apply flex flex-col gap-7 lg:sticky lg:top-28 lg:mt-7 lg:w-60 lg:self-start;
+  animation: railIn 0.6s 0.05s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes railIn {
+  from {
+    opacity: 0.01;
+    transform: translateX(32px);
+  }
+}
+
+.identity {
+  @apply flex flex-col gap-3.5;
+}
+
+.photo {
+  @apply h-[72px] w-[72px] rounded-full object-cover;
+  filter: var(--photo-filter);
+}
+
+.nameBlock {
+  @apply flex flex-col gap-0.5;
+}
+
+.name {
+  @apply text-base font-semibold leading-normal text-[color:var(--color-heading)];
+}
+
+.layout .title {
+  @apply text-sm leading-normal;
+}
+
+.layout .focus {
+  @apply text-sm leading-[1.55];
+}
+
+.railMeta {
+  @apply flex flex-col gap-1.5 font-mono text-xs;
+}
+
+.railMeta a {
+  @apply w-fit text-[color:var(--default-text)] no-underline transition-all;
+}
+
+.railMeta a:hover,
+.railMeta a:focus-visible,
+.railMeta a:active {
+  color: var(--color-heading);
+  box-shadow: inset 0 -1px 0 0 currentColor;
+}
+
+.railMeta a:first-of-type {
+  @apply mt-1.5;
+}
+
+/* links 24px apart centre to centre, the minimum spacing for small targets (WCAG 2.5.8) */
+.railMeta a + a {
+  @apply mt-0.5;
+}
+
+.download {
+  @apply inline-flex w-fit items-center gap-2 whitespace-nowrap rounded-full bg-[color:var(--color-heading)] px-4 py-2 text-sm font-medium text-[color:var(--default-background)] transition-all hover:bg-[color:var(--default-theme-color)] hover:text-white;
+}
+
+.jump {
+  @apply hidden flex-col gap-2 lg:flex;
+}
+
+.jump a {
+  @apply flex items-center gap-2.5 font-mono text-xs uppercase tracking-[0.12em] text-[color:var(--default-text)] transition-all hover:text-[color:var(--color-heading)];
+}
+
+.jump a::before {
+  content: '';
+  @apply inline-block h-px w-3.5 bg-[color:var(--color-link-card-border)];
+}
+
+/* content */
+.content {
+  @apply flex min-w-0 flex-1 flex-col gap-[4.5rem] lg:mt-7;
+}
+
+/* beats the global .main-section section rule. Sections rise in one after another. */
+.layout .section {
+  @apply my-0 flex scroll-mt-10 flex-col gap-5;
+  animation: riseIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.layout .section:nth-child(1) {
+  animation-delay: 0.35s;
+}
+
+.layout .section:nth-child(2) {
+  animation-delay: 0.43s;
+}
+
+.layout .section:nth-child(3) {
+  animation-delay: 0.51s;
+}
+
+.layout .section:nth-child(4) {
+  animation-delay: 0.59s;
+}
+
+.layout .section:nth-child(5) {
+  animation-delay: 0.67s;
+}
+
+@keyframes riseIn {
+  from {
+    /* 0.01: see riseIn in globals.css */
+    opacity: 0.01;
+    transform: translateY(14px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rail,
+  .layout .section {
+    animation: none;
+  }
+}
+
+.layout .status {
+  @apply flex flex-wrap items-center gap-x-[18px] gap-y-2 font-mono text-xs tracking-[0.04em];
+}
+
+.layout .status > span:first-child {
+  @apply flex items-center gap-2;
+}
+
+.layout .lead {
+  @apply max-w-[30ch] text-2xl font-medium leading-[1.35] text-[color:var(--color-heading)];
+}
+
+.layout .body {
+  @apply max-w-[62ch] text-sm leading-[1.65];
+}
+
+/* skills: comma list on small screens, chips from sm up */
+.skills {
+  @apply flex flex-col gap-3.5;
+}
+
+.skillRow {
+  @apply grid grid-cols-1 gap-2 sm:grid-cols-[150px_minmax(0,1fr)] sm:items-baseline sm:gap-4;
+}
+
+.skillGroup {
+  @apply text-sm font-semibold text-[color:var(--color-heading)];
+}
+
+.layout .skillList {
+  @apply text-sm leading-relaxed sm:hidden;
+}
+
+.skillChips {
+  @apply hidden flex-wrap gap-1.5 sm:flex;
+}
+
+/* jobs: cards carry 16px padding (so opening does not shift the content); the list is pulled
+   out by 16px to keep the text aligned with the other sections */
+.jobs {
+  @apply -mx-4 flex flex-col gap-3;
+}
+
+.job {
+  @apply flex flex-col rounded-[14px] border border-transparent;
+  transition:
+    background-color 0.25s,
+    border-color 0.25s;
+}
+
+.jobOpen {
+  @apply border-[color:var(--color-link-card-border)] bg-[color:var(--color-link-card-background)];
+}
+
+.jobHead {
+  @apply grid grid-cols-[44px_minmax(0,1fr)_auto] items-center gap-4 p-4;
+}
+
+.jobLogo {
+  @apply flex h-11 w-11 items-center justify-center rounded-xl bg-[color:var(--color-soft)];
+}
+
+.jobLogo img {
+  @apply rounded-md;
+}
+
+.jobTitles {
+  @apply flex min-w-0 flex-col gap-0.5;
+}
+
+.jobTitle {
+  @apply text-base font-semibold leading-[1.3] text-[color:var(--color-heading)];
+}
+
+.layout .jobCompany {
+  @apply text-sm leading-normal;
+}
+
+.layout .jobCompany a {
+  @apply text-[color:var(--default-text)] transition-all hover:text-[color:var(--color-heading)];
+}
+
+.jobCompanyNote {
+  @apply opacity-70;
+}
+
+/* dimmed text fails AA contrast on the dark background, so it is full strength there */
+:global(html.dark) .jobCompanyNote {
+  @apply opacity-100;
+}
+
+/* on narrow screens the note drops under the company name */
+@media (max-width: 639px) {
+  .jobCompanyNote {
+    @apply block text-xs;
+  }
+
+  .noteSep {
+    @apply hidden;
+  }
+}
+
+.jobYear {
+  @apply flex flex-col items-end gap-1.5;
+}
+
+.chevron {
+  @apply flex text-[color:var(--default-text)] transition-transform duration-200 hover:text-[color:var(--color-heading)];
+}
+
+.chevronOpen {
+  @apply rotate-180;
+}
+
+.jobBody {
+  @apply flex flex-col gap-2.5 px-4 pb-4 sm:pl-[76px];
+}
+
+.layout .jobMeta {
+  @apply font-mono text-xs leading-[1.6];
+}
+
+.layout .jobSummary {
+  @apply text-sm leading-[1.6];
+}
+
+.chips {
+  @apply flex flex-wrap gap-1.5;
+}
+
+.chips:first-of-type {
+  @apply mt-1;
+}
+
+.layout .jobNote {
+  @apply font-sans-italic text-sm italic;
+}
+
+.points {
+  @apply mt-1.5 flex flex-col gap-2;
+}
+
+.points li {
+  @apply grid grid-cols-[10px_minmax(0,1fr)] gap-2.5 text-sm leading-[1.6];
+}
+
+.points li::before {
+  content: '';
+  @apply mt-2.5 h-[5px] w-[5px] rounded-full bg-[color:var(--default-theme-color)] opacity-80;
+}
+
+.showMore {
+  @apply mt-1 w-fit font-mono text-[11px] uppercase tracking-[0.12em] text-[color:var(--default-text)] transition-all hover:text-[color:var(--color-heading)];
+}
+
+/* open source: one line per project, name is the link */
+.oss {
+  @apply flex flex-col gap-2;
+}
+
+.oss li {
+  @apply text-sm leading-[1.65];
+}
+
+.ossName {
+  @apply font-semibold text-[color:var(--color-heading)] no-underline;
+}
+
+.ossName:hover,
+.ossName:focus-visible,
+.ossName:active {
+  box-shadow: inset 0 -1px 0 0 currentColor;
+}
+
+/* education */
+.education {
+  @apply flex flex-col gap-5;
+}
+
+.edu {
+  @apply grid grid-cols-[72px_minmax(0,1fr)] items-start gap-4 sm:gap-5;
+}
+
+.eduText {
+  @apply flex flex-col gap-0.5;
+}
+
+.layout .degree {
+  @apply text-base font-semibold text-[color:var(--color-heading)];
+}
+
+.layout .institution {
+  @apply text-sm;
+}
+
+/* print: the page only, black on white */
+@media print {
+  .layout {
+    @apply flex-col gap-6 text-black;
+  }
+
+  .rail {
+    @apply static;
+  }
+
+  .download,
+  .jump,
+  .status,
+  .chevron,
+  .showMore {
+    display: none;
+  }
+
+  .jobHead,
+  .jobBody {
+    @apply p-0;
+  }
+
+  .jobOpen {
+    @apply border-transparent bg-transparent;
+  }
+
+  .layout .lead,
+  .layout .title,
+  .name,
+  .jobTitle,
+  .layout .jobCompany,
+  .layout .degree,
+  .ossName,
+  .skillGroup {
+    color: #000;
+  }
+}

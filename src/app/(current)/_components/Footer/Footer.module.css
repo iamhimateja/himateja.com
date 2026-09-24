@@ -20,7 +20,7 @@
 
 .container .emailSection,
 .container .calendly,
-.container .links .link:not([data-tooltipped]) {
+.container .links a.link {
   @apply rounded-[10px] border-t border-solid border-t-[color:var(--color-link-card-border)] bg-[color:var(--color-link-card-background)] p-4;
 }
 
@@ -70,27 +70,27 @@
   @apply flex-1;
 }
 
-.container .contactLinks .links .social .link:not([data-tooltipped]) {
+.container .contactLinks .links .social a.link {
   @apply flex place-content-center place-items-center hover:text-white !important;
 }
 
-.container .contactLinks .links .social .link:not([data-tooltipped]) svg {
+.container .contactLinks .links .social a.link svg {
   @apply h-[25px] w-[25px] sm:h-[30px] sm:w-[30px];
 }
 
-.container .contactLinks .links .social .link:not([data-tooltipped]).linkedin {
+.container .contactLinks .links .social a.link.linkedin {
   @apply text-[color:var(--color-link-linkedin)] hover:bg-[color:var(--color-link-linkedin-background)];
 }
 
-.container .contactLinks .links .social .link:not([data-tooltipped]).github {
+.container .contactLinks .links .social a.link.github {
   @apply text-[color:var(--color-link-github)] hover:bg-[color:var(--color-link-github-background)];
 }
 
-.container .contactLinks .links .social .link:not([data-tooltipped]).twitter {
+.container .contactLinks .links .social a.link.twitter {
   @apply text-[color:var(--color-link-twitter)] hover:bg-[color:var(--color-link-twitter-background)];
 }
 
-.container .contactLinks .links .social .link:not([data-tooltipped]).codepen {
+.container .contactLinks .links .social a.link.codepen {
   @apply text-[color:var(--color-link-codepen)] hover:bg-[color:var(--color-link-codepen-background)];
 }
 

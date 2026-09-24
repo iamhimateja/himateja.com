@@ -1,0 +1,174 @@
+.overlay {
+  @apply fixed inset-0 z-[44] bg-[rgba(0,0,0,0.5)];
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: fadeIn 0.25s ease both;
+}
+
+.overlayOut {
+  @apply pointer-events-none;
+  animation: fadeOut 0.25s ease both;
+}
+
+.sheet {
+  @apply fixed inset-x-0 bottom-0 z-[45] flex flex-col gap-3 rounded-t-[22px] bg-[color:var(--color-navigation-background-solid)] pb-[100px] pt-2.5 text-[color:var(--default-text)] shadow-[rgba(0,0,0,0.2)_0_-8px_32px];
+  animation: sheetIn 0.38s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.sheetOut {
+  @apply pointer-events-none;
+  animation: sheetOut 0.26s cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+.grip {
+  @apply mx-auto h-1 w-9 rounded-full bg-[color:var(--color-link-card-border)];
+}
+
+.head {
+  @apply flex items-start justify-between gap-3 px-5;
+}
+
+.title {
+  @apply leading-none text-[2.25rem] text-[color:var(--color-heading)];
+  font-family: var(--font-sacramento), cursive;
+}
+
+.title::after {
+  content: '.';
+  color: var(--default-theme-color);
+}
+
+.sub {
+  @apply mt-1 text-xs;
+}
+
+.close {
+  @apply -mr-1 mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-[color:var(--default-text)];
+}
+
+/* the picked version's card; re-enters on change. A plain link: opens in a new tab */
+.card {
+  @apply mx-4 flex cursor-pointer flex-col gap-2.5 text-[color:var(--default-text)] no-underline rounded-2xl border border-[color:var(--color-link-card-border)] bg-[color:var(--color-link-card-background)] p-3 shadow-[rgba(0,0,0,0.12)_0_6px_20px];
+  --card-bg: var(--bg-light);
+  --card-fg: var(--fg-light);
+  animation: previewIn 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+:global(html.dark) .card {
+  --card-bg: var(--bg-dark);
+  --card-fg: var(--fg-dark);
+}
+
+.caption {
+  @apply flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.08em] text-[color:var(--color-heading)];
+}
+
+.captionMain {
+  @apply font-semibold;
+}
+
+.captionYear {
+  @apply opacity-70;
+}
+
+.swatches {
+  @apply ml-auto flex gap-1.5;
+}
+
+.swatches span {
+  @apply h-2.5 w-2.5 rounded-full;
+  box-shadow: 0 0 0 1px rgba(128, 128, 128, 0.45);
+}
+
+/* the shot: the hero crops are 1600 x 560, shown whole */
+.shot {
+  @apply relative w-full overflow-hidden rounded-[10px];
+  aspect-ratio: 20 / 7;
+  background: var(--card-bg);
+}
+
+.shot img {
+  @apply pointer-events-none object-cover object-center;
+}
+
+.shotDark {
+  display: none;
+}
+
+:global(html.dark) .shotLight {
+  display: none;
+}
+
+:global(html.dark) .shotDark {
+  display: block;
+}
+
+.foot {
+  @apply flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.08em] opacity-70;
+}
+
+/* the timeline: a line with one tick per version, oldest first */
+.strip {
+  @apply relative mx-4 mt-1 flex items-start justify-between px-2;
+}
+
+.line {
+  @apply absolute left-2 right-2 top-[5px] h-px bg-[color:var(--color-link-card-border)];
+}
+
+.year {
+  @apply relative flex flex-col items-center gap-1.5 px-1 pt-0 font-mono text-[11px] uppercase tracking-[0.08em] text-[color:var(--default-text)];
+}
+
+.tick {
+  @apply h-[11px] w-[11px] rounded-full border-2 border-[color:var(--color-link-card-border)] bg-[color:var(--color-navigation-background-solid)] transition-all;
+}
+
+.yearLabel {
+  @apply transition-colors;
+}
+
+.yearTag {
+  @apply text-[9px] opacity-60;
+}
+
+.yearOn .tick {
+  @apply scale-125 border-[color:var(--default-theme-color)] bg-[color:var(--default-theme-color)];
+}
+
+.yearOn .yearLabel {
+  @apply font-semibold text-[color:var(--color-heading)];
+}
+
+@keyframes previewIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes sheetIn {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes sheetOut {
+  to {
+    transform: translateY(100%);
+  }
+}

@@ -1,22 +1,26 @@
 import { cn } from '@utils/index'
 
 interface CalloutProps {
-  icon?: string
+  label?: string
   children?: React.ReactNode
   type?: 'default' | 'warning' | 'danger'
 }
 
-export function Callout({ children, icon, type = 'default', ...props }: CalloutProps) {
+/* Side note inside a post: soft surface, small mono label on the left. */
+export function Callout({ children, label, type = 'default', ...props }: CalloutProps) {
   return (
-    <div
-      className={cn('my-6 flex items-start rounded-md border border-l-4 p-4', {
-        'border-red-900 bg-red-50': type === 'danger',
-        'border-yellow-900 bg-yellow-50': type === 'warning',
-      })}
+    <aside
+      className={cn(
+        'grid max-w-[60ch] grid-cols-[auto_minmax(0,1fr)] gap-3 rounded-xl bg-[color:var(--color-soft)] px-4 py-3.5 text-[15px] leading-[1.6] text-[color:var(--default-text)]',
+        type === 'warning' && 'shadow-[inset_2px_0_0_0_#f59e0b]',
+        type === 'danger' && 'shadow-[inset_2px_0_0_0_#ef4444]',
+      )}
       {...props}
     >
-      {icon && <span className="mr-4 text-2xl">{icon}</span>}
-      <div>{children}</div>
-    </div>
+      <span className="pt-[3px] font-mono text-[11px] uppercase tracking-[0.08em] opacity-80 dark:opacity-100">
+        {label ?? (type === 'default' ? 'note' : type)}
+      </span>
+      <span>{children}</span>
+    </aside>
   )
 }

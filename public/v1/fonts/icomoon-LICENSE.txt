@@ -1,0 +1,13 @@
+icomoon.woff2 is the icon font from the 2015 pen. Himateja picked the icons in the IcoMoon app
+(icomoon.io) in 2014. It is cut down to the 10 icons the page uses. Where they come from:
+
+- codepen (U+F1CB), twitter (U+F099), dribbble (U+F17D), linkedin (U+F0E1), facebook (U+F09A)
+  Font Awesome 4 by Dave Gandy, http://fontawesome.io
+  SIL Open Font License 1.1, see OFL.txt
+
+- about / profile (U+E040), layers (U+E031)
+  ET Line icons by Elegant Themes, https://www.elegantthemes.com
+  GNU General Public License v3, see GPL-3.0.txt
+
+- at (U+E600), color / drop (U+E601), reset / refresh (U+E603)
+  Picked in IcoMoon in 2014. The source set is not identified.

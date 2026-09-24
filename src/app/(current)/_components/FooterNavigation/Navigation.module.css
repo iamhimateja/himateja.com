@@ -2,6 +2,11 @@
   @apply fixed bottom-[-15px] left-2/4 z-50 flex h-min w-min -translate-x-2/4 -translate-y-2/4 flex-row flex-nowrap content-center items-center justify-center gap-2 rounded-[50px] bg-[color:var(--color-navigation-background)] p-2 shadow-[rgba(0,0,0,0.16)_0px_1px_2px_0px,rgba(0,0,0,0.16)_0px_4px_16px_0px] backdrop-blur-lg;
 }
 
+/* over the wheel the slices are busy, so the pill goes solid instead of frosted */
+.navigation.solid {
+  @apply bg-[color:var(--color-navigation-background-solid)] backdrop-blur-none;
+}
+
 .navigation .link {
   @apply flex flex-row items-center gap-2 rounded-[50px] p-2 text-[color:var(--color-navigation-link)] no-underline;
 }
@@ -21,4 +26,39 @@
 
 .navigation .separator {
   @apply h-6 w-px bg-[color:var(--color-navigation-link-separator)];
+}
+
+.versions {
+  @apply relative flex;
+}
+
+/* first-visit hint above the versions button */
+.tip {
+  @apply absolute bottom-full left-1/2 mb-3 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-[10px] bg-[color:var(--color-heading)] px-3 py-2 font-mono text-xs text-[color:var(--default-background)] shadow-[rgba(0,0,0,0.2)_0_4px_16px];
+  animation:
+    tipIn 0.4s 1.2s both,
+    tipOut 0.4s 5.6s forwards;
+}
+
+.tip::after {
+  content: '';
+  @apply absolute -bottom-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rotate-45 bg-[color:var(--color-heading)];
+}
+
+@keyframes tipOut {
+  to {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+}
+
+@keyframes tipIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
 }

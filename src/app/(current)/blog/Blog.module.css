@@ -1,0 +1,91 @@
+/* writing list, from the v8 design: intro + filters, one feature card, two column grid */
+.list {
+  @apply mt-7 flex flex-col gap-5 text-[color:var(--default-text)];
+}
+
+.empty {
+  @apply flex place-content-center p-12 text-base text-[color:var(--default-text)];
+}
+
+.intro {
+  @apply flex flex-wrap items-end justify-between gap-4;
+}
+
+.list .blurb {
+  @apply max-w-[44ch] text-[15px];
+}
+
+.filters {
+  @apply flex flex-wrap gap-1.5;
+}
+
+.filters button {
+  @apply rounded-full font-mono text-[11px] uppercase tracking-[0.08em];
+}
+
+.filters button span {
+  @apply font-mono text-[11px] uppercase tracking-[0.08em];
+}
+
+/* feature card */
+.feature {
+  @apply relative flex min-h-[280px] flex-col justify-end gap-2.5 overflow-hidden rounded-2xl border border-[color:var(--color-link-card-border)] bg-[color:var(--color-link-card-background)] p-6 text-[color:var(--default-text)] transition-all hover:border-[color:var(--default-text)] hover:text-[color:var(--color-heading)];
+}
+
+.cover {
+  @apply absolute inset-0 h-full w-full text-[color:var(--default-text)] opacity-[0.55];
+}
+
+.featureFade {
+  @apply absolute inset-0;
+  background: linear-gradient(to top, var(--color-link-card-background) 40%, transparent 75%);
+}
+
+.label {
+  @apply relative flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.1em] opacity-80;
+}
+
+.dot {
+  @apply h-1.5 w-1.5 rounded-full bg-[color:var(--default-theme-color)];
+}
+
+.featureTitle {
+  @apply relative max-w-[22ch] text-[26px] font-semibold leading-[1.2] tracking-[-0.01em] text-[color:var(--color-heading)];
+}
+
+.featureDek {
+  @apply relative max-w-[48ch] text-[15px] leading-normal;
+}
+
+.date {
+  @apply relative font-mono text-xs opacity-80;
+}
+
+/* grid cards */
+.cards {
+  @apply grid grid-cols-1 gap-3 sm:grid-cols-2;
+}
+
+.card {
+  @apply flex min-h-[170px] flex-col justify-between gap-5 rounded-[14px] border border-[color:var(--color-link-card-border)] bg-[color:var(--color-link-card-background)] p-[18px] text-[color:var(--default-text)] transition-all hover:border-[color:var(--default-text)] hover:text-[color:var(--color-heading)];
+}
+
+.cardMeta {
+  @apply flex justify-between gap-3 font-mono text-[11px] uppercase tracking-[0.08em] opacity-80;
+}
+
+.cardText {
+  @apply flex flex-col gap-2;
+}
+
+.cardTitle {
+  @apply text-[17px] font-semibold leading-[1.3] text-[color:var(--color-heading)];
+}
+
+.cardDek {
+  @apply text-sm leading-normal;
+}
+
+.cardText .date {
+  @apply mt-1;
+}

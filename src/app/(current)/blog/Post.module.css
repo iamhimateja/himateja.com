@@ -1,0 +1,88 @@
+/* post page, from the v8 design: full-bleed cover band, 720px column, 17px body */
+
+/* the post column is a little wider than the default container */
+:global(.main-section):has(.article) {
+  @apply lg:max-w-[45rem];
+}
+
+.progress {
+  @apply fixed left-0 top-0 z-[60] h-0.5 w-0 bg-[color:var(--default-theme-color)];
+  transition: width 0.1s linear;
+}
+
+/* full-bleed band: stretch to the viewport edges, then centre the text column again */
+.hero {
+  @apply relative -mt-5 flex min-h-[52vh] w-screen items-end;
+  margin-left: calc(50% - 50vw);
+}
+
+.cover {
+  @apply absolute inset-0 h-full w-full text-[color:var(--default-text)];
+}
+
+.heroFade {
+  @apply absolute inset-0;
+  background: linear-gradient(to bottom, transparent 0%, var(--default-background) 92%),
+    linear-gradient(
+      to right,
+      var(--default-background) 0%,
+      transparent 18%,
+      transparent 82%,
+      var(--default-background) 100%
+    );
+}
+
+.heroInner {
+  @apply relative mx-auto flex w-full max-w-[45rem] flex-col gap-[18px] px-6 pb-8 pt-16 text-[color:var(--default-text)];
+}
+
+.back,
+.footer a {
+  @apply flex w-fit items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-[color:var(--default-text)] transition-all hover:text-[color:var(--color-heading)];
+}
+
+.backIcon {
+  @apply h-3 w-3 rotate-180;
+}
+
+.meta {
+  @apply flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.1em] opacity-80;
+}
+
+/* dimmed text fails AA contrast on the dark background, so it is full strength there */
+:global(html.dark) .meta {
+  @apply opacity-100;
+}
+
+.dot {
+  @apply h-1.5 w-1.5 rounded-full bg-[color:var(--default-theme-color)];
+}
+
+.title {
+  @apply max-w-[20ch] font-semibold leading-[1.08] tracking-[-0.02em] text-[color:var(--color-heading)];
+  font-size: clamp(30px, 5vw, 44px);
+}
+
+:global(.main-section) .dek {
+  @apply max-w-[52ch] text-lg leading-normal text-[color:var(--default-text)];
+}
+
+.article {
+  @apply flex flex-col gap-7 pt-2;
+}
+
+.footer {
+  @apply flex items-center justify-between gap-4 border-t border-[color:var(--color-link-card-border)] pt-6 font-mono text-xs;
+}
+
+.footer a {
+  @apply text-xs normal-case tracking-normal;
+}
+
+.footer .next {
+  @apply text-right text-[color:var(--color-heading)];
+}
+
+.footer .next svg {
+  @apply h-3 w-3;
+}

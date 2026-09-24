@@ -2,18 +2,18 @@ import '@styles/variables.css'
 import '@styles/globals.css'
 import 'react-tippy/dist/tippy.css'
 
+import Background from '@components/Background'
 import ClientHelpers from '@components/ClientHelpers'
 import Footer from '@components/Footer'
 import FooterNavigation from '@components/FooterNavigation'
+import ScrollThumb from '@components/ScrollThumb'
 import { defaultMeta } from '@globals/constants'
 import GoogleAnalytics from '@globals/GoogleAnalytics'
 import { favicons } from '@utils/constants'
+import { publishedPosts } from '@utils/posts'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import localFont from 'next/font/local'
 
-const pxllFont = localFont({ src: './_fonts/pxll-webfont.woff2', variable: '--pixel-font-family' })
-const inter = Inter({ subsets: ['latin'], variable: '--inter-font-family' })
+import { fontClassName } from './_fonts'
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultMeta.url),
@@ -61,14 +61,16 @@ export const viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={`${pxllFont.variable} ${inter.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth">
+      <body className={fontClassName}>
         <ClientHelpers />
-        <section className="main-section">
+        <Background />
+        <ScrollThumb />
+        <main className="main-section">
           {children}
           <Footer />
-        </section>
-        <FooterNavigation />
+        </main>
+        <FooterNavigation showBlog={publishedPosts().length > 0} />
         <GoogleAnalytics />
       </body>
     </html>

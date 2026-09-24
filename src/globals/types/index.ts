@@ -31,4 +31,5 @@ export type Project = {
   imagePath?: string
   shortTitle?: string
   subtitle?: string
+  hidden?: boolean
 }

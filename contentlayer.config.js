@@ -1,10 +1,10 @@
-import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import { defineDocumentType, makeSource } from 'contentlayer2/source-files'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
-/** @type {import('contentlayer/source-files').ComputedFields} */
+/** @type {import('contentlayer2/source-files').ComputedFields} */
 const computedFields = {
   slug: {
     type: 'string',
@@ -18,7 +18,7 @@ const computedFields = {
 
 export const Article = defineDocumentType(() => ({
   name: 'Article',
-  filePathPattern: `articles/**/*.mdx`,
+  filePathPattern: `blog/**/*.mdx`,
   contentType: 'mdx',
   fields: {
     title: {
@@ -40,8 +40,18 @@ export const Article = defineDocumentType(() => ({
       type: 'string',
       required: false,
     },
+    tags: {
+      type: 'list',
+      of: { type: 'string' },
+    },
   },
-  computedFields,
+  computedFields: {
+    ...computedFields,
+    readingTime: {
+      type: 'number',
+      resolve: (doc) => Math.max(1, Math.round(doc.body.raw.trim().split(/\s+/).length / 200)),
+    },
+  },
 }))
 
 export const Product = defineDocumentType(() => ({

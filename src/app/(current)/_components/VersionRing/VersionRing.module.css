@@ -1,0 +1,296 @@
+/* time machine on wide screens: only the top of the ring shows; the pill sits in the hollow */
+.overlay {
+  @apply fixed inset-0 z-40 bg-[color:var(--color-overlay)];
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: fadeIn 0.4s ease both;
+}
+
+.overlayOut {
+  animation: fadeOut 0.4s ease both;
+}
+
+.readout {
+  @apply absolute left-1/2 top-[9%] flex w-max max-w-[calc(100vw-2rem)] -translate-x-1/2 flex-col items-center gap-2.5 text-center;
+  animation: fadeUp 0.5s 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.readoutOut {
+  animation: fadeDown 0.3s ease both;
+}
+
+.title {
+  @apply relative whitespace-nowrap leading-none tracking-[1px] text-[2.75rem] sm:text-[6rem];
+  font-family: var(--font-sacramento), cursive;
+  background: var(--name-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title::after {
+  content: '.';
+  @apply absolute;
+  background: var(--name-dot-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sub {
+  @apply whitespace-nowrap text-xs leading-[1.55] text-[color:var(--default-text)] sm:text-sm;
+}
+
+.hint {
+  @apply whitespace-nowrap px-4 font-mono text-[10px] uppercase tracking-[0.06em] text-[color:var(--default-text)] opacity-80 sm:text-[11px] sm:tracking-[0.08em];
+}
+
+/* clips the wheel to what shows; transform origin (the wheel's centre) is set inline */
+.ring {
+  @apply fixed bottom-0 left-0 z-[45] w-screen overflow-hidden;
+  animation: wheelIn 0.9s cubic-bezier(0.22, 1.2, 0.36, 1) both;
+}
+
+.ringOut {
+  animation: wheelOut 0.45s cubic-bezier(0.4, 0, 0.6, 1) both;
+}
+
+.wheel {
+  @apply absolute rounded-full will-change-transform;
+}
+
+/* page-coloured band behind the cards, so the gutters show plain page */
+.backing {
+  @apply absolute inset-0 rounded-full border-solid;
+  border-color: var(--default-background);
+}
+
+/* each slice carries light and dark values (set inline); the theme picks which pair is live */
+.slice {
+  @apply absolute block;
+  --slice-bg: var(--bg-light);
+  --slice-fg: var(--fg-light);
+  background: var(--color-link-card-background);
+  transition:
+    opacity 0.3s,
+    transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.3s;
+}
+
+:global(html.dark) .slice {
+  --slice-bg: var(--bg-dark);
+  --slice-fg: var(--fg-dark);
+}
+
+.slice:hover {
+  filter: brightness(1.06);
+}
+
+/* fast spin: shots get the motion blur, rows hide */
+.wheel[data-spinning] .shot {
+  filter: url('#ring-spin-blur');
+}
+
+.wheel[data-spinning] .rows,
+.wheel[data-spinning] .swatch {
+  opacity: 0;
+}
+
+/* the card's 1px border along the sector */
+.edge {
+  @apply pointer-events-none absolute inset-0 h-full w-full overflow-visible;
+}
+
+.edge path {
+  fill: none;
+  stroke: var(--color-link-card-border);
+  stroke-width: 1;
+}
+
+/* the card's rows, drawn as svg text along arcs so they follow the curve */
+.rows {
+  @apply pointer-events-none absolute inset-0 h-full w-full overflow-visible;
+  transition: opacity 0.2s;
+}
+
+.rowText {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  fill: var(--color-heading);
+}
+
+.rowMain {
+  font-weight: 600;
+}
+
+.rowYear {
+  opacity: 0.7;
+}
+
+.rowFoot {
+  font-size: 10px;
+  fill: var(--default-text);
+  opacity: 0.7;
+}
+
+/* a swatch: a 10px dot placed on the header row, the tooltip wrapper is the positioned box */
+.swatch {
+  @apply absolute h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2;
+  transition: opacity 0.2s;
+}
+
+.swatch span {
+  @apply block h-2.5 w-2.5 rounded-full;
+  box-shadow: 0 0 0 1px rgba(128, 128, 128, 0.45);
+}
+
+/* the hero shot bent along its arc (BandShot draws it), placed at its rim */
+.shot {
+  @apply pointer-events-none absolute left-1/2 top-0 block -translate-x-1/2;
+}
+
+.shotDark {
+  display: none;
+}
+
+:global(html.dark) .shotLight {
+  display: none;
+}
+
+/* a version with a dark shot shows it in dark mode */
+:global(html.dark) .shotDark {
+  display: block;
+}
+
+/* read-out pill, sits above the floating nav */
+.pill {
+  @apply fixed bottom-[88px] left-1/2 z-[46] flex -translate-x-1/2 items-center gap-2.5 whitespace-nowrap rounded-full bg-[color:var(--color-navigation-background-solid)] px-3.5 py-2 font-mono text-xs text-[color:var(--default-text)] shadow-[rgba(0,0,0,0.16)_0px_1px_2px_0px,rgba(0,0,0,0.16)_0px_4px_16px_0px];
+  animation: fadeUp 0.5s 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.dot {
+  @apply h-1.5 w-1.5 rounded-full bg-[color:var(--default-theme-color)];
+}
+
+.pillLabel {
+  @apply text-[color:var(--color-heading)];
+}
+
+.pillYear {
+  @apply opacity-70;
+}
+
+.pillOpen {
+  @apply ml-1.5 text-[color:var(--color-heading)] underline underline-offset-[3px];
+}
+
+.pillSep {
+  @apply opacity-40;
+}
+
+.pillClose {
+  @apply text-[color:var(--default-text)] transition-all hover:text-[color:var(--color-heading)];
+}
+
+.pillClose span {
+  @apply opacity-60;
+}
+
+@keyframes wheelIn {
+  0% {
+    transform: scale(0.12);
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes wheelOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.12);
+    opacity: 0;
+  }
+}
+
+@keyframes sliceIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .overlayOut,
+  .readout,
+  .readoutOut,
+  .ring,
+  .ringOut,
+  .pill {
+    animation: none;
+  }
+}
+
+/* short viewports (a phone on its side): the ring needs the room, so only the hint stays */
+@media (max-height: 500px) {
+  .title,
+  .sub {
+    display: none;
+  }
+
+  .readout {
+    @apply top-3;
+  }
+}

@@ -1,0 +1,19 @@
+.badge {
+  font-family: var(--pixel-font-family);
+  background: var(--name-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @apply whitespace-nowrap text-2xl leading-none tracking-[1px];
+}
+
+.lg {
+  @apply pt-0.5 text-3xl;
+}
+
+@media print {
+  .badge {
+    background: none;
+    -webkit-text-fill-color: #000;
+  }
+}

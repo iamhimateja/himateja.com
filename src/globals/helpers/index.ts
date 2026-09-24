@@ -1,19 +1,12 @@
 import { ThemeType } from '@globals/types'
 
-export const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
-
 export const isDarkThemeEnabled = () => {
   if (typeof document !== 'undefined') {
     return document.body.dataset.theme === 'dark'
   }
 }
-export const isLightThemeEnabled = () => {
-  if (typeof document !== 'undefined') {
-    return document.body.dataset.theme === 'light'
-  }
-}
 
-export const fetchSystemColorScheme = (): ThemeType | undefined => {
+const fetchSystemColorScheme = (): ThemeType | undefined => {
   return typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches
     ? ThemeType.Dark
     : ThemeType.Light

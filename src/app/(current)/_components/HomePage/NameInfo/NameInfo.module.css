@@ -15,6 +15,11 @@
   @apply text-[4rem] sm:text-[5rem];
 }
 
+/* reserves the heading's line until it loads (same font size, same line box) */
+.headingSpace {
+  @apply text-[4rem] sm:text-[5rem];
+}
+
 .heading::after {
   @apply absolute content-['.'];
   background: var(--name-dot-gradient);

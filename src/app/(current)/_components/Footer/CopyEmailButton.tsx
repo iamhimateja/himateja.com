@@ -1,7 +1,8 @@
 'use client'
 
-import { Icons } from '@components/Icons'
-import Link from 'next/link'
+import ContactEmail from '@components/ContactEmail'
+import { Icons } from '@icons'
+/* loaded up front so the swap is instant on the first click */
 import { useState } from 'react'
 import { Tooltip } from 'react-tippy'
 
@@ -14,15 +15,7 @@ const CopyEmailButton = () => {
 
   return (
     <div className={styles.emailAddressButton}>
-      <Link
-        tabIndex={0}
-        aria-label="Send me an email"
-        className={styles.emailId}
-        href={`mailto:${myMailId}`}
-        target="_blank"
-      >
-        {isCopied ? 'copied!' : myMailId}
-      </Link>
+      <ContactEmail tabIndex={0} className={styles.emailId} target="_blank" />
       <Tooltip
         animateFill
         size="small"
@@ -33,21 +26,21 @@ const CopyEmailButton = () => {
         className={styles.copyEmailButton}
       >
         <button
-          aria-label="copy email to clipboard"
+          aria-label={isCopied ? 'copied' : 'copy email to clipboard'}
           tabIndex={-1}
           className={styles.copyEmailButton}
           onClick={() => {
             if (navigator.clipboard) {
-              navigator.clipboard.writeText('hello@himateja.com').then(() => {
+              navigator.clipboard.writeText(myMailId).then(() => {
                 setIsCopied(true)
                 setTimeout(() => {
                   setIsCopied(false)
-                }, 2000)
+                }, 2500)
               })
             }
           }}
         >
-          <Icons.Copy />
+          {isCopied ? <Icons.Check /> : <Icons.Copy />}
         </button>
       </Tooltip>
     </div>

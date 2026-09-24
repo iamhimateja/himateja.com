@@ -1,0 +1,11 @@
+.pill {
+  @apply inline-flex items-center whitespace-nowrap rounded-full border border-[color:var(--color-link-card-border)] px-[9px] py-[3px] text-xs leading-normal text-[color:var(--default-text)];
+}
+
+.small {
+  @apply px-2 py-0.5 text-[11px];
+}
+
+.active {
+  @apply border-[color:var(--color-heading)] bg-[color:var(--color-heading)] text-[color:var(--default-background)];
+}

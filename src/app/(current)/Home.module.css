@@ -1,0 +1,96 @@
+.home {
+  @apply flex flex-col gap-[4.5rem] text-[color:var(--default-text)] sm:gap-24;
+}
+
+:global(.main-section) > .home {
+  animation: none;
+}
+
+.home > * {
+  animation: riseIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.home > :nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.home > :nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.home > :nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0.01;
+    transform: translateY(14px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home > * {
+    animation: none;
+  }
+}
+
+/* beats the global .main-section section rule */
+.home .hero,
+.home .section {
+  @apply my-0 flex flex-col;
+}
+
+.home .hero {
+  @apply gap-7;
+}
+
+.home .section {
+  @apply scroll-mt-10 gap-6;
+}
+
+.home .lead {
+  @apply max-w-[34ch] text-[19px] leading-normal text-[color:var(--color-heading)];
+}
+
+.home .sub {
+  @apply max-w-[40ch] text-[15px];
+}
+
+.status {
+  @apply flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] tracking-[0.02em];
+}
+
+.status > span {
+  @apply flex items-center gap-2 whitespace-nowrap;
+}
+
+.statusLink {
+  @apply flex items-center gap-1 text-[color:var(--default-text)] transition-all hover:text-[color:var(--color-heading)];
+}
+
+.statusLink svg {
+  @apply h-3 w-3;
+}
+
+.about {
+  @apply flex flex-col gap-3;
+}
+
+.home .about p {
+  @apply text-base leading-normal;
+}
+
+.home .aboutLead {
+  @apply text-[color:var(--color-heading)];
+}
+
+.aboutLink {
+  @apply text-[color:var(--color-heading)] no-underline;
+}
+
+.aboutLink:hover,
+.aboutLink:focus-visible,
+.aboutLink:active {
+  box-shadow: inset 0 -1px 0 0 currentColor;
+}

@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  font-smoothing: antialiased;
+
+  @apply transition-all;
+}
+
+body {
+  @apply relative block min-h-screen w-full bg-[color:var(--default-background)] bg-fixed text-xs;
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.main-section {
+  @apply relative mx-auto my-0 flex w-full max-w-xl min-h-full flex-col gap-5 px-6 pb-28 pt-6;
+}
+
+.main-section p,
+.main-section .paragraph {
+  @apply text-base leading-normal text-[color:var(--default-text)];
+}
+
+.main-section p.font-sm {
+  @apply text-sm;
+}
+
+.main-section section {
+  @apply flex flex-col gap-5 my-5;
+}
+
+.heading-container {
+  @apply flex flex-col sm:flex-row place-items-center place-content-between;
+}
+
+.heading {
+  font-family: var(--pixel-font-family);
+  @apply my-4 text-5xl text-[color:var(--default-text)] font-medium;
+}
+
+.link {
+  @apply inline-block text-[color:var(--default-text)] no-underline pb-1 hover:shadow-[inset_0_-1px_0_0_var(--default-text)];
+}
+
+.mdx .subheading-anchor {
+  @apply absolute -left-8 opacity-25 hover:opacity-70 no-underline;
+}
+
+.mdx .subheading-anchor .icon:before {
+  content: '#';
+}
+
+.pulseAnimation {
+  --color: #0b8100;
+  @apply mr-2 inline-block h-2.5 w-2.5 animate-[pulse-box-shadow_1.5s_infinite] rounded-[50%] bg-[color:var(--color)] shadow-[0_0_0_0_var(--color)];
+}
+
+.iconLoading {
+  --color: var(--default-text);
+  border-style: inset;
+  @apply inline-block h-3 w-3 animate-[spinning_1.5s_infinite] bg-transparent border-[color:var(--color)] rounded-[50%] border-2;
+}
+
+@keyframes pulse-box-shadow {
+  0% {
+    box-shadow: 0 0 0 0 var(--color);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}

@@ -1,6 +1,6 @@
 'use client'
 
-import { Icons } from '@components/Icons'
+import { Icons } from '@icons'
 import { cn } from '@utils/index'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'

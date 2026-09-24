@@ -1,0 +1,37 @@
+import { Icons } from '@v-1/_components/Icons'
+import { completedProjects } from '@v-1/_globals/constants'
+import Link from 'next/link'
+
+import styles from './Experiments.module.css'
+
+const Experiments = ({ showAll = false }: { showAll?: boolean }) => {
+  const projects = showAll ? completedProjects : completedProjects.slice(0, 3)
+
+  return (
+    <div className={styles.container}>
+      {projects.map((project, index) => (
+        <Link
+          href={project.github ?? project.url}
+          key={project.slug}
+          className={styles.item}
+          tabIndex={0}
+          aria-label={`click to open ${project.title} project`}
+          target="_blank"
+          {...(showAll ? { style: { '--delay': index } as React.CSSProperties } : {})}
+        >
+          <div className={styles.title}>{project.shortTitle ?? project.title}</div>
+          <div className={styles.line}>
+            <div className={styles.lineInner} />
+          </div>
+          <div className={styles.category}>{project.tags[0]}</div>
+          <div className={styles.view}>
+            View
+            <Icons.ArrowTopRight />
+          </div>
+        </Link>
+      ))}
+    </div>
+  )
+}
+
+export default Experiments

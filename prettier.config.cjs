@@ -8,5 +8,6 @@ module.exports = {
   bracketSpacing: true,
   printWidth: 120,
   tabWidth: 2,
+  endOfLine: 'auto',
   plugins: [],
 }
